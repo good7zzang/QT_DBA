@@ -10,7 +10,11 @@ CMSDBA_MainDlg::CMSDBA_MainDlg(QWidget *parent) :
 
     //backho
 
+<<<<<<< HEAD
     //23843
+=======
+    //44444
+>>>>>>> refs/remotes/origin/master
 }
 
 CMSDBA_MainDlg::~CMSDBA_MainDlg()
