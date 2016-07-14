@@ -7,6 +7,8 @@ CMSDBA_MainDlg::CMSDBA_MainDlg(QWidget *parent) :
 {
     ui->setupUi(this);
     //123
+
+    //backho
 }
 
 CMSDBA_MainDlg::~CMSDBA_MainDlg()
