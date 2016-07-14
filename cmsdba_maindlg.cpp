@@ -6,13 +6,6 @@ CMSDBA_MainDlg::CMSDBA_MainDlg(QWidget *parent) :
     ui(new Ui::CMSDBA_MainDlg)
 {
     ui->setupUi(this);
-    //123
-
-    //backho
-
-
-    //23843
-
 }
 
 CMSDBA_MainDlg::~CMSDBA_MainDlg()
