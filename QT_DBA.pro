@@ -18,3 +18,6 @@ SOURCES += main.cpp\
 HEADERS  += cmsdba_maindlg.h
 
 FORMS    += cmsdba_maindlg.ui
+
+RESOURCES += \
+    res.qrc
