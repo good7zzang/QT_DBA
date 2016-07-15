@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::CMSDBA_MainDlg *ui;
+
+public:
+    void init();
+    void Toolbarinit();
 };
 
 #endif // CMSDBA_MAINDLG_H

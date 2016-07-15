@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>res/Alram.png</file>
+        <file>res/Setting_Change.png</file>
+    </qresource>
+</RCC>
