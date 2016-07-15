@@ -13,11 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        cmsdba_maindlg.cpp
+        cmsdba_maindlg.cpp \
+    molding_setting.cpp
 
-HEADERS  += cmsdba_maindlg.h
+HEADERS  += cmsdba_maindlg.h \
+    molding_setting.h
 
-FORMS    += cmsdba_maindlg.ui
+FORMS    += cmsdba_maindlg.ui \
+    molding_setting.ui
 
 RESOURCES += \
     res.qrc
