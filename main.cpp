@@ -18,12 +18,11 @@ int main(int argc, char *argv[])
     MoldCondition.show();
     moldsetting.show();
 
-<<<<<<< HEAD
-=======
+
     DBsearchact dbsearchact;
     dbsearchact.show();
 
 
->>>>>>> refs/remotes/origin/master
+
     return a.exec();
 }
