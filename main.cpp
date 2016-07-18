@@ -1,7 +1,11 @@
 #include "cmsdba_maindlg.h"
 #include <QApplication>
 #include <molding_setting.h>
+
 #include <moldcondition_report.h>
+
+
+#include "dbsearchact.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,5 +18,12 @@ int main(int argc, char *argv[])
     MoldCondition.show();
     moldsetting.show();
 
+<<<<<<< HEAD
+=======
+    DBsearchact dbsearchact;
+    dbsearchact.show();
+
+
+>>>>>>> refs/remotes/origin/master
     return a.exec();
 }
