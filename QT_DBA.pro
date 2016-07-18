@@ -15,7 +15,18 @@ TEMPLATE = app
 SOURCES += main.cpp\
         cmsdba_maindlg.cpp \
     molding_setting.cpp \
+    moldcondition_report.cpp\
     dbsearchact.cpp
+
+HEADERS  += cmsdba_maindlg.h \
+    molding_setting.h \
+    moldcondition_report.h
+
+FORMS    += cmsdba_maindlg.ui \
+    molding_setting.ui \
+    moldcondition_report.ui
+
+
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
@@ -24,6 +35,7 @@ HEADERS  += cmsdba_maindlg.h \
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
     dbsearchact.ui
+
 
 RESOURCES += \
     res.qrc
