@@ -1,7 +1,12 @@
 #include "cmsdba_maindlg.h"
 #include <QApplication>
 #include <molding_setting.h>
+
+#include <moldcondition_report.h>
+
+
 #include "dbsearchact.h"
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -9,11 +14,16 @@ int main(int argc, char *argv[])
     w.show();
 
     molding_setting moldsetting;
+    MoldCondition_Report MoldCondition;
+    MoldCondition.show();
     moldsetting.show();
 
+<<<<<<< HEAD
+=======
     DBsearchact dbsearchact;
     dbsearchact.show();
 
 
+>>>>>>> refs/remotes/origin/master
     return a.exec();
 }
