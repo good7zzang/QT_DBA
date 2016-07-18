@@ -15,8 +15,7 @@ TEMPLATE = app
 SOURCES += main.cpp\
         cmsdba_maindlg.cpp \
     molding_setting.cpp \
-
-    moldcondition_report.cpp \
+    moldcondition_report.cpp\
     dbsearchact.cpp
 
 HEADERS  += cmsdba_maindlg.h \
