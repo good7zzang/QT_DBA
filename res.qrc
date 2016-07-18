@@ -2,5 +2,6 @@
     <qresource prefix="/Icon">
         <file>res/Alram.png</file>
         <file>res/Setting_Change.png</file>
+        <file>res/Woojin Logo.png</file>
     </qresource>
 </RCC>
