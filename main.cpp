@@ -4,7 +4,7 @@
 
 #include <moldcondition_report.h>
 
-
+#include <singlegraph.h>
 #include "dbsearchact.h"
 
 int main(int argc, char *argv[])
@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
     DBsearchact dbsearchact;
     dbsearchact.show();
 
+    SingleGraph singlegraph;
+    singlegraph.show();
 
 
     return a.exec();
