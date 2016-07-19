@@ -19,7 +19,7 @@ void CMSDBA_MainDlg::init()
     Toolbarinit();
     QPixmap Picture(":/Icon/res/Woojin Logo.png"); //로고 이미지
 
-    ui->label->setPixmap(Picture);
+    ui->label_2->setPixmap(Picture);
 }
 
 void CMSDBA_MainDlg::Toolbarinit()
