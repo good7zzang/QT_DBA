@@ -57,6 +57,9 @@
            <property name="title">
             <string>히터</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
            <property name="flat">
             <bool>true</bool>
            </property>
@@ -212,6 +215,9 @@
            <property name="title">
             <string>생산정보 설정</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
            <property name="flat">
             <bool>true</bool>
            </property>
@@ -365,6 +371,9 @@
           <widget class="QGroupBox" name="groupBox_3">
            <property name="title">
             <string>외부온도</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
            <property name="flat">
             <bool>true</bool>
@@ -549,6 +558,9 @@
              <property name="title">
               <string>계량</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
              <property name="flat">
               <bool>true</bool>
              </property>
@@ -710,6 +722,9 @@
              <property name="title">
               <string>계량설정</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
              <property name="flat">
               <bool>true</bool>
              </property>
@@ -753,6 +768,9 @@
            </property>
            <property name="title">
             <string>사출</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
            <property name="flat">
             <bool>true</bool>
@@ -1026,6 +1044,9 @@
              <property name="title">
               <string>보압</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
              <property name="flat">
               <bool>true</bool>
              </property>
@@ -1173,6 +1194,9 @@
             <widget class="QGroupBox" name="groupBox_6">
              <property name="title">
               <string>사출설정</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
              <property name="flat">
               <bool>true</bool>
