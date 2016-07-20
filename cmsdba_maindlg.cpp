@@ -42,4 +42,15 @@ void CMSDBA_MainDlg::Toolbarinit()
     ui->CMSDBA_MainToobar->addAction("Display2");
     ui->CMSDBA_MainToobar->addSeparator();
     ui->CMSDBA_MainToobar->addAction("Setting");
+    connect(ui->CMSDBA_MainToobar, SIGNAL(actionTriggered(QAction*)), this,SLOT(toolbartriggered(QAction*)));
+}
+void CMSDBA_MainDlg::toolbartriggered(QAction *action)
+{
+    QString test;
+    test = action->text();
+    SettingLog *settinglog = new SettingLog();
+
+    if(test.compare("Setting Log") == 0){
+        settinglog->show();
+    }
 }

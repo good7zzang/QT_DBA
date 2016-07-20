@@ -2,6 +2,7 @@
 #define CMSDBA_MAINDLG_H
 
 #include <QMainWindow>
+#include "settinglog.h"
 
 namespace Ui {
 class CMSDBA_MainDlg;
@@ -21,6 +22,9 @@ private:
 public:
     void init();
     void Toolbarinit();
+
+public slots:
+    void toolbartriggered(QAction *action);
 };
 
 #endif // CMSDBA_MAINDLG_H
