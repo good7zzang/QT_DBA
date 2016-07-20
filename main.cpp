@@ -7,6 +7,8 @@
 #include "singlegraph.h"
 #include "dbsearchact.h"
 #include "moldconditionformset.h"
+#include "dba_setting.h"
+#include "productstatistics.h"
 
 int main(int argc, char *argv[])
 {
@@ -32,8 +34,14 @@ int main(int argc, char *argv[])
 //    SettingLog settinglog;
 //    settinglog.show();
 
-    MoldConditionFormSet moldconditionformset;
-    moldconditionformset.show();
+//    MoldConditionFormSet moldconditionformset;
+//    moldconditionformset.show();
+
+//    DBA_Setting dba_setting;
+//    dba_setting.show();
+
+    Productstatistics productstatistics;
+    productstatistics.show();
 
     return a.exec();
 }
