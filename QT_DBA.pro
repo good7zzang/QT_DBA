@@ -17,17 +17,29 @@ SOURCES += main.cpp\
     molding_setting.cpp \
     moldcondition_report.cpp\
     dbsearchact.cpp \
-    singlegraph.cpp
+    singlegraph.cpp \
+    alarmlog.cpp \
+    settinglog.cpp \
+    moldconditionformset.cpp \
+    dba_setting.cpp
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
     moldcondition_report.h \
-    singlegraph.h
+    singlegraph.h \
+    alarmlog.h \
+    settinglog.h \
+    moldconditionformset.h \
+    dba_setting.h
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
     moldcondition_report.ui \
-    singlegraph.ui
+    singlegraph.ui \
+    alarmlog.ui \
+    settinglog.ui \
+    moldconditionformset.ui \
+    dba_setting.ui
 
 
 
