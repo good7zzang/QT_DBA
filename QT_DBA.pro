@@ -16,15 +16,18 @@ SOURCES += main.cpp\
         cmsdba_maindlg.cpp \
     molding_setting.cpp \
     moldcondition_report.cpp\
-    dbsearchact.cpp
+    dbsearchact.cpp \
+    singlegraph.cpp
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
-    moldcondition_report.h
+    moldcondition_report.h \
+    singlegraph.h
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
-    moldcondition_report.ui
+    moldcondition_report.ui \
+    singlegraph.ui
 
 
 
