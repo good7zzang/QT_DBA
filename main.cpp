@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
     CMSDBA_MainDlg w;
     w.show();
 
+    //2323
+
 //    molding_setting moldsetting;
 //    MoldCondition_Report MoldCondition;
 //    MoldCondition.show();
