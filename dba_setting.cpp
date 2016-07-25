@@ -6,6 +6,7 @@ DBA_Setting::DBA_Setting(QWidget *parent) :
     ui(new Ui::DBA_Setting)
 {
     ui->setupUi(this);
+
 }
 
 DBA_Setting::~DBA_Setting()
