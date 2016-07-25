@@ -40,8 +40,8 @@ int main(int argc, char *argv[])
 //    DBA_Setting dba_setting;
 //    dba_setting.show();
 
-    Productstatistics productstatistics;
-    productstatistics.show();
+//    Productstatistics productstatistics;
+//    productstatistics.show();
 
     return a.exec();
 }
