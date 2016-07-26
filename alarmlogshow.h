@@ -14,6 +14,7 @@ class AlarmLogShow : public QWidget
 public:
     explicit AlarmLogShow(QWidget *parent = 0);
     ~AlarmLogShow();
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::AlarmLogShow *ui;

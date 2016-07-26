@@ -12,3 +12,8 @@ AlarmLogShow::~AlarmLogShow()
 {
     delete ui;
 }
+
+void AlarmLogShow::closeEvent(QCloseEvent *event)
+{
+    this->deleteLater();
+}
