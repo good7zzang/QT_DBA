@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     machineadd.cpp \
     moldcondition.cpp \
     alarmlogshow.cpp \
-    settinglogshow.cpp
+    settinglogshow.cpp \
+    dbsearchsetting.cpp
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
@@ -40,7 +41,8 @@ HEADERS  += cmsdba_maindlg.h \
     machineadd.h \
     moldcondition.h \
     alarmlogshow.h \
-    settinglogshow.h
+    settinglogshow.h \
+    dbsearchsetting.h
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
@@ -54,7 +56,8 @@ FORMS    += cmsdba_maindlg.ui \
     machineadd.ui \
     moldcondition.ui \
     alarmlogshow.ui \
-    settinglogshow.ui
+    settinglogshow.ui \
+    dbsearchsetting.ui
 
 
 
