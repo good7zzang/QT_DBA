@@ -34,7 +34,7 @@ void CMSDBA_MainDlg::Toolbarinit()
     ui->CMSDBA_MainToobar->addAction("Add");
     ui->CMSDBA_MainToobar->addAction("Delete");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction("Alarm");
+    ui->CMSDBA_MainToobar->addAction("Alarm Log");
     ui->CMSDBA_MainToobar->addAction("Moldcondition");
     ui->CMSDBA_MainToobar->addAction("Setting Log");
     ui->CMSDBA_MainToobar->addSeparator();
@@ -46,11 +46,42 @@ void CMSDBA_MainDlg::Toolbarinit()
 }
 void CMSDBA_MainDlg::toolbartriggered(QAction *action)
 {
-    QString test;
-    test = action->text();
-    SettingLog *settinglog = new SettingLog();
+    QString Toolbar_Name;
 
-    if(test.compare("Setting Log") == 0){
-        settinglog->show();
+    MachineAdd *m_machineadd = new MachineAdd();
+    SettingLogShow *m_settinglogshow = new SettingLogShow();
+    AlarmLogShow *m_alarmlogshow = new AlarmLogShow();
+    MoldCondition *m_moldcondition = new MoldCondition();
+    DBA_Setting *m_dbasetting = new DBA_Setting();
+
+    Toolbar_Name = action->text();
+
+    if(!Toolbar_Name.compare("Add"))
+    {
+        m_machineadd->show();
+    }
+    else if(!Toolbar_Name.compare("Alarm Log"))
+    {
+        m_alarmlogshow->show();
+    }
+    else if(!Toolbar_Name.compare("Moldcondition"))
+    {
+        m_moldcondition->show();
+    }
+    else if(!Toolbar_Name.compare("Setting Log"))
+    {
+        m_settinglogshow->show();
+    }
+    else if(!Toolbar_Name.compare("Display1"))
+    {
+
+    }
+    else if(!Toolbar_Name.compare("Display2"))
+    {
+
+    }
+    else if(!Toolbar_Name.compare("Setting"))
+    {
+        m_dbasetting->show();
     }
 }

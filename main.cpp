@@ -43,8 +43,11 @@ int main(int argc, char *argv[])
 //    Productstatistics productstatistics;
 //    productstatistics.show();
 
-    AlarmLogShow alarmlogshow;
-    alarmlogshow.show();
+//    AlarmLogShow alarmlogshow;
+//    alarmlogshow.show();
+
+//    SettingLogShow settinglogshow;
+//    settinglogshow.show();
 
     return a.exec();
 }

@@ -4,6 +4,10 @@
 #include <QMainWindow>
 #include "settinglog.h"
 #include "alarmlogshow.h"
+#include "settinglogshow.h"
+#include "machineadd.h"
+#include "moldcondition.h"
+#include "dba_setting.h"
 
 namespace Ui {
 class CMSDBA_MainDlg;
