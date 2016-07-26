@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     dba_setting.cpp \
     productstatistics.cpp \
     machineadd.cpp \
-    moldcondition.cpp
+    moldcondition.cpp \
+    alarmlogshow.cpp
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
@@ -36,7 +37,8 @@ HEADERS  += cmsdba_maindlg.h \
     dba_setting.h \
     productstatistics.h \
     machineadd.h \
-    moldcondition.h
+    moldcondition.h \
+    alarmlogshow.h
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
@@ -48,7 +50,8 @@ FORMS    += cmsdba_maindlg.ui \
     dba_setting.ui \
     productstatistics.ui \
     machineadd.ui \
-    moldcondition.ui
+    moldcondition.ui \
+    alarmlogshow.ui
 
 
 

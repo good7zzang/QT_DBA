@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "settinglog.h"
+#include "alarmlogshow.h"
 
 namespace Ui {
 class CMSDBA_MainDlg;
