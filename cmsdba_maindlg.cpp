@@ -28,20 +28,23 @@ void CMSDBA_MainDlg::Toolbarinit()
 //    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Setting_Change.png"), "Setting Log"); //설정 변경 아이콘
 //    ui->CMSDBA_MainToobar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); //Toolbar 스타일 설정
 
-    ui->CMSDBA_MainToobar->addAction("Connect");
-    ui->CMSDBA_MainToobar->addAction("Disconnect");
+    ui->CMSDBA_MainToobar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/connect.png"), "Connect");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/disconnect.png"), "Disconnect");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction("Add");
-    ui->CMSDBA_MainToobar->addAction("Delete");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/add.png"), "Add");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/delete.png"), "Delete");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction("Alarm Log");
-    ui->CMSDBA_MainToobar->addAction("Moldcondition");
-    ui->CMSDBA_MainToobar->addAction("Setting Log");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/moldcondition.png"), "Moldcondition");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Alarm.png"), "Alarm Log");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Settinglog.png"), "Setting Log");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction("DisPlay1");
-    ui->CMSDBA_MainToobar->addAction("Display2");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display1.png"), "DisPlay1");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display2.png"), "Display2");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction("Setting");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/setting.png"), "Setting");
+
     connect(ui->CMSDBA_MainToobar, SIGNAL(actionTriggered(QAction*)), this,SLOT(toolbartriggered(QAction*)));
 }
 void CMSDBA_MainDlg::toolbartriggered(QAction *action)

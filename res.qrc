@@ -1,7 +1,15 @@
 <RCC>
     <qresource prefix="/Icon">
-        <file>res/Alram.png</file>
-        <file>res/Setting_Change.png</file>
         <file>res/Woojin Logo.png</file>
+        <file>res/add.png</file>
+        <file>res/delete.png</file>
+        <file>res/setting.png</file>
+        <file>res/Alarm.png</file>
+        <file>res/moldcondition.png</file>
+        <file>res/Settinglog.png</file>
+        <file>res/Display2.png</file>
+        <file>res/Display1.png</file>
+        <file>res/connect.png</file>
+        <file>res/disconnect.png</file>
     </qresource>
 </RCC>
