@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     settinglogshow.cpp \
     dbsearchsetting.cpp \
     m_table_item.cpp \
-    simplecrypt.cpp
+    simplecrypt.cpp \
+    db_serversetting.cpp
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
@@ -46,7 +47,8 @@ HEADERS  += cmsdba_maindlg.h \
     settinglogshow.h \
     dbsearchsetting.h \
     m_table_item.h \
-    simplecrypt.h
+    simplecrypt.h \
+    db_serversetting.h
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
@@ -61,7 +63,8 @@ FORMS    += cmsdba_maindlg.ui \
     moldcondition.ui \
     alarmlogshow.ui \
     settinglogshow.ui \
-    dbsearchsetting.ui
+    dbsearchsetting.ui \
+    db_serversetting.ui
 
 
 

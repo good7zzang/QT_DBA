@@ -55,7 +55,8 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     SettingLogShow *m_settinglogshow = new SettingLogShow();
     AlarmLogShow *m_alarmlogshow = new AlarmLogShow();
     MoldCondition *m_moldcondition = new MoldCondition();
-    DBA_Setting *m_dbasetting = new DBA_Setting();
+    //DBA_Setting *m_dbasetting = new DBA_Setting();
+    Db_serversetting *m_dbasetting = new Db_serversetting();
 
     Toolbar_Name = action->text();
 
@@ -95,6 +96,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
  */
 void CMSDBA_MainDlg::litedbinit(){
     localdb = QSqlDatabase::addDatabase("QSQLITE","localdb");
+    localdb.setDatabaseName("local.db");
     if(!localdb.open()){
         qDebug()<<"local DB not open";
     }
@@ -109,6 +111,7 @@ void CMSDBA_MainDlg::litedbinit(){
                     "remoteservertype TEXT"
                     ");");
     //만약조건이없다면 업데이트
+    qDebug()<<litequery.lastError().text();
     litequery.exec("insert into systemset(remoteserverip,"
                     "remoteserverport,"
                     "remoteserverdbname,"
@@ -124,6 +127,7 @@ void CMSDBA_MainDlg::litedbinit(){
                     "\'1234\',"
                     "\'ODBC\' "
                     "where not exists(select * from systemset);");
+
 }
 /*
  * 원격 db에 접속

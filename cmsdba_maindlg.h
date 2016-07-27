@@ -13,6 +13,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include "m_table_item.h"
+#include "db_serversetting.h"
 
 #define MACHIEN_NAME_FILD 0
 #define MACHINE_STATUE_FILD 1
