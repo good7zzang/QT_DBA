@@ -9,12 +9,17 @@
 #include "moldconditionformset.h"
 #include "productstatistics.h"
 #include "dbsearchsetting.h"
+#include <QTranslator>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     CMSDBA_MainDlg w;
     w.show();
+    QTranslator trans;
+    trans.load(":/Lang/Lang_ko_KR.qm");
+    QApplication::installTranslator(&trans);
+
 
 //    molding_setting moldsetting;
 //    MoldCondition_Report MoldCondition;

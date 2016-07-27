@@ -12,4 +12,7 @@
         <file>res/connect.png</file>
         <file>res/disconnect.png</file>
     </qresource>
+    <qresource prefix="/Lang">
+        <file>Lang_ko_KR.qm</file>
+    </qresource>
 </RCC>

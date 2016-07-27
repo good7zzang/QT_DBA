@@ -2,6 +2,8 @@
 #define DBA_SETTING_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
 
 namespace Ui {
 class DBA_Setting;
@@ -13,6 +15,7 @@ class DBA_Setting : public QWidget
 
 public:
     explicit DBA_Setting(QWidget *parent = 0);
+    QSqlDatabase localdb;
     ~DBA_Setting();
     void closeEvent(QCloseEvent *event);
 
