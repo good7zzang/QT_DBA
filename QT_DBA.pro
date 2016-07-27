@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     moldcondition.cpp \
     alarmlogshow.cpp \
     settinglogshow.cpp \
-    dbsearchsetting.cpp
+    dbsearchsetting.cpp \
+    m_table_item.cpp
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
@@ -42,7 +43,8 @@ HEADERS  += cmsdba_maindlg.h \
     moldcondition.h \
     alarmlogshow.h \
     settinglogshow.h \
-    dbsearchsetting.h
+    dbsearchsetting.h \
+    m_table_item.h
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
