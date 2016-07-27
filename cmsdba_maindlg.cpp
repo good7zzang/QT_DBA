@@ -116,7 +116,7 @@ void CMSDBA_MainDlg::litedbinit(){
                     "remoteserverusername,"
                     "remoteserveruserpassword,"
                     "remoteservertype) "
-                    "select \'127.0.0.1\',"
+                    "select \'172.16.131.117\',"
                     "\'1143\',"
                     "\'QCproject\',"
                     "1,"
