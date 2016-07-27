@@ -169,12 +169,15 @@ void CMSDBA_MainDlg::M_table_init(){
     }
     while(remotequery.next()){
         QString machine_name = remotequery.value("machine_name").toString();
+        QString ipaddress = remotequery.value("ipaddress").toString();
         M_table_item *temp_item;
         if(!item_map->contains(machine_name)){
-            temp_item = new M_table_item(machine_name);
+            temp_item = new M_table_item(machine_name,ipaddress,this);
             item_map->insert(machine_name,temp_item);
         }else {
             temp_item = item_map->value(machine_name);
+            temp_item->machine_name = machine_name;
+            temp_item->ip = ipaddress;
         }
         int rowcount = ui->M_moniter->rowCount();
         ui->M_moniter->insertRow(rowcount);
