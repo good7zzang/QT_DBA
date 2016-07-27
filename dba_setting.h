@@ -14,6 +14,7 @@ class DBA_Setting : public QWidget
 public:
     explicit DBA_Setting(QWidget *parent = 0);
     ~DBA_Setting();
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::DBA_Setting *ui;

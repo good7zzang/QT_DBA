@@ -7,8 +7,8 @@
 #include "singlegraph.h"
 #include "dbsearchact.h"
 #include "moldconditionformset.h"
-#include "dba_setting.h"
 #include "productstatistics.h"
+#include "dbsearchsetting.h"
 
 int main(int argc, char *argv[])
 {
@@ -42,6 +42,18 @@ int main(int argc, char *argv[])
 
 //    Productstatistics productstatistics;
 //    productstatistics.show();
+
+//    AlarmLogShow alarmlogshow;
+//    alarmlogshow.show();
+
+//    SettingLogShow settinglogshow;
+//    settinglogshow.show();
+
+//    DBsearchact db;
+//    db.show();
+
+    DBsearchsetting db;
+    db.show();
 
     return a.exec();
 }

@@ -12,3 +12,8 @@ DBA_Setting::~DBA_Setting()
 {
     delete ui;
 }
+
+void DBA_Setting::closeEvent(QCloseEvent *event)
+{
+    this->deleteLater();
+}
