@@ -101,5 +101,4 @@ void M_table_item::M_timer_loop(){
     }else {
         La_warning_flag->setText(tr("safe"));
     }
-
 }

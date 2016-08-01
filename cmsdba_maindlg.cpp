@@ -21,7 +21,7 @@ void CMSDBA_MainDlg::init()
     Toolbarinit();
     QPixmap Picture(":/Icon/res/Woojin Logo.png"); //로고 이미지
 
-
+    select_machine_name = "";
     ui->label_2->setPixmap(Picture);
 }
 
@@ -123,7 +123,7 @@ void CMSDBA_MainDlg::litedbinit(){
                     "remoteserveruserpassword,"
                     "remoteservertype) "
                     "select \'172.16.131.117\',"
-                    "\'1143\',"
+                    "\'1433\',"
                     "\'QCproject\',"
                     "1,"
                     "\'QCmen\',"
@@ -195,4 +195,12 @@ void CMSDBA_MainDlg::M_table_init(){
         ui->M_moniter->setCellWidget(rowcount,MACHINE_ACHIEVE_FILD,temp_item->PB_achive_bar);
         ui->M_moniter->setCellWidget(rowcount,MACHINE_WARNING_FILD,temp_item->La_warning_flag);
     }
+}
+
+
+
+void CMSDBA_MainDlg::on_M_moniter_cellClicked(int row, int column)
+{
+    QLabel *La_machine_name =(QLabel *)ui->M_moniter->cellWidget(row,MACHIEN_NAME_FILD);
+    select_machine_name = La_machine_name->text();
 }
