@@ -10,7 +10,7 @@
 #include <QDebug>
 #include "simplecrypt.h"
 #include <QString>
-
+#include <QProgressBar>
 /*
  * 메인에 있는 테이블위젯에 들어가는 ITEM
  */
@@ -31,6 +31,8 @@ public:
     QSqlDatabase remotedb;
     QTimer M_timer;
     SimpleCrypt crypt;
+    QProgressBar *PB_achive_bar;
+    QLabel *La_warning_flag;
     void remotedbconnect();
 
 

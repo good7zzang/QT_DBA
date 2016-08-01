@@ -26,7 +26,6 @@ DBA_Setting::DBA_Setting(QWidget *parent) :
     ui->CB_remotedb_type->setCurrentText(remoteservertype);
     ui->LE_remotedb_port->setText(remoteserverport);
 
-
 }
 
 DBA_Setting::~DBA_Setting()
