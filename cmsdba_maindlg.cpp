@@ -21,17 +21,12 @@ void CMSDBA_MainDlg::init()
     Toolbarinit();
     QPixmap Picture(":/Icon/res/Woojin Logo.png"); //로고 이미지
 
-
     ui->label_2->setPixmap(Picture);
 }
 
 void CMSDBA_MainDlg::Toolbarinit()
 {
-//    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Alram.png"),"Alram"); //알람 아이콘
-//    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Setting_Change.png"), "Setting Log"); //설정 변경 아이콘
-//    ui->CMSDBA_MainToobar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); //Toolbar 스타일 설정
-
-    ui->CMSDBA_MainToobar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    ui->CMSDBA_MainToobar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); //툴바 스타일 설정
 
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/connect.png"), "Connect");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/disconnect.png"), "Disconnect");
