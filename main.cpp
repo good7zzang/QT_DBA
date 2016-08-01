@@ -11,10 +11,13 @@
 #include "dbsearchsetting.h"
 #include <QTranslator>
 
+CMSDBA_MainDlg *Main_ui;
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     CMSDBA_MainDlg w;
+    Main_ui = &w;
     w.show();
     QTranslator trans;
     trans.load(":/Lang/Lang_ko_KR.qm");

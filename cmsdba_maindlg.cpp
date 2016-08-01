@@ -192,5 +192,7 @@ void CMSDBA_MainDlg::M_table_init(){
         ui->M_moniter->setCellWidget(rowcount,MACHINE_STATUE_FILD,temp_item->La_statue);
         ui->M_moniter->setCellWidget(rowcount,MACHINE_OBJECT_FILD,temp_item->La_object_count);
         ui->M_moniter->setCellWidget(rowcount,MACHINE_CURRENT_FILD,temp_item->La_current_count);
+        ui->M_moniter->setCellWidget(rowcount,MACHINE_ACHIEVE_FILD,temp_item->PB_achive_bar);
+        ui->M_moniter->setCellWidget(rowcount,MACHINE_WARNING_FILD,temp_item->La_warning_flag);
     }
 }

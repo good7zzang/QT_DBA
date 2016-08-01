@@ -19,6 +19,8 @@
 #define MACHINE_STATUE_FILD 1
 #define MACHINE_OBJECT_FILD 2
 #define MACHINE_CURRENT_FILD 3
+#define MACHINE_ACHIEVE_FILD 4
+#define MACHINE_WARNING_FILD 5
 
 namespace Ui {
 class CMSDBA_MainDlg;
@@ -33,11 +35,11 @@ public:
     QSqlDatabase localdb;
     QSqlDatabase remotedb;
     QMap<QString,M_table_item *> *item_map;
-
+    Ui::CMSDBA_MainDlg *ui;
     ~CMSDBA_MainDlg();
 
 private:
-    Ui::CMSDBA_MainDlg *ui;
+
 
 public:
     void init();
