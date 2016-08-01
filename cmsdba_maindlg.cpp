@@ -73,7 +73,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     }
     else if(!Toolbar_Name.compare("Moldcondition"))
     {
-        MoldCondition *m_moldcondition = new MoldCondition();
+        MoldCondition *m_moldcondition = new MoldCondition(select_machine_name);
         m_moldcondition->show();
     }
     else if(!Toolbar_Name.compare("Setting Log"))
