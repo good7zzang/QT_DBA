@@ -57,7 +57,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     MachineAdd *m_machineadd = new MachineAdd();
     SettingLogShow *m_settinglogshow = new SettingLogShow();
     AlarmLogShow *m_alarmlogshow = new AlarmLogShow();
-    MoldCondition *m_moldcondition = new MoldCondition();
+
     //DBA_Setting *m_dbasetting = new DBA_Setting();
     Db_serversetting *m_dbasetting = new Db_serversetting();
 
@@ -73,6 +73,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     }
     else if(!Toolbar_Name.compare("Moldcondition"))
     {
+        MoldCondition *m_moldcondition = new MoldCondition();
         m_moldcondition->show();
     }
     else if(!Toolbar_Name.compare("Setting Log"))
