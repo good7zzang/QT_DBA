@@ -60,8 +60,8 @@ int main(int argc, char *argv[])
 //    DBsearchact db;
 //    db.show();
 
-    DBsearchsetting db;
-    db.show();
+//    DBsearchsetting db1;
+//    db1.show();
 
     return a.exec();
 }
