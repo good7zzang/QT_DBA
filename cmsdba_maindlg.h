@@ -34,6 +34,7 @@ public:
     explicit CMSDBA_MainDlg(QWidget *parent = 0);
     QSqlDatabase localdb;
     QSqlDatabase remotedb;
+    QString select_machine_name;
     QMap<QString,M_table_item *> *item_map;
     Ui::CMSDBA_MainDlg *ui;
     ~CMSDBA_MainDlg();
@@ -50,6 +51,9 @@ public:
 
 public slots:
     void toolbartriggered(QAction *action);
+private slots:
+
+    void on_M_moniter_cellClicked(int row, int column);
 };
 
 #endif // CMSDBA_MAINDLG_H
