@@ -145,9 +145,9 @@ void CMSDBA_MainDlg::dbconnect(){
         QString remoteserveruserpassword = litequery.value("remoteserveruserpassword").toString();
         QString remoteservertype = litequery.value("remoteservertype").toString();
         if(!remoteservertype.compare("ODBC")){
-            remotedb = QSqlDatabase::addDatabase("QODBC");
+            remotedb = QSqlDatabase::addDatabase("QODBC","remotedb");
         }else if(!remoteservertype.compare("MYSQL")) {
-            remotedb = QSqlDatabase::addDatabase("QMYSQL");
+            remotedb = QSqlDatabase::addDatabase("QMYSQL","remotedb");
         }
         remotedb.setHostName(remoteserverip);
         remotedb.setDatabaseName(remoteserverdbname);
