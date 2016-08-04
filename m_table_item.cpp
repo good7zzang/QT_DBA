@@ -1,4 +1,8 @@
 #include "m_table_item.h"
+#include "cmsdba_maindlg.h"
+#include "ui_cmsdba_maindlg.h"
+
+extern CMSDBA_MainDlg *Main_ui;
 
 M_table_item::M_table_item(QString machine_name,QString ip,QObject *parent)
 {
@@ -14,6 +18,11 @@ M_table_item::M_table_item(QString machine_name,QString ip,QObject *parent)
     La_statue = new QLabel("");
     La_object_count = new QLabel("");
     La_current_count = new QLabel("");
+    PB_achive_bar = new QProgressBar();
+    PB_achive_bar->setRange(0,100);
+    PB_achive_bar->setAlignment(Qt::AlignHCenter);
+    La_warning_flag = new QLabel();
+
     connect(&M_timer,SIGNAL(timeout()),this,SLOT(M_timer_loop()));
     M_timer.setInterval(1000);
     M_timer.start();
@@ -41,8 +50,9 @@ void M_table_item::remotedbconnect(){
         remotedb.setPassword(remoteserveruserpassword);
         if(!remotedb.open()){
             qDebug()<<ip<<"DB not open";
+            Main_ui->ui->logtext->append(QString(tr("%1 DB not open")).arg(machine_name));
         }else {
-
+            Main_ui->ui->logtext->append(QString(tr("%1 DB open")).arg(machine_name));
         }
     }
 }
@@ -50,6 +60,7 @@ void M_table_item::M_timer_loop(){
     if(!remotedb.isOpen()){
         if(!remotedb.open()){
             qDebug()<<ip<<"DB not open";
+            Main_ui->ui->logtext->append(QString(tr("%1 DB not open")).arg(machine_name));
         }else{
 
         }
@@ -77,4 +88,17 @@ void M_table_item::M_timer_loop(){
     QString productioncount_crypto = remotequery.value("production_count").toString();
     QString productioncount_decrypto = crypt.decryptToString(productioncount_crypto);
     La_current_count->setText(productioncount_decrypto);
+    QString achieve_crypto = remotequery.value("achievemen_rate").toString();
+    QString achieve_decrypto = crypt.decryptToString(achieve_crypto);
+    int achieve_value  = achieve_decrypto.toDouble();
+    PB_achive_bar->setValue(achieve_value);
+    QString warning_flag_crypto = remotequery.value("warning_flag").toString();
+    QString warning_flag_decrypto = crypt.decryptToString(warning_flag_crypto);
+    int warning_data_value = warning_flag_decrypto.toInt();
+    if(warning_data_value > 0){
+        La_warning_flag->setText(tr("warnning"));
+        La_warning_flag->setStyleSheet(QString("background-color: rgb(255, 0, 0);"));
+    }else {
+        La_warning_flag->setText(tr("safe"));
+    }
 }

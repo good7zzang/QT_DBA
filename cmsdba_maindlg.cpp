@@ -22,29 +22,30 @@ void CMSDBA_MainDlg::init()
     QPixmap Picture(":/Icon/res/Woojin Logo.png"); //로고 이미지
 
 
+    select_machine_name = "";
+
     ui->label_2->setPixmap(Picture);
 }
 
 void CMSDBA_MainDlg::Toolbarinit()
 {
-//    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Alram.png"),"Alram"); //알람 아이콘
-//    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Setting_Change.png"), "Setting Log"); //설정 변경 아이콘
-//    ui->CMSDBA_MainToobar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); //Toolbar 스타일 설정
+    ui->CMSDBA_MainToobar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); //툴바 스타일 설정
 
-    ui->CMSDBA_MainToobar->addAction("Connect");
-    ui->CMSDBA_MainToobar->addAction("Disconnect");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/connect.png"), "Connect");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/disconnect.png"), "Disconnect");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction("Add");
-    ui->CMSDBA_MainToobar->addAction("Delete");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/add.png"), "Add");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/delete.png"), "Delete");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction("Alarm Log");
-    ui->CMSDBA_MainToobar->addAction("Moldcondition");
-    ui->CMSDBA_MainToobar->addAction("Setting Log");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/moldcondition.png"), "Moldcondition");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Alarm.png"), "Alarm Log");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Settinglog.png"), "Setting Log");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction("DisPlay1");
-    ui->CMSDBA_MainToobar->addAction("Display2");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display1.png"), "DisPlay1");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display2.png"), "Display2");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction("Setting");
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/setting.png"), "Setting");
+
     connect(ui->CMSDBA_MainToobar, SIGNAL(actionTriggered(QAction*)), this,SLOT(toolbartriggered(QAction*)));
 }
 void CMSDBA_MainDlg::toolbartriggered(QAction *action)
@@ -54,7 +55,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     MachineAdd *m_machineadd = new MachineAdd();
     SettingLogShow *m_settinglogshow = new SettingLogShow();
     AlarmLogShow *m_alarmlogshow = new AlarmLogShow();
-    MoldCondition *m_moldcondition = new MoldCondition();
+
     //DBA_Setting *m_dbasetting = new DBA_Setting();
     Db_serversetting *m_dbasetting = new Db_serversetting();
 
@@ -70,6 +71,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     }
     else if(!Toolbar_Name.compare("Moldcondition"))
     {
+        MoldCondition *m_moldcondition = new MoldCondition(select_machine_name);
         m_moldcondition->show();
     }
     else if(!Toolbar_Name.compare("Setting Log"))
@@ -120,7 +122,7 @@ void CMSDBA_MainDlg::litedbinit(){
                     "remoteserveruserpassword,"
                     "remoteservertype) "
                     "select \'172.16.131.117\',"
-                    "\'1143\',"
+                    "\'1433\',"
                     "\'QCproject\',"
                     "1,"
                     "\'QCmen\',"
@@ -143,9 +145,9 @@ void CMSDBA_MainDlg::dbconnect(){
         QString remoteserveruserpassword = litequery.value("remoteserveruserpassword").toString();
         QString remoteservertype = litequery.value("remoteservertype").toString();
         if(!remoteservertype.compare("ODBC")){
-            remotedb = QSqlDatabase::addDatabase("QODBC");
+            remotedb = QSqlDatabase::addDatabase("QODBC","remotedb");
         }else if(!remoteservertype.compare("MYSQL")) {
-            remotedb = QSqlDatabase::addDatabase("QMYSQL");
+            remotedb = QSqlDatabase::addDatabase("QMYSQL","remotedb");
         }
         remotedb.setHostName(remoteserverip);
         remotedb.setDatabaseName(remoteserverdbname);
@@ -189,5 +191,15 @@ void CMSDBA_MainDlg::M_table_init(){
         ui->M_moniter->setCellWidget(rowcount,MACHINE_STATUE_FILD,temp_item->La_statue);
         ui->M_moniter->setCellWidget(rowcount,MACHINE_OBJECT_FILD,temp_item->La_object_count);
         ui->M_moniter->setCellWidget(rowcount,MACHINE_CURRENT_FILD,temp_item->La_current_count);
+        ui->M_moniter->setCellWidget(rowcount,MACHINE_ACHIEVE_FILD,temp_item->PB_achive_bar);
+        ui->M_moniter->setCellWidget(rowcount,MACHINE_WARNING_FILD,temp_item->La_warning_flag);
     }
+}
+
+
+
+void CMSDBA_MainDlg::on_M_moniter_cellClicked(int row, int column)
+{
+    QLabel *La_machine_name =(QLabel *)ui->M_moniter->cellWidget(row,MACHIEN_NAME_FILD);
+    select_machine_name = La_machine_name->text();
 }
