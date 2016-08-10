@@ -32,7 +32,8 @@ public:
     int Query_Count_Row; //열 카운트 변수
 
 private slots:
-    void on_pushButton_clicked();
+
+    void on_Pu_Renew_clicked();
 
 private:
     Ui::AlarmLogShow *ui;
