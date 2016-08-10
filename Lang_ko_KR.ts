@@ -37,59 +37,74 @@
 <context>
     <name>AlarmLogShow</name>
     <message>
-        <location filename="alarmlogshow.ui" line="14"/>
+        <location filename="alarmlogshow.ui" line="20"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="alarmlogshow.ui" line="64"/>
-        <source>TextLabel</source>
+        <location filename="alarmlogshow.ui" line="189"/>
+        <source>엑셀 저장</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="alarmlogshow.ui" line="77"/>
+        <location filename="alarmlogshow.ui" line="116"/>
+        <source>기계이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="alarmlogshow.ui" line="215"/>
+        <source>검색 시간</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="alarmlogshow.ui" line="222"/>
         <source>갱신</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="alarmlogshow.ui" line="104"/>
-        <source>인쇄</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="alarmlogshow.ui" line="117"/>
-        <source>엑셀저장</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="alarmlogshow.ui" line="124"/>
+        <location filename="alarmlogshow.ui" line="41"/>
         <source>알람 내역</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="alarmlogshow.ui" line="148"/>
-        <source>2016.07.26.08:10:12</source>
-        <translation type="unfinished"></translation>
+        <source>lee</source>
+        <translation type="obsolete">컨트롤러 정보</translation>
     </message>
     <message>
-        <location filename="alarmlogshow.ui" line="161"/>
-        <source>검색 시작일</source>
-        <translation type="unfinished"></translation>
+        <location filename="alarmlogshow.cpp" line="73"/>
+        <source>Controller-Name</source>
+        <oldsource>Controller-Info</oldsource>
+        <translation type="unfinished">컨트롤러 이름</translation>
     </message>
     <message>
-        <location filename="alarmlogshow.ui" line="174"/>
-        <source>2016.07.26 08:10:11</source>
-        <translation type="unfinished"></translation>
+        <location filename="alarmlogshow.cpp" line="73"/>
+        <source>Alarm-List</source>
+        <translation type="unfinished">알람 내역</translation>
     </message>
     <message>
-        <location filename="alarmlogshow.ui" line="181"/>
-        <source>검색 종료일</source>
-        <translation type="unfinished"></translation>
+        <location filename="alarmlogshow.cpp" line="73"/>
+        <source>Alarm Start Time</source>
+        <translation type="unfinished">알람 발생 시간</translation>
     </message>
     <message>
-        <location filename="alarmlogshow.ui" line="276"/>
-        <source>기계 이름</source>
-        <translation type="unfinished"></translation>
+        <location filename="alarmlogshow.cpp" line="73"/>
+        <source>Alarm End Time</source>
+        <translation type="unfinished">알람 해제 시간</translation>
+    </message>
+    <message>
+        <location filename="alarmlogshow.cpp" line="73"/>
+        <source>Staus</source>
+        <translation type="unfinished">상태</translation>
+    </message>
+    <message>
+        <location filename="alarmlogshow.cpp" line="92"/>
+        <source>Alarm Occur</source>
+        <translation type="unfinished">알람 발생</translation>
+    </message>
+    <message>
+        <location filename="alarmlogshow.cpp" line="101"/>
+        <source>Alarm OFF</source>
+        <translation type="unfinished">알람 해제</translation>
     </message>
 </context>
 <context>
@@ -136,17 +151,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="cmsdba_maindlg.ui" line="176"/>
+        <location filename="cmsdba_maindlg.ui" line="147"/>
+        <source>달성률</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="cmsdba_maindlg.ui" line="152"/>
+        <source>경보</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="cmsdba_maindlg.ui" line="186"/>
         <source>Menu Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="cmsdba_maindlg.ui" line="185"/>
+        <location filename="cmsdba_maindlg.ui" line="195"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="cmsdba_maindlg.ui" line="202"/>
+        <location filename="cmsdba_maindlg.ui" line="212"/>
         <source>Connect</source>
         <translation type="unfinished"></translation>
     </message>
@@ -272,159 +297,38 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="54"/>
-        <source>인쇄</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="67"/>
+        <location filename="dbsearchact.ui" line="188"/>
         <source>엑셀저장</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="80"/>
+        <location filename="dbsearchact.ui" line="64"/>
         <source>검색</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="89"/>
-        <location filename="dbsearchact.ui" line="153"/>
-        <location filename="dbsearchact.ui" line="183"/>
-        <location filename="dbsearchact.ui" line="203"/>
-        <location filename="dbsearchact.ui" line="223"/>
-        <location filename="dbsearchact.ui" line="230"/>
-        <location filename="dbsearchact.ui" line="253"/>
-        <location filename="dbsearchact.ui" line="268"/>
-        <location filename="dbsearchact.ui" line="295"/>
-        <location filename="dbsearchact.ui" line="321"/>
-        <location filename="dbsearchact.ui" line="360"/>
-        <location filename="dbsearchact.ui" line="393"/>
-        <location filename="dbsearchact.ui" line="432"/>
-        <location filename="dbsearchact.ui" line="474"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="96"/>
-        <source>검색종료일</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="103"/>
+        <location filename="dbsearchact.ui" line="133"/>
         <source>추가정보2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="110"/>
-        <source>기계이름</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="123"/>
+        <location filename="dbsearchact.ui" line="73"/>
         <source>검색 시작일</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="146"/>
+        <location filename="dbsearchact.ui" line="86"/>
+        <source>검색 종료일</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dbsearchact.ui" line="123"/>
+        <source>기계 이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dbsearchact.ui" line="143"/>
         <source>추가정보1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="176"/>
-        <source>사출 압력</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="196"/>
-        <source>사출 속도</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="216"/>
-        <source>사출 위치</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="237"/>
-        <source>보압 절환
-압력</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="245"/>
-        <source>보압 절환 
-시간</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="260"/>
-        <source>보압 절환
-속도</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="275"/>
-        <source>사출 정보</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="308"/>
-        <source>계량 위치</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="334"/>
-        <source>배압</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="347"/>
-        <source>계량 속도</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="373"/>
-        <source>계량 정보</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="406"/>
-        <source>보압 시간</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="419"/>
-        <source>보압 압력</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="445"/>
-        <source>보압 속도</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="458"/>
-        <source>보압 정보</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="497"/>
-        <source>히터 정보</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="537"/>
-        <source>검색 목록</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="561"/>
-        <source>외부 온도 정보</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="621"/>
-        <source>데이터베이스 검색(ACT_DATA)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -446,38 +350,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="74"/>
-        <source>인쇄</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchsetting.ui" line="97"/>
+        <location filename="dbsearchsetting.ui" line="84"/>
         <source>검색 시작일</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="107"/>
+        <location filename="dbsearchsetting.ui" line="94"/>
         <source>검색 종료일</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="163"/>
+        <location filename="dbsearchsetting.ui" line="150"/>
         <source>기계 이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="179"/>
+        <location filename="dbsearchsetting.ui" line="163"/>
         <source>추가정보1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="189"/>
+        <location filename="dbsearchsetting.ui" line="173"/>
         <source>추가정보2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchsetting.ui" line="206"/>
-        <source>테이블 선택</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -537,24 +431,45 @@
 <context>
     <name>M_table_item</name>
     <message>
-        <location filename="m_table_item.cpp" line="66"/>
+        <location filename="m_table_item.cpp" line="53"/>
+        <location filename="m_table_item.cpp" line="63"/>
+        <source>%1 DB not open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="m_table_item.cpp" line="55"/>
+        <source>%1 DB open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="m_table_item.cpp" line="77"/>
         <source>auto</source>
         <translation>전자동</translation>
     </message>
     <message>
-        <location filename="m_table_item.cpp" line="68"/>
+        <location filename="m_table_item.cpp" line="79"/>
         <source>selfauto</source>
         <translation>반자동</translation>
     </message>
     <message>
-        <location filename="m_table_item.cpp" line="70"/>
+        <location filename="m_table_item.cpp" line="81"/>
         <source>maunual</source>
         <translation>수동</translation>
     </message>
     <message>
-        <location filename="m_table_item.cpp" line="72"/>
+        <location filename="m_table_item.cpp" line="83"/>
         <source>moldmode</source>
         <translation>금형취부</translation>
+    </message>
+    <message>
+        <location filename="m_table_item.cpp" line="99"/>
+        <source>warnning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="m_table_item.cpp" line="102"/>
+        <source>safe</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -580,8 +495,8 @@
         <location filename="machineadd.ui" line="118"/>
         <location filename="machineadd.ui" line="125"/>
         <location filename="machineadd.ui" line="189"/>
-        <location filename="machineadd.ui" line="558"/>
-        <location filename="machineadd.ui" line="577"/>
+        <location filename="machineadd.ui" line="555"/>
+        <location filename="machineadd.ui" line="574"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -591,32 +506,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="machineadd.ui" line="311"/>
+        <location filename="machineadd.ui" line="308"/>
         <source>PushButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="machineadd.ui" line="368"/>
+        <location filename="machineadd.ui" line="365"/>
         <source>주의 사항</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="machineadd.ui" line="397"/>
+        <location filename="machineadd.ui" line="394"/>
         <source>비 고</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="machineadd.ui" line="444"/>
+        <location filename="machineadd.ui" line="441"/>
         <source>기계 정보</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="machineadd.ui" line="491"/>
+        <location filename="machineadd.ui" line="488"/>
         <source>IP 주소</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="machineadd.ui" line="508"/>
+        <location filename="machineadd.ui" line="505"/>
         <source>기계 호수</source>
         <translation type="unfinished"></translation>
     </message>
@@ -635,259 +550,259 @@
     </message>
     <message>
         <location filename="moldcondition.ui" line="50"/>
-        <location filename="moldcondition.ui" line="453"/>
-        <location filename="moldcondition.ui" line="681"/>
-        <location filename="moldcondition.ui" line="888"/>
+        <location filename="moldcondition.ui" line="519"/>
+        <location filename="moldcondition.ui" line="810"/>
+        <location filename="moldcondition.ui" line="1135"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="60"/>
-        <location filename="moldcondition.ui" line="463"/>
-        <location filename="moldcondition.ui" line="711"/>
-        <location filename="moldcondition.ui" line="852"/>
+        <location filename="moldcondition.ui" line="555"/>
+        <location filename="moldcondition.ui" line="840"/>
+        <location filename="moldcondition.ui" line="1145"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="70"/>
-        <location filename="moldcondition.ui" line="443"/>
-        <location filename="moldcondition.ui" line="898"/>
+        <location filename="moldcondition.ui" line="509"/>
+        <location filename="moldcondition.ui" line="1125"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="80"/>
-        <location filename="moldcondition.ui" line="938"/>
+        <location filename="moldcondition.ui" line="585"/>
         <source>9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="90"/>
-        <location filename="moldcondition.ui" line="496"/>
-        <location filename="moldcondition.ui" line="653"/>
+        <location filename="moldcondition.ui" line="782"/>
+        <location filename="moldcondition.ui" line="1198"/>
         <source>속도</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="97"/>
-        <location filename="moldcondition.ui" line="908"/>
+        <location filename="moldcondition.ui" line="575"/>
         <source>6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="107"/>
-        <location filename="moldcondition.ui" line="928"/>
+        <location filename="moldcondition.ui" line="595"/>
         <source>8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="117"/>
-        <location filename="moldcondition.ui" line="918"/>
+        <location filename="moldcondition.ui" line="605"/>
         <source>7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="127"/>
-        <location filename="moldcondition.ui" line="433"/>
-        <location filename="moldcondition.ui" line="691"/>
-        <location filename="moldcondition.ui" line="878"/>
+        <location filename="moldcondition.ui" line="529"/>
+        <location filename="moldcondition.ui" line="820"/>
+        <location filename="moldcondition.ui" line="1115"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="137"/>
-        <location filename="moldcondition.ui" line="948"/>
+        <location filename="moldcondition.ui" line="565"/>
         <source>10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="147"/>
-        <location filename="moldcondition.ui" line="489"/>
+        <location filename="moldcondition.ui" line="1191"/>
         <source>압력</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="154"/>
-        <location filename="moldcondition.ui" line="473"/>
-        <location filename="moldcondition.ui" line="701"/>
-        <location filename="moldcondition.ui" line="868"/>
+        <location filename="moldcondition.ui" line="545"/>
+        <location filename="moldcondition.ui" line="830"/>
+        <location filename="moldcondition.ui" line="1161"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="164"/>
-        <location filename="moldcondition.ui" line="667"/>
+        <location filename="moldcondition.ui" line="796"/>
         <source>거리</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="282"/>
+        <location filename="moldcondition.ui" line="171"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="moldcondition.ui" line="1445"/>
+        <source>보압절환 사출압력</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="moldcondition.ui" line="1469"/>
         <source>히터</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="302"/>
+        <location filename="moldcondition.ui" line="1489"/>
         <source>H1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="312"/>
+        <location filename="moldcondition.ui" line="1499"/>
         <source>H3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="322"/>
+        <location filename="moldcondition.ui" line="1509"/>
         <source>H2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="332"/>
+        <location filename="moldcondition.ui" line="1519"/>
         <source>H4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="342"/>
+        <location filename="moldcondition.ui" line="1529"/>
         <source>H5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="352"/>
+        <location filename="moldcondition.ui" line="1539"/>
         <source>H6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="362"/>
+        <location filename="moldcondition.ui" line="1549"/>
         <source>H7(Oil)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="372"/>
+        <location filename="moldcondition.ui" line="1559"/>
         <source>H8(Hopper)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="419"/>
+        <location filename="moldcondition.ui" line="1726"/>
+        <source>금형이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="moldcondition.ui" line="1101"/>
         <source>보압</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="527"/>
+        <location filename="moldcondition.ui" line="1285"/>
         <source>시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="554"/>
+        <location filename="moldcondition.ui" line="1363"/>
         <source>사출설정</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="568"/>
+        <location filename="moldcondition.ui" line="1377"/>
         <source>보압절환위치</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="575"/>
+        <location filename="moldcondition.ui" line="1384"/>
         <source>보압절환시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="582"/>
+        <location filename="moldcondition.ui" line="1391"/>
         <source>사출시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="589"/>
+        <location filename="moldcondition.ui" line="1398"/>
         <source>사출지연시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="639"/>
+        <location filename="moldcondition.ui" line="768"/>
         <source>계량</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="660"/>
+        <location filename="moldcondition.ui" line="789"/>
         <source>배압</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="674"/>
+        <location filename="moldcondition.ui" line="803"/>
         <source>강제후퇴1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="721"/>
+        <location filename="moldcondition.ui" line="850"/>
         <source>강제후퇴2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="787"/>
+        <location filename="moldcondition.ui" line="1022"/>
         <source>계량설정</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="801"/>
-        <source>공정시간</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="moldcondition.ui" line="808"/>
+        <location filename="moldcondition.ui" line="1036"/>
         <source>계량지연시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="815"/>
+        <location filename="moldcondition.ui" line="1043"/>
         <source>냉각시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="838"/>
+        <location filename="moldcondition.ui" line="495"/>
         <source>외부온도</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="958"/>
+        <location filename="moldcondition.ui" line="615"/>
         <source>11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="971"/>
+        <location filename="moldcondition.ui" line="635"/>
         <source>12</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1046"/>
+        <location filename="moldcondition.ui" line="1709"/>
         <source>기계 이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1053"/>
+        <location filename="moldcondition.ui" line="1679"/>
         <source>날 짜</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1073"/>
-        <source>추가 정보1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="moldcondition.ui" line="1080"/>
-        <source>추가 정보2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="moldcondition.ui" line="1132"/>
+        <location filename="moldcondition.ui" line="1794"/>
         <source>Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1143"/>
+        <location filename="moldcondition.ui" line="1805"/>
         <source>Print</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1148"/>
+        <location filename="moldcondition.ui" line="1810"/>
         <source>Excel Save</source>
         <translation type="unfinished"></translation>
     </message>

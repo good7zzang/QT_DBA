@@ -30,7 +30,7 @@
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="2" column="0">
+        <item row="3" column="0">
          <widget class="QGroupBox" name="groupBox">
           <property name="title">
            <string>사출</string>
@@ -166,7 +166,7 @@
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLineEdit" name="La_injspd1">
+              <widget class="QLineEdit" name="Li_injspd1">
                <property name="whatsThis">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
@@ -179,7 +179,7 @@
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QLineEdit" name="La_injspd2">
+              <widget class="QLineEdit" name="Li_injspd2">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -189,7 +189,7 @@
               </widget>
              </item>
              <item row="1" column="3">
-              <widget class="QLineEdit" name="La_injspd3">
+              <widget class="QLineEdit" name="Li_injspd3">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -199,7 +199,7 @@
               </widget>
              </item>
              <item row="1" column="4">
-              <widget class="QLineEdit" name="La_injspd4">
+              <widget class="QLineEdit" name="Li_injspd4">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -209,7 +209,7 @@
               </widget>
              </item>
              <item row="1" column="5">
-              <widget class="QLineEdit" name="La_injspd5">
+              <widget class="QLineEdit" name="Li_injspd5">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -219,7 +219,7 @@
               </widget>
              </item>
              <item row="1" column="6">
-              <widget class="QLineEdit" name="La_injspd6">
+              <widget class="QLineEdit" name="Li_injspd6">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -229,7 +229,7 @@
               </widget>
              </item>
              <item row="1" column="7">
-              <widget class="QLineEdit" name="La_injspd7">
+              <widget class="QLineEdit" name="Li_injspd7">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -239,7 +239,7 @@
               </widget>
              </item>
              <item row="1" column="8">
-              <widget class="QLineEdit" name="La_injspd8">
+              <widget class="QLineEdit" name="Li_injspd8">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -249,7 +249,7 @@
               </widget>
              </item>
              <item row="1" column="9">
-              <widget class="QLineEdit" name="La_injspd9">
+              <widget class="QLineEdit" name="Li_injspd9">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -259,7 +259,7 @@
               </widget>
              </item>
              <item row="1" column="10">
-              <widget class="QLineEdit" name="La_injspd10">
+              <widget class="QLineEdit" name="Li_injspd10">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -269,7 +269,7 @@
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QLineEdit" name="La_Injprs1">
+              <widget class="QLineEdit" name="Li_Injprs1">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -279,7 +279,7 @@
               </widget>
              </item>
              <item row="3" column="1">
-              <widget class="QLineEdit" name="La_Injpos1">
+              <widget class="QLineEdit" name="Li_Injpos1">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -289,7 +289,7 @@
               </widget>
              </item>
              <item row="2" column="2">
-              <widget class="QLineEdit" name="La_Injprs2">
+              <widget class="QLineEdit" name="Li_Injprs2">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -299,7 +299,7 @@
               </widget>
              </item>
              <item row="3" column="2">
-              <widget class="QLineEdit" name="La_Injpos2">
+              <widget class="QLineEdit" name="Li_Injpos2">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -309,7 +309,7 @@
               </widget>
              </item>
              <item row="2" column="3">
-              <widget class="QLineEdit" name="La_Injprs3">
+              <widget class="QLineEdit" name="Li_Injprs3">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -319,7 +319,7 @@
               </widget>
              </item>
              <item row="3" column="3">
-              <widget class="QLineEdit" name="La_Injpos3">
+              <widget class="QLineEdit" name="Li_Injpos3">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -329,7 +329,7 @@
               </widget>
              </item>
              <item row="2" column="4">
-              <widget class="QLineEdit" name="La_Injprs4">
+              <widget class="QLineEdit" name="Li_Injprs4">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -339,7 +339,7 @@
               </widget>
              </item>
              <item row="3" column="4">
-              <widget class="QLineEdit" name="La_Injpos4">
+              <widget class="QLineEdit" name="Li_Injpos4">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -349,7 +349,7 @@
               </widget>
              </item>
              <item row="2" column="5">
-              <widget class="QLineEdit" name="La_Injprs5">
+              <widget class="QLineEdit" name="Li_Injprs5">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -359,7 +359,7 @@
               </widget>
              </item>
              <item row="3" column="5">
-              <widget class="QLineEdit" name="La_Injpos5">
+              <widget class="QLineEdit" name="Li_Injpos5">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -369,7 +369,7 @@
               </widget>
              </item>
              <item row="2" column="6">
-              <widget class="QLineEdit" name="La_Injprs6">
+              <widget class="QLineEdit" name="Li_Injprs6">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -379,7 +379,7 @@
               </widget>
              </item>
              <item row="3" column="6">
-              <widget class="QLineEdit" name="La_Injpos6">
+              <widget class="QLineEdit" name="Li_Injpos6">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -389,7 +389,7 @@
               </widget>
              </item>
              <item row="2" column="7">
-              <widget class="QLineEdit" name="La_Injprs7">
+              <widget class="QLineEdit" name="Li_Injprs7">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -399,7 +399,7 @@
               </widget>
              </item>
              <item row="3" column="7">
-              <widget class="QLineEdit" name="La_Injpos7">
+              <widget class="QLineEdit" name="Li_Injpos7">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -409,7 +409,7 @@
               </widget>
              </item>
              <item row="2" column="8">
-              <widget class="QLineEdit" name="La_Injprs8">
+              <widget class="QLineEdit" name="Li_Injprs8">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -419,7 +419,7 @@
               </widget>
              </item>
              <item row="3" column="8">
-              <widget class="QLineEdit" name="La_Injpos8">
+              <widget class="QLineEdit" name="Li_Injpos8">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -429,7 +429,7 @@
               </widget>
              </item>
              <item row="2" column="9">
-              <widget class="QLineEdit" name="La_Injprs9">
+              <widget class="QLineEdit" name="Li_Injprs9">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -439,7 +439,7 @@
               </widget>
              </item>
              <item row="3" column="9">
-              <widget class="QLineEdit" name="La_Injpos9">
+              <widget class="QLineEdit" name="Li_Injpos9">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -449,7 +449,7 @@
               </widget>
              </item>
              <item row="2" column="10">
-              <widget class="QLineEdit" name="La_Injprs10">
+              <widget class="QLineEdit" name="Li_Injprs10">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -459,7 +459,7 @@
               </widget>
              </item>
              <item row="3" column="10">
-              <widget class="QLineEdit" name="La_Injpos10">
+              <widget class="QLineEdit" name="Li_Injpos10">
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
@@ -489,10 +489,10 @@
           </layout>
          </widget>
         </item>
-        <item row="6" column="0">
-         <widget class="QGroupBox" name="groupBox_2">
+        <item row="8" column="0">
+         <widget class="QGroupBox" name="groupBox_3">
           <property name="title">
-           <string>히터</string>
+           <string>외부온도</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -500,39 +500,13 @@
           <property name="flat">
            <bool>true</bool>
           </property>
-          <layout class="QGridLayout" name="gridLayout_15">
+          <layout class="QGridLayout" name="gridLayout_17">
            <item row="0" column="0">
-            <layout class="QGridLayout" name="gridLayout_14">
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_42">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
+            <layout class="QGridLayout" name="gridLayout_16">
+             <item row="0" column="4">
+              <widget class="QLabel" name="La_Temp5">
                <property name="text">
-                <string>H1</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QLabel" name="label_44">
-               <property name="text">
-                <string>H3</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLabel" name="label_43">
-               <property name="text">
-                <string>H2</string>
+                <string>5</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -540,19 +514,55 @@
               </widget>
              </item>
              <item row="0" column="3">
-              <widget class="QLabel" name="label_45">
+              <widget class="QLabel" name="La_Temp4">
                <property name="text">
-                <string>H4</string>
+                <string>4</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
-             <item row="0" column="4">
-              <widget class="QLabel" name="label_46">
+             <item row="0" column="2">
+              <widget class="QLabel" name="La_Temp3">
                <property name="text">
-                <string>H5</string>
+                <string>3</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="La_Temp1">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>1</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="La_Temp2">
+               <property name="text">
+                <string>2</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="9">
+              <widget class="QLabel" name="La_Temp10">
+               <property name="text">
+                <string>10</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -560,19 +570,19 @@
               </widget>
              </item>
              <item row="0" column="5">
-              <widget class="QLabel" name="label_47">
+              <widget class="QLabel" name="La_Temp6">
                <property name="text">
-                <string>H6</string>
+                <string>6</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
-             <item row="0" column="6">
-              <widget class="QLabel" name="label_48">
+             <item row="0" column="8">
+              <widget class="QLabel" name="La_Temp9">
                <property name="text">
-                <string>H7(Oil)</string>
+                <string>9</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -580,9 +590,49 @@
               </widget>
              </item>
              <item row="0" column="7">
-              <widget class="QLabel" name="label_49">
+              <widget class="QLabel" name="La_Temp8">
                <property name="text">
-                <string>H8(Hopper)</string>
+                <string>8</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="6">
+              <widget class="QLabel" name="La_Temp7">
+               <property name="text">
+                <string>7</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="10">
+              <widget class="QLabel" name="La_Temp11">
+               <property name="text">
+                <string>11</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="Li_Temp2">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="11">
+              <widget class="QLabel" name="La_Temp12">
+               <property name="text">
+                <string>12</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -590,392 +640,121 @@
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QLineEdit" name="lineEdit_75"/>
-             </item>
-             <item row="1" column="1">
-              <widget class="QLineEdit" name="lineEdit_76"/>
+              <widget class="QLineEdit" name="Li_Temp1">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QLineEdit" name="lineEdit_77"/>
+              <widget class="QLineEdit" name="Li_Temp3">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="3">
-              <widget class="QLineEdit" name="lineEdit_78"/>
+              <widget class="QLineEdit" name="Li_Temp4">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="4">
-              <widget class="QLineEdit" name="lineEdit_79"/>
+              <widget class="QLineEdit" name="Li_Temp5">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="5">
-              <widget class="QLineEdit" name="lineEdit_80"/>
+              <widget class="QLineEdit" name="Li_Temp6">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="6">
-              <widget class="QLineEdit" name="lineEdit_81"/>
+              <widget class="QLineEdit" name="Li_Temp7">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="7">
-              <widget class="QLineEdit" name="lineEdit_82"/>
+              <widget class="QLineEdit" name="Li_Temp8">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="8">
+              <widget class="QLineEdit" name="Li_Temp9">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="9">
+              <widget class="QLineEdit" name="Li_Temp10">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="10">
+              <widget class="QLineEdit" name="Li_Temp11">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="11">
+              <widget class="QLineEdit" name="Li_Temp12">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
           </layout>
          </widget>
         </item>
-        <item row="4" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QGroupBox" name="groupBox_4">
-            <property name="maximumSize">
-             <size>
-              <width>700</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="title">
-             <string>보압</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_7">
-             <item row="0" column="0">
-              <layout class="QGridLayout" name="gridLayout_6">
-               <item row="0" column="3">
-                <widget class="QLabel" name="label_22">
-                 <property name="text">
-                  <string>3</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="5">
-                <widget class="QLabel" name="label_24">
-                 <property name="text">
-                  <string>5</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QLabel" name="label_23">
-                 <property name="text">
-                  <string>4</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QLabel" name="label_18">
-                 <property name="text">
-                  <string>2</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_21">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>1</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="La_Holdprs1">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="La_Holdspd1">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_20">
-                 <property name="text">
-                  <string>압력</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_19">
-                 <property name="text">
-                  <string>속도</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="3">
-                <widget class="QLineEdit" name="La_Holdprs3">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="4">
-                <widget class="QLineEdit" name="La_Holdspd4">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="2">
-                <widget class="QLineEdit" name="La_Holdprs2">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="2">
-                <widget class="QLineEdit" name="La_Holdspd2">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="5">
-                <widget class="QLineEdit" name="La_Holdspd5">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="5">
-                <widget class="QLineEdit" name="La_Holdprs5">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="4">
-                <widget class="QLineEdit" name="La_Holdprs4">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="3">
-                <widget class="QLineEdit" name="La_Holdspd3">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_25">
-                 <property name="text">
-                  <string>시간</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLineEdit" name="La_Holdtime1">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLineEdit" name="La_Holdtime2">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="3">
-                <widget class="QLineEdit" name="La_Holdtime3">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="4">
-                <widget class="QLineEdit" name="La_Holdtime4">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="5">
-                <widget class="QLineEdit" name="La_Holdtime5">
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="1" column="0">
-              <spacer name="verticalSpacer_3">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Maximum</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>30</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="groupBox_5">
-            <property name="title">
-             <string>사출설정</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_9">
-             <item row="0" column="0">
-              <layout class="QGridLayout" name="gridLayout_8">
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_27">
-                 <property name="text">
-                  <string>보압절환위치</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_26">
-                 <property name="text">
-                  <string>보압절환시간</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_28">
-                 <property name="text">
-                  <string>사출시간</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="label_29">
-                 <property name="text">
-                  <string>사출지연시간</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="lineEdit_50"/>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="lineEdit_51"/>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLineEdit" name="lineEdit_52"/>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLineEdit" name="lineEdit_53"/>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_41">
-                 <property name="text">
-                  <string>보압절환 사출압력</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="lineEdit_5"/>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="3" column="0">
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Maximum</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>10</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="5" column="0">
+        <item row="6" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QGroupBox" name="groupBox_7">
@@ -1073,52 +852,164 @@
                 </widget>
                </item>
                <item row="1" column="1">
-                <widget class="QLineEdit" name="lineEdit_54"/>
+                <widget class="QLineEdit" name="Li_Suckspd1">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="2">
-                <widget class="QLineEdit" name="lineEdit_55"/>
+                <widget class="QLineEdit" name="Li_Chgspd1">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="3">
-                <widget class="QLineEdit" name="lineEdit_56"/>
+                <widget class="QLineEdit" name="Li_Chgspd2">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="4">
-                <widget class="QLineEdit" name="lineEdit_57"/>
+                <widget class="QLineEdit" name="Li_Chgspd3">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="5">
-                <widget class="QLineEdit" name="lineEdit_58"/>
+                <widget class="QLineEdit" name="Li_Chgspd4">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="6">
-                <widget class="QLineEdit" name="lineEdit_59"/>
+                <widget class="QLineEdit" name="Li_Suckspd2">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="3" column="1">
-                <widget class="QLineEdit" name="lineEdit_61"/>
+                <widget class="QLineEdit" name="Li_Suckpos1">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="2" column="2">
-                <widget class="QLineEdit" name="lineEdit_62"/>
+                <widget class="QLineEdit" name="Li_Chgbps1">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="3" column="2">
-                <widget class="QLineEdit" name="lineEdit_63"/>
+                <widget class="QLineEdit" name="Li_Chgpos1">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="2" column="3">
-                <widget class="QLineEdit" name="lineEdit_64"/>
+                <widget class="QLineEdit" name="Li_Chgbps2">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="3" column="3">
-                <widget class="QLineEdit" name="lineEdit_65"/>
+                <widget class="QLineEdit" name="Li_Chgpos2">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="2" column="4">
-                <widget class="QLineEdit" name="lineEdit_66"/>
+                <widget class="QLineEdit" name="Li_Chgbps3">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="3" column="4">
-                <widget class="QLineEdit" name="lineEdit_67"/>
+                <widget class="QLineEdit" name="Li_Chgpos3">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="2" column="5">
-                <widget class="QLineEdit" name="lineEdit_68"/>
+                <widget class="QLineEdit" name="Li_Chgbps4">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="3" column="5">
-                <widget class="QLineEdit" name="lineEdit_69"/>
+                <widget class="QLineEdit" name="Li_Chgpos4">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="3" column="6">
-                <widget class="QLineEdit" name="lineEdit_71"/>
+                <widget class="QLineEdit" name="Li_Suckpos2">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -1154,10 +1045,416 @@
                 </widget>
                </item>
                <item row="0" column="1">
-                <widget class="QLineEdit" name="lineEdit_72"/>
+                <widget class="QLineEdit" name="Li_Cooltime">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="1">
-                <widget class="QLineEdit" name="lineEdit_73"/>
+                <widget class="QLineEdit" name="Li_Chgdeltime">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Maximum</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="5" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="maximumSize">
+             <size>
+              <width>700</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>보압</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_6">
+               <item row="0" column="3">
+                <widget class="QLabel" name="label_22">
+                 <property name="text">
+                  <string>3</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="5">
+                <widget class="QLabel" name="label_24">
+                 <property name="text">
+                  <string>5</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QLabel" name="label_23">
+                 <property name="text">
+                  <string>4</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_18">
+                 <property name="text">
+                  <string>2</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_21">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="Li_Holdprs1">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="Li_Holdspd1">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_20">
+                 <property name="text">
+                  <string>압력</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_19">
+                 <property name="text">
+                  <string>속도</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <widget class="QLineEdit" name="Li_Holdprs3">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="4">
+                <widget class="QLineEdit" name="Li_Holdspd4">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLineEdit" name="Li_Holdprs2">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLineEdit" name="Li_Holdspd2">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="5">
+                <widget class="QLineEdit" name="Li_Holdspd5">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="5">
+                <widget class="QLineEdit" name="Li_Holdprs5">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="4">
+                <widget class="QLineEdit" name="Li_Holdprs4">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="3">
+                <widget class="QLineEdit" name="Li_Holdspd3">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_25">
+                 <property name="text">
+                  <string>시간</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="Li_Holdtime1">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLineEdit" name="Li_Holdtime2">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="3">
+                <widget class="QLineEdit" name="Li_Holdtime3">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="4">
+                <widget class="QLineEdit" name="Li_Holdtime4">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="5">
+                <widget class="QLineEdit" name="Li_Holdtime5">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="1" column="0">
+              <spacer name="verticalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Maximum</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_5">
+            <property name="title">
+             <string>사출설정</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_9">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_8">
+               <item row="1" column="0">
+                <widget class="QLabel" name="La_Sovpos">
+                 <property name="text">
+                  <string>보압절환위치</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="La_Sovtime">
+                 <property name="text">
+                  <string>보압절환시간</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="La_injtime">
+                 <property name="text">
+                  <string>사출시간</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="La_injdeltime">
+                 <property name="text">
+                  <string>사출지연시간</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="Li_Sovtime">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="Li_Sovpos">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="Li_Injtime">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="Li_Injdeltime">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="La_sovprs">
+                 <property name="text">
+                  <string>보압절환 사출압력</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="Li_Sovprs">
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -1167,9 +1464,9 @@
          </layout>
         </item>
         <item row="7" column="0">
-         <widget class="QGroupBox" name="groupBox_3">
+         <widget class="QGroupBox" name="groupBox_2">
           <property name="title">
-           <string>외부온도</string>
+           <string>히터</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -1177,21 +1474,11 @@
           <property name="flat">
            <bool>true</bool>
           </property>
-          <layout class="QGridLayout" name="gridLayout_17">
+          <layout class="QGridLayout" name="gridLayout_15">
            <item row="0" column="0">
-            <layout class="QGridLayout" name="gridLayout_16">
-             <item row="0" column="1">
-              <widget class="QLabel" name="label_51">
-               <property name="text">
-                <string>2</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
+            <layout class="QGridLayout" name="gridLayout_14">
              <item row="0" column="0">
-              <widget class="QLabel" name="label_50">
+              <widget class="QLabel" name="La_Heater1">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                  <horstretch>0</horstretch>
@@ -1199,7 +1486,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>1</string>
+                <string>H1</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1207,9 +1494,19 @@
               </widget>
              </item>
              <item row="0" column="2">
-              <widget class="QLabel" name="label_52">
+              <widget class="QLabel" name="La_Heater3">
                <property name="text">
-                <string>3</string>
+                <string>H3</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="La_Heater2">
+               <property name="text">
+                <string>H2</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1217,9 +1514,9 @@
               </widget>
              </item>
              <item row="0" column="3">
-              <widget class="QLabel" name="label_53">
+              <widget class="QLabel" name="La_Heater4">
                <property name="text">
-                <string>4</string>
+                <string>H4</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1227,9 +1524,9 @@
               </widget>
              </item>
              <item row="0" column="4">
-              <widget class="QLabel" name="label_54">
+              <widget class="QLabel" name="La_Heater5">
                <property name="text">
-                <string>5</string>
+                <string>H5</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1237,9 +1534,9 @@
               </widget>
              </item>
              <item row="0" column="5">
-              <widget class="QLabel" name="label_55">
+              <widget class="QLabel" name="La_Heater6">
                <property name="text">
-                <string>6</string>
+                <string>H6</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1247,9 +1544,9 @@
               </widget>
              </item>
              <item row="0" column="6">
-              <widget class="QLabel" name="label_56">
+              <widget class="QLabel" name="La_Heater7">
                <property name="text">
-                <string>7</string>
+                <string>H7(Oil)</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1257,52 +1554,9 @@
               </widget>
              </item>
              <item row="0" column="7">
-              <widget class="QLabel" name="label_57">
+              <widget class="QLabel" name="La_Heater8">
                <property name="text">
-                <string>8</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="8">
-              <widget class="QLabel" name="label_58">
-               <property name="text">
-                <string>9</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="9">
-              <widget class="QLabel" name="label_59">
-               <property name="text">
-                <string>10</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="10">
-              <widget class="QLabel" name="label_60">
-               <property name="text">
-                <string>11</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
-              <widget class="QLineEdit" name="lineEdit_84"/>
-             </item>
-             <item row="0" column="11">
-              <widget class="QLabel" name="label_61">
-               <property name="text">
-                <string>12</string>
+                <string>H8(Hopper)</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1310,37 +1564,84 @@
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QLineEdit" name="lineEdit_83"/>
+              <widget class="QLineEdit" name="Li_Heater1">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="Li_Heater2">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QLineEdit" name="lineEdit_85"/>
+              <widget class="QLineEdit" name="Li_Heater3">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="3">
-              <widget class="QLineEdit" name="lineEdit_86"/>
+              <widget class="QLineEdit" name="Li_Heater4">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="4">
-              <widget class="QLineEdit" name="lineEdit_87"/>
+              <widget class="QLineEdit" name="Li_Heater5">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="5">
-              <widget class="QLineEdit" name="lineEdit_88"/>
+              <widget class="QLineEdit" name="Li_Heater6">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="6">
-              <widget class="QLineEdit" name="lineEdit_89"/>
+              <widget class="QLineEdit" name="Li_Heater7">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="7">
-              <widget class="QLineEdit" name="lineEdit_90"/>
-             </item>
-             <item row="1" column="8">
-              <widget class="QLineEdit" name="lineEdit_91"/>
-             </item>
-             <item row="1" column="9">
-              <widget class="QLineEdit" name="lineEdit_92"/>
-             </item>
-             <item row="1" column="10">
-              <widget class="QLineEdit" name="lineEdit_93"/>
-             </item>
-             <item row="1" column="11">
-              <widget class="QLineEdit" name="lineEdit_94"/>
+              <widget class="QLineEdit" name="Li_Heater8">
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -1362,33 +1663,24 @@
             </property>
            </spacer>
           </item>
-          <item row="1" column="2">
-           <widget class="QLineEdit" name="lineEdit_3"/>
-          </item>
-          <item row="0" column="2">
-           <widget class="QLineEdit" name="lineEdit"/>
-          </item>
-          <item row="1" column="5">
-           <widget class="QLineEdit" name="lineEdit_4"/>
-          </item>
           <item row="0" column="5">
-           <widget class="QLineEdit" name="lineEdit_2"/>
-          </item>
-          <item row="0" column="4">
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>기계 이름</string>
+           <widget class="QLineEdit" name="Li_Date">
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
+          <item row="0" column="4">
            <widget class="QLabel" name="label">
             <property name="text">
              <string>날 짜</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="6">
+          <item row="0" column="9">
            <spacer name="horizontalSpacer">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -1401,17 +1693,37 @@
             </property>
            </spacer>
           </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>추가 정보1</string>
+          <item row="0" column="11">
+           <widget class="QLineEdit" name="Li_Moldname">
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="1" column="4">
-           <widget class="QLabel" name="label_4">
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_2">
             <property name="text">
-             <string>추가 정보2</string>
+             <string>기계 이름</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="Li_Machine_name">
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="10">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>금형이름</string>
             </property>
            </widget>
           </item>
@@ -1442,6 +1754,22 @@
            <size>
             <width>20</width>
             <height>30</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Maximum</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
            </size>
           </property>
          </spacer>
