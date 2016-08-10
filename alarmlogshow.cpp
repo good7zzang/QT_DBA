@@ -19,10 +19,13 @@ AlarmLogShow::~AlarmLogShow()
 void AlarmLogShow::closeEvent(QCloseEvent *event)
 {
     this->deleteLater();
+    Alarm_DB.close(); //DB 닫기
 }
 
 void AlarmLogShow::init()
 {
+    this->setWindowTitle(tr("Alarm Log")); //이름설정
+
     Alarm_DB = QSqlDatabase::database("remotedb"); //DB 연결확인
 
     if(!Alarm_DB.open())
@@ -53,6 +56,15 @@ void AlarmLogShow::Execute_Query()
 
         Query_Count_Row = 0; //행의 갯수 초기화
 
+        /*기계 이름 출력*/
+        ui->Li_MachineName->setText(machine_name); //기계이름 출력
+
+        /*검색 시간 출력*/
+        QDateTime Date = QDateTime::currentDateTime(); //현재시간 가져오기
+        QString Current_Date = Date.toString("yyyy-MM-dd hh:mm:ss"); //날짜형식 지정출력
+
+        ui->LI_Date->setText(Current_Date); //검색시간 출력
+
         while(Alarm_Query.next())
         {
             QString Temp; //문자열 제거하기 위한 변수
@@ -81,15 +93,6 @@ void AlarmLogShow::Display(int Query_Count_Row, QString Controller_info, QString
 {
     ui->Ta_Alarmlist->insertRow(Query_Count_Row); //행의 갯수 설정
 
-    /*기계 이름 출력*/
-    ui->Li_MachineName->setText(machine_name); //기계이름 출력
-
-    /*검색 시간 출력*/
-    QDateTime Date = QDateTime::currentDateTime(); //현재시간 가져오기
-    QString Current_Date = Date.toString("yyyy-MM-dd hh:mm:ss"); //날짜형식 지정출력
-
-    ui->LI_Date->setText(Current_Date); //검색시간 출력
-
     /*알람 정보 출력*/
     ui->Ta_Alarmlist->setItem(Query_Count_Row,0,new QTableWidgetItem(Controller_info)); //컨트롤러 정보 출력
     ui->Ta_Alarmlist->item(Query_Count_Row,0)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
@@ -116,10 +119,8 @@ void AlarmLogShow::Display(int Query_Count_Row, QString Controller_info, QString
         ui->Ta_Alarmlist->item(Query_Count_Row,4)->setBackgroundColor(Qt::green); //배경색 설정
     }
 }
-
-void AlarmLogShow::on_pushButton_clicked()
+void AlarmLogShow::on_Pu_Renew_clicked()
 {
-
     for(int i=0; i<Query_Count_Row; i++)
         ui->Ta_Alarmlist->removeRow(0);
 

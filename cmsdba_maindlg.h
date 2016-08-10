@@ -14,6 +14,8 @@
 #include <QSqlError>
 #include "m_table_item.h"
 #include "db_serversetting.h"
+#include "dbsearchsetting.h"
+#include "dbsearchact.h"
 
 #define MACHIEN_NAME_FILD 0
 #define MACHINE_STATUE_FILD 1
@@ -51,8 +53,9 @@ public:
 
 public slots:
     void toolbartriggered(QAction *action);
-private slots:
+    void menubartriggered(QAction *action);
 
+private slots:
     void on_M_moniter_cellClicked(int row, int column);
 };
 
