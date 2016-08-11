@@ -23,9 +23,14 @@ public:
     ~DBsearchsetting();
     void closeEvent(QCloseEvent *event);
     void init();
+    QString Excute_Query(QString Machine_Select_Name, QString Mold_Name, QString Start_DateTime,
+                         QString End_DataTime);
 
 public:
     QSqlDatabase Setting_DB; //DB 변수
+
+private slots:
+    void on_Pu_SearchButton_clicked();
 
 private:
     Ui::DBsearchsetting *ui;
