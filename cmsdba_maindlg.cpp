@@ -46,7 +46,8 @@ void CMSDBA_MainDlg::Toolbarinit()
     ui->CMSDBA_MainToobar->addSeparator();
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/setting.png"), "Setting");
 
-    connect(ui->CMSDBA_MainToobar, SIGNAL(actionTriggered(QAction*)), this,SLOT(toolbartriggered(QAction*)));
+    connect(ui->CMSDBA_MainToobar, SIGNAL(actionTriggered(QAction*)), this,SLOT(toolbartriggered(QAction*))); //메뉴툴바
+    connect(ui->menuBar, SIGNAL(triggered(QAction*)), this, SLOT(menubartriggered(QAction*))); //메뉴바
 }
 void CMSDBA_MainDlg::toolbartriggered(QAction *action)
 {
@@ -93,6 +94,29 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
         dbconnect();
     }
 }
+
+void CMSDBA_MainDlg::menubartriggered(QAction *action)
+{
+    QString Menubar_Name; //메뉴바 이름 저장변수
+
+    Menubar_Name = action->text(); //메뉴바 이름 저장
+
+    if(!Menubar_Name.compare("Connect")) //Database Connect
+    {
+        dbconnect();
+    }
+    else if(!Menubar_Name.compare("ActData"))
+    {
+        DBsearchact *m_dbact = new DBsearchact(); //DBsearchact 객체 생성
+        m_dbact->show(); //객체 활성화
+    }
+    else if(!Menubar_Name.compare("SetData"))
+    {
+        DBsearchsetting *m_dbSetting = new DBsearchsetting(); //DBsearchsetting 객체 생성
+        m_dbSetting->show(); //객체 활성화
+    }
+}
+
 /*
  * SQLLitedb 초기화
  */
@@ -167,7 +191,7 @@ void CMSDBA_MainDlg::dbconnect(){
 }
 void CMSDBA_MainDlg::M_table_init(){
     QSqlQuery remotequery(remotedb);
-    remotequery.exec("select * from Systeminfo");
+    remotequery.exec("select * from Systeminfo order by machine_name asc");
     //raw모두 지우기
     while(ui->M_moniter->rowCount()){
 

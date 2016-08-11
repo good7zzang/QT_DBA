@@ -18,12 +18,13 @@ MoldCondition::~MoldCondition()
 
 void MoldCondition::closeEvent(QCloseEvent *event)
 {
-    Mold_DB.close(); //DB 닫기
     this->deleteLater();
 }
 
 void MoldCondition::init()
 {
+    this->setWindowTitle(tr("Molding Condition")); //이름 설정
+
     Mold_DB = QSqlDatabase::database("remotedb"); //DB 연결 반환
 
     if(!Mold_DB.open()) //DB 연결 확인

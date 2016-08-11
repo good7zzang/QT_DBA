@@ -30,8 +30,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>976</width>
-        <height>876</height>
+        <width>980</width>
+        <height>880</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
@@ -184,7 +184,7 @@
           </widget>
          </item>
          <item row="0" column="15">
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="excel_save_btn">
            <property name="text">
             <string>엑셀 저장</string>
            </property>
@@ -231,7 +231,7 @@
           </widget>
          </item>
          <item row="0" column="13">
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="Pu_Renew">
            <property name="text">
             <string>갱신</string>
            </property>

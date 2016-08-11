@@ -5,10 +5,8 @@
 #include "moldcondition_report.h"
 #include "alarmlog.h"
 #include "singlegraph.h"
-#include "dbsearchact.h"
 #include "moldconditionformset.h"
 #include "productstatistics.h"
-#include "dbsearchsetting.h"
 #include <QTranslator>
 
 CMSDBA_MainDlg *Main_ui;
