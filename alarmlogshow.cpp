@@ -147,6 +147,7 @@ void AlarmLogShow::on_excel_save_btn_clicked()
         for(int i=1;i<=ui->Ta_Alarmlist->columnCount();i++){
             QXlsx::Format format;
             format.setHorizontalAlignment(QXlsx::Format::AlignHCenter);
+            format.setPatternBackgroundColor(QColor("gray"));
             xlsx.setColumnWidth(i,20);
             xlsx.write(1,i,headeritem.at(i-1),format);
         }
@@ -160,6 +161,14 @@ void AlarmLogShow::on_excel_save_btn_clicked()
             xlsx.write(i+2,j+1,data,format);
             }
         }
-        xlsx.saveAs(S_filepath);
+        bool saveresult;
+        saveresult = xlsx.saveAs(S_filepath);
+        QMessageBox messagebox;
+        if(saveresult){
+            messagebox.setText(tr("save ok"));
+        }else {
+            messagebox.setText(tr("save error"));
+        }
+        messagebox.exec();
     }
 }

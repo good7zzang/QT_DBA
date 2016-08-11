@@ -15,6 +15,7 @@
 #include "xlsxworksheet.h"
 #include "xlsxconditionalformatting.h"
 #include <QtCore>
+#include <QMessageBox>
 
 
 namespace Ui {
