@@ -136,10 +136,9 @@ void AlarmLogShow::on_excel_save_btn_clicked()
     filepath.setNameFilter("*.xlsx");
 
     QStringList headeritem;
-    for(int i=0;i<5;i++){
+    for(int i=0;i<ui->Ta_Alarmlist->columnCount();i++){
         headeritem.insert(i,ui->Ta_Alarmlist->horizontalHeaderItem(i)->text());
     }
-
     QString S_filepath;
     S_filepath = filepath.getSaveFileName(this,QString(""),QString(""),QString("*.xlsx"));
     if(S_filepath != ""){
