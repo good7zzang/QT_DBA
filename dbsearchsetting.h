@@ -9,6 +9,15 @@
 #include <QTableView>
 #include <QSqlTableModel>
 #include <QSqlError>
+#include <QFileDialog>
+#include <QtXlsx>
+#include "xlsxdocument.h"
+#include "xlsxformat.h"
+#include "xlsxcellrange.h"
+#include "xlsxworksheet.h"
+#include "xlsxconditionalformatting.h"
+#include <QtCore>
+#include <QMessageBox>
 
 namespace Ui {
 class DBsearchsetting;
@@ -23,9 +32,15 @@ public:
     ~DBsearchsetting();
     void closeEvent(QCloseEvent *event);
     void init();
+    QSqlQueryModel *model;
 
 public:
     QSqlDatabase Setting_DB; //DB 변수
+
+private slots:
+
+
+    void on_seve_excel_btn_clicked();
 
 private:
     Ui::DBsearchsetting *ui;
