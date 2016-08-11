@@ -19,7 +19,6 @@ MoldCondition::~MoldCondition()
 void MoldCondition::closeEvent(QCloseEvent *event)
 {
     this->deleteLater();
-    Mold_DB.close(); //DB 닫기
 }
 
 void MoldCondition::init()
