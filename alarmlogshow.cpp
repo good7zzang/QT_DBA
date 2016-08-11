@@ -33,7 +33,7 @@ void AlarmLogShow::init()
         qDebug()<<"DB Open";
 
     QStringList Header_Name;
-    Header_Name<<tr("Controller-Name")<<tr("Alarm-List")<<tr("Alarm Start Time")<<tr("Alarm End Time")<<tr("Staus");
+    Header_Name<<tr("machine_name")<<tr("Alarm-List")<<tr("Alarm Start Time")<<tr("Alarm End Time")<<tr("Staus");
 
     ui->Ta_Alarmlist->setColumnCount(5); //컬럼 갯수 설정
     ui->Ta_Alarmlist->setHorizontalHeaderLabels(Header_Name); //칼럼 출력
@@ -81,19 +81,19 @@ void AlarmLogShow::Execute_Query()
 
             QString Alarm_flag = Alarm_Query.value(QString("Alarm_flag")).toString(); //알람 flag 저장
 
-            Display(Query_Count_Row, Controller_info, Alarm_Number, Alarm_Start_Time, Alarm_End_Time, Alarm_flag);
+            Display(Query_Count_Row, machine_name, Alarm_Number, Alarm_Start_Time, Alarm_End_Time, Alarm_flag);
 
             Query_Count_Row++; //열 증가
         }
     }
 }
 
-void AlarmLogShow::Display(int Query_Count_Row, QString Controller_info, QString Alarm_Number, QString Alarm_Start_Time, QString Alarm_End_Time, QString Alarm_flag)
+void AlarmLogShow::Display(int Query_Count_Row, QString machinename, QString Alarm_Number, QString Alarm_Start_Time, QString Alarm_End_Time, QString Alarm_flag)
 {
     ui->Ta_Alarmlist->insertRow(Query_Count_Row); //행의 갯수 설정
 
     /*알람 정보 출력*/
-    ui->Ta_Alarmlist->setItem(Query_Count_Row,0,new QTableWidgetItem(Controller_info)); //컨트롤러 정보 출력
+    ui->Ta_Alarmlist->setItem(Query_Count_Row,0,new QTableWidgetItem(machinename)); //컨트롤러 정보 출력
     ui->Ta_Alarmlist->item(Query_Count_Row,0)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
 
     ui->Ta_Alarmlist->setItem(Query_Count_Row,1,new QTableWidgetItem(Alarm_Number)); //알람 내역 출력
@@ -103,13 +103,16 @@ void AlarmLogShow::Display(int Query_Count_Row, QString Controller_info, QString
     {
         ui->Ta_Alarmlist->setItem(Query_Count_Row,2,new QTableWidgetItem(Alarm_Start_Time)); //알람 발생 시간 출력
         ui->Ta_Alarmlist->item(Query_Count_Row,2)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
-
+        ui->Ta_Alarmlist->setItem(Query_Count_Row,3,new QTableWidgetItem("")); //알람 해제 시간 출력
+        ui->Ta_Alarmlist->item(Query_Count_Row,3)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
         ui->Ta_Alarmlist->setItem(Query_Count_Row,4,new QTableWidgetItem(tr("Alarm Occur"))); //알람 발생 문구 출력
         ui->Ta_Alarmlist->item(Query_Count_Row,4)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
         ui->Ta_Alarmlist->item(Query_Count_Row,4)->setBackgroundColor(Qt::red); //배경색 설정
     }
     else //알람 해제시
     {
+        ui->Ta_Alarmlist->setItem(Query_Count_Row,2,new QTableWidgetItem("")); //알람 발생 시간 출력
+        ui->Ta_Alarmlist->item(Query_Count_Row,2)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
         ui->Ta_Alarmlist->setItem(Query_Count_Row,3,new QTableWidgetItem(Alarm_End_Time)); //알람 해제 시간 출력
         ui->Ta_Alarmlist->item(Query_Count_Row,3)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
 
@@ -124,4 +127,48 @@ void AlarmLogShow::on_Pu_Renew_clicked()
         ui->Ta_Alarmlist->removeRow(0);
 
     Execute_Query();
+}
+
+void AlarmLogShow::on_excel_save_btn_clicked()
+{
+    QFileDialog filepath(this);
+    filepath.setAcceptMode(QFileDialog::AcceptSave);
+    filepath.setNameFilter("*.xlsx");
+
+    QStringList headeritem;
+    for(int i=0;i<5;i++){
+        headeritem.insert(i,ui->Ta_Alarmlist->horizontalHeaderItem(i)->text());
+    }
+
+    QString S_filepath;
+    S_filepath = filepath.getSaveFileName(this,QString(""),QString(""),QString("*.xlsx"));
+    if(S_filepath != ""){
+        QXlsx::Document xlsx;
+        for(int i=1;i<=ui->Ta_Alarmlist->columnCount();i++){
+            QXlsx::Format format;
+            format.setHorizontalAlignment(QXlsx::Format::AlignHCenter);
+            format.setPatternBackgroundColor(QColor("gray"));
+            xlsx.setColumnWidth(i,20);
+            xlsx.write(1,i,headeritem.at(i-1),format);
+        }
+        for(int i=0;i<ui->Ta_Alarmlist->rowCount();i++){
+            for(int j=0;j<ui->Ta_Alarmlist->columnCount();j++){
+            QXlsx::Format format;
+            format.setHorizontalAlignment(QXlsx::Format::AlignHCenter);
+            QString data = ui->Ta_Alarmlist->item(i,j)->text();
+            QColor backgroundcolor = ui->Ta_Alarmlist->item(i,j)->backgroundColor();
+            format.setPatternBackgroundColor(backgroundcolor);
+            xlsx.write(i+2,j+1,data,format);
+            }
+        }
+        bool saveresult;
+        saveresult = xlsx.saveAs(S_filepath);
+        QMessageBox messagebox;
+        if(saveresult){
+            messagebox.setText(tr("save ok"));
+        }else {
+            messagebox.setText(tr("save error"));
+        }
+        messagebox.exec();
+    }
 }
