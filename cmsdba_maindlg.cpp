@@ -167,7 +167,7 @@ void CMSDBA_MainDlg::dbconnect(){
 }
 void CMSDBA_MainDlg::M_table_init(){
     QSqlQuery remotequery(remotedb);
-    remotequery.exec("select * from Systeminfo");
+    remotequery.exec("select * from Systeminfo order by machine_name asc");
     //raw모두 지우기
     while(ui->M_moniter->rowCount()){
 
