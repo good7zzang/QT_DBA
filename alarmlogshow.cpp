@@ -73,11 +73,11 @@ void AlarmLogShow::Execute_Query()
 
             QString Alarm_Number = Alarm_Query.value(QString("Alarm_Number")).toString(); //알람번호 저장
 
-            Temp = Alarm_Query.value(QString("Alarm_Start_Time")).toString(); //알람발생시간 저장
-            QString Alarm_Start_Time = Temp.replace(QChar('T'), QChar(' ')); //T 문자열 제거
+            Temp = Alarm_Query.value(QString("Alarm_Start_Time")).toDateTime().toString("yyyy-MM-dd hh:mm:ss"); //알람발생시간 저장
+            QString Alarm_Start_Time = Temp;
 
-            Temp = Alarm_Query.value(QString("Alarm_End_Time")).toString(); //알람해제시간 저장
-            QString Alarm_End_Time = Temp.replace(QChar('T'), QChar(' ')); //T 문자열 제거
+            Temp = Alarm_Query.value(QString("Alarm_End_Time")).toDateTime().toString("yyyy-MM-dd hh:mm:ss"); //알람해제시간 저장
+            QString Alarm_End_Time = Temp;
 
             QString Alarm_flag = Alarm_Query.value(QString("Alarm_flag")).toString(); //알람 flag 저장
 
