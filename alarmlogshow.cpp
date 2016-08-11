@@ -19,7 +19,6 @@ AlarmLogShow::~AlarmLogShow()
 void AlarmLogShow::closeEvent(QCloseEvent *event)
 {
     this->deleteLater();
-    Alarm_DB.close(); //DB 닫기
 }
 
 void AlarmLogShow::init()
