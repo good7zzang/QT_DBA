@@ -34,6 +34,7 @@ public:
     void init();
 
     QSqlQueryModel *model;
+    QSqlQueryModel *Setting_Query;
 
     QString Excute_Query(QString Machine_Select_Name, QString Mold_Name, QString Start_DateTime,
                          QString End_DataTime);
