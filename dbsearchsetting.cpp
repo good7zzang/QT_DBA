@@ -28,6 +28,7 @@ void DBsearchsetting::init()
     Setting_DB = QSqlDatabase::database("remotedb"); //DB 가져오기
     QSqlQuery Machine_Name(Setting_DB); //DB 설정
     model = new QSqlQueryModel(this);
+    Setting_Query = new QSqlQueryModel(this);
 
     if(!Setting_DB.open())
         qDebug()<<"DB Not Open";
@@ -78,7 +79,7 @@ void DBsearchsetting::on_Pu_SearchButton_clicked()
     QString End_DataTime; //검색종료일 저장변수
     QString Mold_Name; //금형이름 저장변수
     QString Query_Setting; //쿼리셋팅 저장변수
-    QSqlQueryModel *Setting_Query;
+
 
     Machine_Select_Name = ui->Co_MachineList->currentText();
     qDebug()<<Machine_Select_Name;
@@ -92,9 +93,11 @@ void DBsearchsetting::on_Pu_SearchButton_clicked()
 
     Query_Setting = Excute_Query(Machine_Select_Name, Mold_Name, Start_DateTime, End_DataTime); //쿼리문 셋팅
 
-    Setting_Query->setQuery(Query_Setting, Setting_DB); //쿼리문 설정
+    Setting_Query->setQuery(Query_Setting, Setting_DB); //쿼리문 설정Setting_Query
+
 
     ui->Ta_Settinglist->setModel(Setting_Query); //데이터 출력
+
 }
 
 QString DBsearchsetting::Excute_Query(QString Machine_Select_Name, QString Mold_Name, QString Start_DateTime, QString End_DataTime)
@@ -134,25 +137,25 @@ void DBsearchsetting::on_seve_excel_btn_clicked()
     filepath.setNameFilter("*.xlsx");
 
     QStringList headeritem;
-    for(int i=0;i<model->columnCount();i++){
-        headeritem.insert(i,model->headerData(i,Qt::Horizontal).toString());
+    for(int i=0;i<Setting_Query->columnCount();i++){
+        headeritem.insert(i,Setting_Query->headerData(i,Qt::Horizontal).toString());
     }
     QString S_filepath;
     S_filepath = filepath.getSaveFileName(this,QString(""),QString(""),QString("*.xlsx"));
     if(S_filepath != ""){
         QXlsx::Document xlsx;
-        for(int i=1;i<=model->columnCount();i++){
+        for(int i=1;i<=Setting_Query->columnCount();i++){
             QXlsx::Format format;
             format.setHorizontalAlignment(QXlsx::Format::AlignHCenter);
             format.setPatternBackgroundColor(QColor("gray"));
             xlsx.setColumnWidth(i,20);
             xlsx.write(1,i,headeritem.at(i-1),format);
         }
-        for(int i=0;i<model->rowCount();i++){
-            for(int j=0;j<model->columnCount();j++){
+        for(int i=0;i<Setting_Query->rowCount();i++){
+            for(int j=0;j<Setting_Query->columnCount();j++){
             QXlsx::Format format;
             format.setHorizontalAlignment(QXlsx::Format::AlignHCenter);
-            QString data =model->index(i,j).data(0).toString();
+            QString data =Setting_Query->index(i,j).data(0).toString();
             xlsx.write(i+2,j+1,data,format);
             }
         }
