@@ -76,10 +76,9 @@
         <translation type="unfinished">알람 내역</translation>
     </message>
     <message>
-        <location filename="alarmlogshow.cpp" line="36"/>
         <source>Controller-Name</source>
         <oldsource>Controller-Info</oldsource>
-        <translation type="unfinished">컨트롤러 이름</translation>
+        <translation type="obsolete">컨트롤러 이름</translation>
     </message>
     <message>
         <location filename="alarmlogshow.cpp" line="36"/>
@@ -102,12 +101,17 @@
         <translation type="unfinished">상태</translation>
     </message>
     <message>
-        <location filename="alarmlogshow.cpp" line="107"/>
+        <location filename="alarmlogshow.cpp" line="36"/>
+        <source>machine_name</source>
+        <translation>기계이름</translation>
+    </message>
+    <message>
+        <location filename="alarmlogshow.cpp" line="108"/>
         <source>Alarm Occur</source>
         <translation type="unfinished">알람 발생</translation>
     </message>
     <message>
-        <location filename="alarmlogshow.cpp" line="116"/>
+        <location filename="alarmlogshow.cpp" line="119"/>
         <source>Alarm OFF</source>
         <translation type="unfinished">알람 해제</translation>
     </message>
@@ -391,7 +395,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.cpp" line="19"/>
+        <location filename="dbsearchsetting.cpp" line="24"/>
         <source>Molding Condition(ACTData) Search</source>
         <translation type="unfinished">조건 데이터 검색</translation>
     </message>
@@ -828,7 +832,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.cpp" line="27"/>
+        <location filename="moldcondition.cpp" line="26"/>
         <source>Molding Condition</source>
         <translation type="unfinished">성형조건</translation>
     </message>
