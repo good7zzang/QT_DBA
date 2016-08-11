@@ -27,6 +27,7 @@ void DBsearchsetting::init()
 
     Setting_DB = QSqlDatabase::database("remotedb"); //DB 가져오기
     QSqlQuery Machine_Name(Setting_DB); //DB 설정
+    model = new QSqlQueryModel(this);
 
     if(!Setting_DB.open())
         qDebug()<<"DB Not Open";
@@ -114,7 +115,55 @@ QString DBsearchsetting::Excute_Query(QString Machine_Select_Name, QString Mold_
                   "set_injdelaytime, set_chgdelaytime From shot_data_rec2 where Machine_Name='%1' AND TimeStamp between '%2' AND '%3' order by TIMESTAMP DESC limit 2000")
                   .arg(Machine_Select_Name).arg(Start_DateTime).arg(End_DataTime));
 
+
+
+
+
     qDebug()<<Query_Setting;
 
+
     return Query_Setting; //쿼리문 반환
+}
+
+
+
+void DBsearchsetting::on_seve_excel_btn_clicked()
+{
+    QFileDialog filepath(this);
+    filepath.setAcceptMode(QFileDialog::AcceptSave);
+    filepath.setNameFilter("*.xlsx");
+
+    QStringList headeritem;
+    for(int i=0;i<model->columnCount();i++){
+        headeritem.insert(i,model->headerData(i,Qt::Horizontal).toString());
+    }
+    QString S_filepath;
+    S_filepath = filepath.getSaveFileName(this,QString(""),QString(""),QString("*.xlsx"));
+    if(S_filepath != ""){
+        QXlsx::Document xlsx;
+        for(int i=1;i<=model->columnCount();i++){
+            QXlsx::Format format;
+            format.setHorizontalAlignment(QXlsx::Format::AlignHCenter);
+            format.setPatternBackgroundColor(QColor("gray"));
+            xlsx.setColumnWidth(i,20);
+            xlsx.write(1,i,headeritem.at(i-1),format);
+        }
+        for(int i=0;i<model->rowCount();i++){
+            for(int j=0;j<model->columnCount();j++){
+            QXlsx::Format format;
+            format.setHorizontalAlignment(QXlsx::Format::AlignHCenter);
+            QString data =model->index(i,j).data(0).toString();
+            xlsx.write(i+2,j+1,data,format);
+            }
+        }
+        bool saveresult;
+        saveresult = xlsx.saveAs(S_filepath);
+        QMessageBox messagebox;
+        if(saveresult){
+            messagebox.setText(tr("save ok"));
+        }else {
+            messagebox.setText(tr("save error"));
+        }
+        messagebox.exec();
+    }
 }

@@ -24,8 +24,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1076</width>
-        <height>976</height>
+        <width>1080</width>
+        <height>980</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
@@ -286,7 +286,7 @@
           </spacer>
          </item>
          <item row="0" column="13" rowspan="3">
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="seve_excel_btn">
            <property name="text">
             <string>엑셀 저장</string>
            </property>
