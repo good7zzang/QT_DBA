@@ -50,31 +50,14 @@ void DBsearchsetting::init()
         ui->Co_MachineList->insertItem(i, Machine_Name.value("Machine_Name").toString()); //기계이름 추가
     }
 
-//    QSqlQueryModel *model = new QSqlQueryModel();
-
-//    model->setQuery("select Machine_Name, Additional_Info_1, Additional_Info_2, TimeStamp, Shot_Number, inj_step, hold_step,"
-//                    "Inj_Velocity_1, Inj_Velocity_2, Inj_Velocity_3, Inj_Velocity_4, Inj_Velocity_5, Inj_Velocity_6, Inj_Velocity_7,"
-//                    "Inj_Velocity_8, Inj_Velocity_9, Inj_Velocity_10, Inj_Pressure_1, Inj_Pressure_2, Inj_Pressure_3, Inj_Pressure_4,"
-//                    "Inj_Pressure_5, Inj_Pressure_6, Inj_Pressure_7, Inj_Pressure_8, Inj_Pressure_9, Inj_Pressure_10, Inj_Position_1,"
-//                    "Inj_Position_2, Inj_Position_3, Inj_Position_4, Inj_Position_5, Inj_Position_6, Inj_Position_7, Inj_Position_8,"
-//                    "Inj_Position_9, Inj_Position_10, SOV_Time, SOV_Position, SOV_Prs, Hld_Pressure_1, Hld_Pressure_2, Hld_Pressure_3,"
-//                    "Hld_Pressure_4, Hld_Pressure_5, Hld_Time_1, Hld_Time_2, Hld_Time_3, Hld_Time_4, Hld_Time_5, Hld_Vel_1, Hld_Vel_2,"
-//                    "Hld_Vel_3, Hld_Vel_4, Hld_Vel_5, Chg_Position_1, Chg_Position_2, Chg_Position_3, Chg_Position_4, Chg_Speed_1, Chg_Speed_2,"
-//                    "Chg_Speed_3, Chg_Speed_4, BackPressure_1, BackPressure_2, BackPressure_3, BackPressure_4, Suckback_Position_1,"
-//                    "Suckback_Position_2, Suckback_Speed_1, Suckback_Speed_2, Barrel_Temperature_1, Barrel_Temperature_2, Barrel_Temperature_3,"
-//                    "Barrel_Temperature_4, Barrel_Temperature_5, Barrel_Temperature_6, Barrel_Temperature_7, Barrel_Temperature_hopper, Mold_Temperature_1,"
-//                    "Mold_Temperature_2, Mold_Temperature_3, Mold_Temperature_4, Mold_Temperature_5, Mold_Temperature_6, Mold_Temperature_7,"
-//                    "Mold_Temperature_8, Mold_Temperature_9, Mold_Temperature_10, Mold_Temperature_11, Mold_Temperature_12, set_injtime, set_cooltime,"
-//                    "set_injdelaytime, set_chgdelaytime From shot_data_rec2 order by TIMESTAMP DESC limit 1000", Setting_DB);
-
-//    model->setQuery(name,Setting_DB);
-
-//    ui->Ta_Settinglist->setModel(model);
+    /*날짜 설정*/
+    ui->Da_Data_Start_Time->setDate(QDate::currentDate()); //현재 날짜 설정
+    ui->Da_Date_End_Time->setDateTime(QDateTime::currentDateTime()); //현재 날짜/시간 설정
 }
 
 void DBsearchsetting::on_Pu_SearchButton_clicked()
 {
-    QString Machine_Select_Name;
+    QString Machine_Select_Name; //기계이름 저장변
     QString Start_DateTime; //검색시작일 저장변수
     QString End_DataTime; //검색종료일 저장변수
     QString Mold_Name; //금형이름 저장변수
@@ -82,7 +65,7 @@ void DBsearchsetting::on_Pu_SearchButton_clicked()
 
 
     Machine_Select_Name = ui->Co_MachineList->currentText();
-    qDebug()<<Machine_Select_Name;
+
     Mold_Name = ui->Li_MoldName->text(); //입력된 금형이름 저장
 
     ui->Da_Data_Start_Time->setDisplayFormat("yyyy-MM-dd hh:mm:ss"); //날짜/시간 출력 형식 지정
@@ -95,9 +78,7 @@ void DBsearchsetting::on_Pu_SearchButton_clicked()
 
     Setting_Query->setQuery(Query_Setting, Setting_DB); //쿼리문 설정Setting_Query
 
-
     ui->Ta_Settinglist->setModel(Setting_Query); //데이터 출력
-
 }
 
 QString DBsearchsetting::Excute_Query(QString Machine_Select_Name, QString Mold_Name, QString Start_DateTime, QString End_DataTime)
@@ -115,20 +96,26 @@ QString DBsearchsetting::Excute_Query(QString Machine_Select_Name, QString Mold_
                   "Barrel_Temperature_4, Barrel_Temperature_5, Barrel_Temperature_6, Barrel_Temperature_7, Barrel_Temperature_hopper, Mold_Temperature_1,"
                   "Mold_Temperature_2, Mold_Temperature_3, Mold_Temperature_4, Mold_Temperature_5, Mold_Temperature_6, Mold_Temperature_7,"
                   "Mold_Temperature_8, Mold_Temperature_9, Mold_Temperature_10, Mold_Temperature_11, Mold_Temperature_12, set_injtime, set_cooltime,"
-                  "set_injdelaytime, set_chgdelaytime From shot_data_rec2 where Machine_Name='%1' AND TimeStamp between '%2' AND '%3' order by TIMESTAMP DESC limit 2000")
-                  .arg(Machine_Select_Name).arg(Start_DateTime).arg(End_DataTime));
+                  "set_injdelaytime, set_chgdelaytime From shot_data_rec2 where TimeStamp between '%1' AND '%2'")
+                  .arg(Start_DateTime).arg(End_DataTime));
 
+    if(Machine_Select_Name == " " && Mold_Name == "") //기게이름/금형이름 설정 안되어 있을 경우
+    {
+        return Query_Setting.append(" order by TIMESTAMP DESC"); //쿼리문 리턴
+    }
+    else
+    {
+        if(Machine_Select_Name.compare(" ")) //기계이름 설정 안했을 경우
+            Query_Setting.append(QString("AND Machine_Name='%1' ").arg(Machine_Select_Name));
 
+        if(Mold_Name.compare("")) //금형이름 입력 안했을 경우
+            Query_Setting.append(QString("AND Additional_Info_1='%1' ").arg(Mold_Name));
 
+        Query_Setting.append("order by TIMESTAMP DESC"); //오름차순 정렬
+    }
 
-
-    qDebug()<<Query_Setting;
-
-
-    return Query_Setting; //쿼리문 반환
+    return Query_Setting; //쿼리문 리턴
 }
-
-
 
 void DBsearchsetting::on_seve_excel_btn_clicked()
 {
