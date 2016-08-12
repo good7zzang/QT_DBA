@@ -99,19 +99,19 @@ QString DBsearchsetting::Excute_Query(QString Machine_Select_Name, QString Mold_
                   "set_injdelaytime, set_chgdelaytime From shot_data_rec2 where TimeStamp between '%1' AND '%2'")
                   .arg(Start_DateTime).arg(End_DataTime));
 
-    if(Machine_Select_Name == " " && Mold_Name == "")
+    if(Machine_Select_Name == " " && Mold_Name == "") //기게이름/금형이름 설정 안되어 있을 경우
     {
         return Query_Setting.append(" order by TIMESTAMP DESC"); //쿼리문 리턴
     }
     else
     {
-        if(Machine_Select_Name.compare(""))
+        if(Machine_Select_Name.compare(" ")) //기계이름 설정 안했을 경우
             Query_Setting.append(QString("AND Machine_Name='%1' ").arg(Machine_Select_Name));
 
-        if(Mold_Name.compare(""))
+        if(Mold_Name.compare("")) //금형이름 입력 안했을 경우
             Query_Setting.append(QString("AND Additional_Info_1='%1' ").arg(Mold_Name));
 
-        Query_Setting.append("order by TIMESTAMP DESC"); //정렬구문
+        Query_Setting.append("order by TIMESTAMP DESC"); //오름차순 정렬
     }
 
     return Query_Setting; //쿼리문 리턴
