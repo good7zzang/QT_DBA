@@ -27,7 +27,7 @@ void MoldCondition::init()
 
     Mold_DB = QSqlDatabase::database("remotedb"); //DB 연결 반환
 
-    if(!Mold_DB.open()) //DB 연결 확인
+    if(!Mold_DB.isOpen()) //DB 연결 확인
         qDebug()<<"DB Not Open";
     else
         qDebug()<<"DB Open";
@@ -361,7 +361,7 @@ void MoldCondition::Display(QString machine_info, QString mold_name, QString inj
         {
             if(Program_Name.indexOf("DL") >= 0)
             {
-                ui->Li_Sovtime->setEnabled(0);
+                ui->Li_Sovtime->setEnabled(0); //보압절환 시간 UI Disable
             }
             else
             {
@@ -377,8 +377,9 @@ void MoldCondition::Display(QString machine_info, QString mold_name, QString inj
             ui->Li_Sovtime->setEnabled(0); //보압절환 UI Disable
             ui->Li_Sovpos->setEnabled(0); //보압절환 UI Disable
         }
+
     }
-    else //ES600
+    else if(Controller_Name == "ES600") //ES600
     {
         ui->Li_Injtime->setText(injtime); //사출시간
 
@@ -386,6 +387,15 @@ void MoldCondition::Display(QString machine_info, QString mold_name, QString inj
         ui->Li_Sovtime->setEnabled(0); //보압절환 시간 UI Disable
         ui->Li_Sovprs->setEnabled(0); //보압절환 사출 압력 UI Disable
         ui->Li_Injdeltime->setEnabled(0); //사출지연시간 UI Disable
+    }
+    else if(Controller_Name == "bluecon")
+    {
+        ui->Li_Sovtime->setEnabled(0); //보압절환시간 UI Disable
+        ui->Li_Sovpos->setEnabled(0); //보압절환위치 UI Disable
+        ui->Li_Sovprs->setEnabled(0); //보압절환 사출 압력 UI Disable
+
+        ui->Li_Injtime->setText(injtime); //사출시간 출력
+        ui->Li_Injdeltime->setText(injdeltime); //사출지연시간 출력
     }
 
     /*계량설정 정보*/
