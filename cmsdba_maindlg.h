@@ -16,6 +16,7 @@
 #include "db_serversetting.h"
 #include "dbsearchsetting.h"
 #include "dbsearchact.h"
+#include "heatername_setting.h"
 
 #define MACHIEN_NAME_FILD 0
 #define MACHINE_STATUE_FILD 1
