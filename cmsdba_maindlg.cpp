@@ -54,17 +54,15 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
 {
     QString Toolbar_Name;
 
-    MachineAdd *m_machineadd = new MachineAdd();
-    SettingLogShow *m_settinglogshow = new SettingLogShow();
-
     //DBA_Setting *m_dbasetting = new DBA_Setting();
-    Db_serversetting *m_dbasetting = new Db_serversetting();
+
 
     Toolbar_Name = action->text();
 
+
     if(!Toolbar_Name.compare("Add"))
     {
-        m_machineadd->show();
+//        m_machineadd->show();
     }
     else if(!Toolbar_Name.compare("Alarm Log"))
     {
@@ -78,7 +76,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     }
     else if(!Toolbar_Name.compare("Setting Log"))
     {
-        m_settinglogshow->show();
+//        m_settinglogshow->show();
     }
     else if(!Toolbar_Name.compare("Display1"))
     {
@@ -95,6 +93,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     }
     else if(!Toolbar_Name.compare("Setting"))
     {
+        Db_serversetting *m_dbasetting = new Db_serversetting();
         m_dbasetting->show();
     }else if(!Toolbar_Name.compare("Connect")){
         dbconnect();
@@ -120,6 +119,9 @@ void CMSDBA_MainDlg::menubartriggered(QAction *action)
     {
         DBsearchsetting *m_dbSetting = new DBsearchsetting(); //DBsearchsetting 객체 생성
         m_dbSetting->show(); //객체 활성화
+    }else if(!Menubar_Name.compare("datagraph")){
+        data_graph_m_widget *act_graph = new data_graph_m_widget();
+        act_graph->show();
     }
 }
 
