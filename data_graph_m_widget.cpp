@@ -12,10 +12,9 @@ data_graph_m_widget::data_graph_m_widget(QWidget *parent) :
     m_tooltip = 0;
     ui->start_search_time->setDate(QDate::currentDate());
     ui->end_search_time->setDateTime(QDateTime::currentDateTime());
-
+    remotequely.exec("select * from Systeminfo order by machine_name asc");
     while(remotequely.next()){
-        QDateTime temptime = remotequely.value("TimeStamp").toDateTime();
-        series->append(temptime.toMSecsSinceEpoch(),remotequely.value("Shot_Number").toInt());
+        ui->cb_select_machine_name->addItem(remotequely.value("machine_name").toString());
     }
     chart = new Zoomchart();
     chart->addSeries(series);
@@ -41,9 +40,28 @@ data_graph_m_widget::data_graph_m_widget(QWidget *parent) :
     chart->setAnimationOptions(QChart::AllAnimations);
     ui->chart_layout->addWidget(chartView);
 
+    tree_model = new QStandardItemModel(this);
+    tree_model->insertRow(0);
+//    QStandardItem *item = new QStandardItem(QString(tr("set_injection")));
+//    item->insertRow(0);
+
+
+//    tree_model->setItem(0,item);
+
+
+//    list_model = new QStringListModel();
+//    list_model->insertRow(0);
+//    QModelIndex index = list_model->index(0);
+//    list_model->setData(index,QVariant("test"));
+
+//    list_model->insertRow(1);
+//    QModelIndex index1 = list_model->index(1);
+//    list_model->setData(index1,QVariant("test1"));
+
+//    ui->chart_item_list->setModel(list_model);
+
     connect(series, SIGNAL(clicked(QPointF)), this, SLOT(keepCallout()));
     connect(series, SIGNAL(hovered(QPointF, bool)), this, SLOT(tooltip(QPointF,bool)));
-
 
 }
 
@@ -77,4 +95,18 @@ void data_graph_m_widget::tooltip(QPointF point, bool state){
 void data_graph_m_widget::on_btn_zoom_reset_clicked()
 {
     chart->zoomReset();
+}
+
+void data_graph_m_widget::on_btn_chart_output_clicked()
+{
+//    QModelIndexList index_list = ui->chart_item_list->selectionModel()->selectedIndexes();
+//    for(int i=0;i<index_list.count();i++){
+//        QModelIndex tempdata = index_list.at(i);
+//        qDebug()<<tempdata.data().toString();
+//    }
+}
+
+void data_graph_m_widget::on_cb_select_machine_name_currentIndexChanged(const QString &arg1)
+{
+
 }

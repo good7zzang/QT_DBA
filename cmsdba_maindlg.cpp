@@ -98,22 +98,22 @@ void CMSDBA_MainDlg::menubartriggered(QAction *action)
 {
     QString Menubar_Name; //메뉴바 이름 저장변수
 
-    Menubar_Name = action->text(); //메뉴바 이름 저장
+    Menubar_Name = action->objectName(); //메뉴바 이름 저장
 
-    if(!Menubar_Name.compare("Connect")) //Database Connect
+    if(!Menubar_Name.compare("actionConnect")) //Database Connect
     {
         dbconnect();
     }
-    else if(!Menubar_Name.compare("ActData"))
+    else if(!Menubar_Name.compare("actionActData"))
     {
         DBsearchact *m_dbact = new DBsearchact(); //DBsearchact 객체 생성
         m_dbact->show(); //객체 활성화
     }
-    else if(!Menubar_Name.compare("SetData"))
+    else if(!Menubar_Name.compare("actionSettingData"))
     {
         DBsearchsetting *m_dbSetting = new DBsearchsetting(); //DBsearchsetting 객체 생성
         m_dbSetting->show(); //객체 활성화
-    }else if(!Menubar_Name.compare("datagraph")){
+    }else if(!Menubar_Name.compare("actiondatagrhape")){
         data_graph_m_widget *act_graph = new data_graph_m_widget();
         act_graph->show();
     }
