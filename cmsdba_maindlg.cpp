@@ -34,9 +34,9 @@ void CMSDBA_MainDlg::Toolbarinit()
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/connect.png"), "Connect");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/disconnect.png"), "Disconnect");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/add.png"), "Add");
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/delete.png"), "Delete");
-    ui->CMSDBA_MainToobar->addSeparator();
+    //ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/add.png"), "Add");
+    //ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/delete.png"), "Delete");
+    //ui->CMSDBA_MainToobar->addSeparator();
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/moldcondition.png"), "Moldcondition");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Alarm.png"), "Alarm Log");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Settinglog.png"), "Setting Log");
@@ -44,6 +44,7 @@ void CMSDBA_MainDlg::Toolbarinit()
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display1.png"), "DisPlay1");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display2.png"), "Display2");
     ui->CMSDBA_MainToobar->addSeparator();
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/HeaterName.png"), "Heater Name Setting");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/setting.png"), "Setting");
 
     connect(ui->CMSDBA_MainToobar, SIGNAL(actionTriggered(QAction*)), this,SLOT(toolbartriggered(QAction*))); //메뉴툴바
@@ -86,6 +87,11 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     else if(!Toolbar_Name.compare("Display2"))
     {
 
+    }
+    else if(!Toolbar_Name.compare("Heater Name Setting"))
+    {
+        HeaterName_Setting *m_heatername = new HeaterName_Setting();
+        m_heatername->show();
     }
     else if(!Toolbar_Name.compare("Setting"))
     {

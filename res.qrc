@@ -11,6 +11,7 @@
         <file>res/Display1.png</file>
         <file>res/connect.png</file>
         <file>res/disconnect.png</file>
+        <file>res/HeaterName.png</file>
     </qresource>
     <qresource prefix="/Lang">
         <file>Lang_ko_KR.qm</file>
