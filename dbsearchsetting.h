@@ -6,8 +6,6 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QDebug>
-#include <QTableView>
-#include <QSqlTableModel>
 #include <QSqlError>
 #include <QFileDialog>
 #include <QtXlsx>
@@ -32,21 +30,15 @@ public:
     ~DBsearchsetting();
     void closeEvent(QCloseEvent *event);
     void init();
-
-    QSqlQueryModel *model;
-    QSqlQueryModel *Setting_Query;
-
-    QString Excute_Query(QString Machine_Select_Name, QString Mold_Name, QString Start_DateTime,
+    QString Excute_Query_Setting(QString Machine_Select_Name, QString Mold_Name, QString Start_DateTime,
                          QString End_DataTime);
 
 
 public:
     QSqlDatabase Setting_DB; //DB 변수
+    QSqlQueryModel *Setting_Query; //쿼리 변수
 
 private slots:
-
-
-
     void on_seve_excel_btn_clicked();
 
     void on_Pu_SearchButton_clicked();

@@ -17,6 +17,8 @@
 #include "dbsearchsetting.h"
 #include "dbsearchact.h"
 #include "data_graph_m_widget.h"
+#include "heatername_setting.h"
+
 #define MACHIEN_NAME_FILD 0
 #define MACHINE_STATUE_FILD 1
 #define MACHINE_OBJECT_FILD 2

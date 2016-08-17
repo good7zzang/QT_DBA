@@ -115,6 +115,16 @@
         <source>Alarm OFF</source>
         <translation type="unfinished">알람 해제</translation>
     </message>
+    <message>
+        <location filename="alarmlogshow.cpp" line="167"/>
+        <source>save ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="alarmlogshow.cpp" line="169"/>
+        <source>save error</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CMSDBA_MainDlg</name>
@@ -322,33 +332,59 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="142"/>
-        <source>금형 이름</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="dbsearchact.ui" line="167"/>
+        <location filename="dbsearchact.ui" line="67"/>
         <source>엑셀저장</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="64"/>
+        <location filename="dbsearchact.ui" line="212"/>
         <source>검색</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="73"/>
+        <location filename="dbsearchact.ui" line="50"/>
         <source>검색 시작일</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="86"/>
+        <location filename="dbsearchact.ui" line="40"/>
+        <source>금형이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dbsearchact.ui" line="57"/>
+        <location filename="dbsearchact.ui" line="173"/>
+        <source>yyyy-MM-dd hh:mm:ss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dbsearchact.ui" line="97"/>
+        <source>기계이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dbsearchact.ui" line="166"/>
         <source>검색 종료일</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchact.ui" line="113"/>
-        <source>기계 이름</source>
+        <location filename="dbsearchact.ui" line="227"/>
+        <source>실제 데이터 검색 내역</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dbsearchact.cpp" line="28"/>
+        <source>Molding Condition(ACTData) Search</source>
+        <translation type="unfinished">실제 데이터 검색</translation>
+    </message>
+    <message>
+        <location filename="dbsearchact.cpp" line="138"/>
+        <source>save ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dbsearchact.cpp" line="140"/>
+        <source>save error</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -360,12 +396,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="261"/>
+        <location filename="dbsearchsetting.ui" line="298"/>
         <source>검색</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="222"/>
+        <location filename="dbsearchsetting.ui" line="232"/>
         <source>검색 시작일</source>
         <translation type="unfinished"></translation>
     </message>
@@ -375,29 +411,46 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="196"/>
+        <location filename="dbsearchsetting.ui" line="206"/>
         <source>기계이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="232"/>
+        <location filename="dbsearchsetting.ui" line="242"/>
         <source>검색 종료일</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="287"/>
+        <location filename="dbsearchsetting.ui" line="285"/>
+        <location filename="dbsearchsetting.ui" line="318"/>
+        <source>yyyy-MM-dd hh:mm:ss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dbsearchsetting.ui" line="350"/>
         <source>엑셀 저장</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="212"/>
+        <location filename="dbsearchsetting.ui" line="222"/>
         <source>금형 이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.cpp" line="24"/>
-        <source>Molding Condition(ACTData) Search</source>
+        <location filename="dbsearchsetting.cpp" line="26"/>
+        <source>Molding Condition(SetData) Search</source>
+        <oldsource>Molding Condition(SETData) Search</oldsource>
         <translation type="unfinished">조건 데이터 검색</translation>
+    </message>
+    <message>
+        <location filename="dbsearchsetting.cpp" line="152"/>
+        <source>save ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="dbsearchsetting.cpp" line="154"/>
+        <source>save error</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
