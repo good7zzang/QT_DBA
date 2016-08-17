@@ -124,7 +124,6 @@ QString DBsearchsetting::Excute_Query(QString Machine_Select_Name, QString Mold_
 
     qDebug()<<Query_Setting;
 
-
     return Query_Setting; //쿼리문 반환
 }
 
