@@ -42,8 +42,8 @@ data_graph_m_widget::data_graph_m_widget(QWidget *parent) :
 
     tree_model = new QStandardItemModel(this);
     tree_model->insertRow(0);
-//    QStandardItem *item = new QStandardItem(QString(tr("set_injection")));
-//    item->insertRow(0);
+    QStandardItem *item = new QStandardItem(QString(tr("set_injection")));
+    tree_model->setItem(0,item);
 
 
 //    tree_model->setItem(0,item);
@@ -58,7 +58,7 @@ data_graph_m_widget::data_graph_m_widget(QWidget *parent) :
 //    QModelIndex index1 = list_model->index(1);
 //    list_model->setData(index1,QVariant("test1"));
 
-//    ui->chart_item_list->setModel(list_model);
+    ui->tree_chart_item_list->setModel(tree_model);
 
     connect(series, SIGNAL(clicked(QPointF)), this, SLOT(keepCallout()));
     connect(series, SIGNAL(hovered(QPointF, bool)), this, SLOT(tooltip(QPointF,bool)));
