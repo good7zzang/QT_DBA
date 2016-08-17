@@ -111,10 +111,13 @@ QString DBsearchsetting::Excute_Query(QString Machine_Select_Name, QString Mold_
         if(Mold_Name.compare("")) //금형이름 입력 안했을 경우
             Query_Setting.append(QString("AND Additional_Info_1='%1' ").arg(Mold_Name));
 
+
         Query_Setting.append("order by TIMESTAMP DESC"); //오름차순 정렬
     }
 
-    return Query_Setting; //쿼리문 리턴
+
+    return Query_Setting; //쿼리문 반환
+
 }
 
 void DBsearchsetting::on_seve_excel_btn_clicked()
