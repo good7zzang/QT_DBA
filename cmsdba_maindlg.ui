@@ -198,7 +198,7 @@
     <property name="title">
      <string>graph</string>
     </property>
-    <addaction name="actionActdatagrhape"/>
+    <addaction name="actiondatagrhape"/>
    </widget>
    <addaction name="menuMenu_Bar"/>
    <addaction name="menuDatabase_Search"/>
@@ -237,7 +237,7 @@
     <string>SetData</string>
    </property>
   </action>
-  <action name="actionActdatagrhape">
+  <action name="actiondatagrhape">
    <property name="text">
     <string>datagraph</string>
    </property>

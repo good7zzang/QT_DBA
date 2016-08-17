@@ -16,7 +16,10 @@
 #include <zoomchartview.h>
 #include <QtCharts/QLogValueAxis>
 #include "callout.h"
-
+#include <QAbstractListModel>
+#include <QStringListModel>
+#include <QModelIndexList>
+#include <QStandardItemModel>
 
 QT_CHARTS_USE_NAMESPACE
 
@@ -36,6 +39,9 @@ public:
     ZoomChartView *chartView;
     callout *m_tooltip;
     QVector<callout *> tooltip_list;
+    QStandardItemModel *tree_model;
+
+
     ~data_graph_m_widget();
 
 public slots:
@@ -46,8 +52,12 @@ public slots:
 private slots:
     void on_btn_zoom_reset_clicked();
 
+    void on_btn_chart_output_clicked();
+
+    void on_cb_select_machine_name_currentIndexChanged(const QString &arg1);
+
 private:
-    Ui::data_graph_m_widget *ui;
+     Ui::data_graph_m_widget *ui;
 };
 
 #endif // DATA_GRAPH_M_WIDGET_H

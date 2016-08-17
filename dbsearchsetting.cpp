@@ -114,8 +114,7 @@ QString DBsearchsetting::Excute_Query_Setting(QString Machine_Select_Name, QStri
         Query_Setting.append("order by TIMESTAMP DESC"); //오름차순 정렬
     }
 
-
-    return Query_Setting; //쿼리문 반환
+    return Query_Setting; //쿼리문 리턴
 
 }
 
