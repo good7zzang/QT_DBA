@@ -10,11 +10,11 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDateTime>
-#include <QDateTimeAxis>
-#include <QValueAxis>
+#include <QtCharts/QDateTimeAxis>
+#include <QtCharts/QValueAxis>
 #include <zoomchart.h>
 #include <zoomchartview.h>
-#include <QLogValueAxis>
+#include <QtCharts/QLogValueAxis>
 #include "callout.h"
 #include <QAbstractListModel>
 #include <QStringListModel>
