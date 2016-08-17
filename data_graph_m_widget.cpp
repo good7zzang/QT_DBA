@@ -40,13 +40,18 @@ data_graph_m_widget::data_graph_m_widget(QWidget *parent) :
     chart->setAnimationOptions(QChart::AllAnimations);
     ui->chart_layout->addWidget(chartView);
 
-    tree_model = new QStandardItemModel(this);
-    tree_model->insertRow(0);
-    QStandardItem *item = new QStandardItem(QString(tr("set_injection")));
-    tree_model->setItem(0,item);
+    tree_model = new QStandardItemModel();
+
+    tree_model->insertRow(0,new QStandardItem(QString(tr("set_injtion"))));
+    tree_model->item(0)->insertRow(0,new QStandardItem(QString(tr("1step"))));
+    tree_model->item(0)->insertRow(1,new QStandardItem(QString(tr("2step"))));
+    tree_model->item(0)->insertRow(2,new QStandardItem(QString(tr("3step"))));
+    tree_model->item(0)->insertRow(3,new QStandardItem(QString(tr("4step"))));
+    tree_model->setHorizontalHeaderItem(0,new QStandardItem(QString(tr("chart"))));
 
 
-//    tree_model->setItem(0,item);
+
+
 
 
 //    list_model = new QStringListModel();
