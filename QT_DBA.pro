@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network sql xlsx
+QT       += core gui network sql xlsx charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -30,7 +30,12 @@ SOURCES += main.cpp\
     dbsearchsetting.cpp \
     m_table_item.cpp \
     simplecrypt.cpp \
-    db_serversetting.cpp
+    db_serversetting.cpp \
+    zoomchart.cpp \
+    zoomchartview.cpp \
+    callout.cpp \
+    data_graph_m_widget.cpp \
+    heatername_setting.cpp
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
@@ -48,7 +53,12 @@ HEADERS  += cmsdba_maindlg.h \
     dbsearchsetting.h \
     m_table_item.h \
     simplecrypt.h \
-    db_serversetting.h
+    db_serversetting.h \
+    zoomchart.h \
+    zoomchartview.h \
+    callout.h \
+    data_graph_m_widget.h \
+    heatername_setting.h
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
@@ -64,7 +74,9 @@ FORMS    += cmsdba_maindlg.ui \
     alarmlogshow.ui \
     settinglogshow.ui \
     dbsearchsetting.ui \
-    db_serversetting.ui
+    db_serversetting.ui \
+    data_graph_m_widget.ui \
+    heatername_setting.ui
 
 
 

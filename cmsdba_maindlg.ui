@@ -31,8 +31,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>1276</width>
-         <height>911</height>
+         <width>1280</width>
+         <height>927</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
@@ -178,7 +178,7 @@
      <x>0</x>
      <y>0</y>
      <width>1300</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu_Bar">
@@ -194,8 +194,15 @@
     <addaction name="actionActData"/>
     <addaction name="actionSettingData"/>
    </widget>
+   <widget class="QMenu" name="menuGrape">
+    <property name="title">
+     <string>graph</string>
+    </property>
+    <addaction name="actiondatagrhape"/>
+   </widget>
    <addaction name="menuMenu_Bar"/>
    <addaction name="menuDatabase_Search"/>
+   <addaction name="menuGrape"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="CMSDBA_MainToobar">
@@ -228,6 +235,11 @@
   <action name="actionSettingData">
    <property name="text">
     <string>SetData</string>
+   </property>
+  </action>
+  <action name="actiondatagrhape">
+   <property name="text">
+    <string>datagraph</string>
    </property>
   </action>
  </widget>

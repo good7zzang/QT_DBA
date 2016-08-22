@@ -22,6 +22,9 @@ int main(int argc, char *argv[])
     QApplication::installTranslator(&trans);
 
 
+//    HeaterName_Setting m_heater;
+//    m_heater.show();
+
 //    molding_setting moldsetting;
 //    MoldCondition_Report MoldCondition;
 //    MoldCondition.show();

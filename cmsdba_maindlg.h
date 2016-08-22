@@ -16,7 +16,10 @@
 #include "db_serversetting.h"
 #include "dbsearchsetting.h"
 #include "dbsearchact.h"
+#include "data_graph_m_widget.h"
+#include "heatername_setting.h"
 
+#include "data_graph_m_widget.h"
 #define MACHIEN_NAME_FILD 0
 #define MACHINE_STATUE_FILD 1
 #define MACHINE_OBJECT_FILD 2
@@ -46,7 +49,7 @@ private:
 
 public:
     void init();
-    void Toolbarinit(); 
+    void Toolbarinit();
     void litedbinit();
     void dbconnect();
     void M_table_init();

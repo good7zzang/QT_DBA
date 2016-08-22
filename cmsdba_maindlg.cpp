@@ -34,9 +34,9 @@ void CMSDBA_MainDlg::Toolbarinit()
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/connect.png"), "Connect");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/disconnect.png"), "Disconnect");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/add.png"), "Add");
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/delete.png"), "Delete");
-    ui->CMSDBA_MainToobar->addSeparator();
+    //ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/add.png"), "Add");
+    //ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/delete.png"), "Delete");
+    //ui->CMSDBA_MainToobar->addSeparator();
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/moldcondition.png"), "Moldcondition");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Alarm.png"), "Alarm Log");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Settinglog.png"), "Setting Log");
@@ -44,6 +44,7 @@ void CMSDBA_MainDlg::Toolbarinit()
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display1.png"), "DisPlay1");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display2.png"), "Display2");
     ui->CMSDBA_MainToobar->addSeparator();
+    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/HeaterName.png"), "Heater Name Setting");
     ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/setting.png"), "Setting");
 
     connect(ui->CMSDBA_MainToobar, SIGNAL(actionTriggered(QAction*)), this,SLOT(toolbartriggered(QAction*))); //메뉴툴바
@@ -53,17 +54,15 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
 {
     QString Toolbar_Name;
 
-    MachineAdd *m_machineadd = new MachineAdd();
-    SettingLogShow *m_settinglogshow = new SettingLogShow();
-
     //DBA_Setting *m_dbasetting = new DBA_Setting();
-    Db_serversetting *m_dbasetting = new Db_serversetting();
+
 
     Toolbar_Name = action->text();
 
+
     if(!Toolbar_Name.compare("Add"))
     {
-        m_machineadd->show();
+//        m_machineadd->show();
     }
     else if(!Toolbar_Name.compare("Alarm Log"))
     {
@@ -77,7 +76,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     }
     else if(!Toolbar_Name.compare("Setting Log"))
     {
-        m_settinglogshow->show();
+//        m_settinglogshow->show();
     }
     else if(!Toolbar_Name.compare("Display1"))
     {
@@ -87,8 +86,14 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     {
 
     }
+    else if(!Toolbar_Name.compare("Heater Name Setting"))
+    {
+        HeaterName_Setting *m_heatername = new HeaterName_Setting();
+        m_heatername->show();
+    }
     else if(!Toolbar_Name.compare("Setting"))
     {
+        Db_serversetting *m_dbasetting = new Db_serversetting();
         m_dbasetting->show();
     }else if(!Toolbar_Name.compare("Connect")){
         dbconnect();
@@ -99,21 +104,24 @@ void CMSDBA_MainDlg::menubartriggered(QAction *action)
 {
     QString Menubar_Name; //메뉴바 이름 저장변수
 
-    Menubar_Name = action->text(); //메뉴바 이름 저장
+    Menubar_Name = action->objectName(); //메뉴바 이름 저장
 
-    if(!Menubar_Name.compare("Connect")) //Database Connect
+    if(!Menubar_Name.compare("actionConnect")) //Database Connect
     {
         dbconnect();
     }
-    else if(!Menubar_Name.compare("ActData"))
+    else if(!Menubar_Name.compare("actionActData"))
     {
         DBsearchact *m_dbact = new DBsearchact(); //DBsearchact 객체 생성
         m_dbact->show(); //객체 활성화
     }
-    else if(!Menubar_Name.compare("SetData"))
+    else if(!Menubar_Name.compare("actionSettingData"))
     {
         DBsearchsetting *m_dbSetting = new DBsearchsetting(); //DBsearchsetting 객체 생성
         m_dbSetting->show(); //객체 활성화
+    }else if(!Menubar_Name.compare("actiondatagrhape")){
+        data_graph_m_widget *act_graph = new data_graph_m_widget();
+        act_graph->show();
     }
 }
 
