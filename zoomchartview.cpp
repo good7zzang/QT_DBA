@@ -1,12 +1,14 @@
 #include "zoomchartview.h"
-
+#include <QDebug>
 ZoomChartView::ZoomChartView(QChart *chart, QWidget *parent)
     : QChartView(chart, parent),m_isTouching(false)
 {
-    setRubberBand(QChartView::HorizontalRubberBand);
+    setRubberBand(QChartView::RectangleRubberBand);
 //    setRubberBandSelectionMode(Qt::ContainsItemBoundingRect);
     m_coordX = new QGraphicsSimpleTextItem(chart);
+    qDebug()<<this->size().height();
     m_coordX->setPos(50, this->size().height());
+
     m_coordX->setText("X: ");
     m_coordY = new QGraphicsSimpleTextItem(chart);
     m_coordY->setPos(200, this->size().height());
@@ -97,3 +99,11 @@ void ZoomChartView::keyPressEvent(QKeyEvent *event)
         break;
     }
 }
+void ZoomChartView::resizeEvent(QResizeEvent *event){
+    m_coordX->setPos(50, this->size().height()-30);
+    m_coordY->setPos(200, this->size().height()-30);
+    QChartView::resizeEvent(event);
+
+//    m_coordX->show();
+}
+

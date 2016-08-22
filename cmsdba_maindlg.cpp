@@ -20,6 +20,7 @@ void CMSDBA_MainDlg::init()
     item_map = new QMap<QString,M_table_item *>();
     Toolbarinit();
     QPixmap Picture(":/Icon/res/Woojin Logo.png"); //로고 이미지
+    trans = new QTranslator();
 
 
     select_machine_name = "";
@@ -122,6 +123,13 @@ void CMSDBA_MainDlg::menubartriggered(QAction *action)
     }else if(!Menubar_Name.compare("actiondatagrhape")){
         data_graph_m_widget *act_graph = new data_graph_m_widget();
         act_graph->show();
+    }else if(!Menubar_Name.compare("actionKo")){
+
+        trans->load(":/Lang/Lang_ko_KR.qm");
+        QApplication::installTranslator(trans);
+    }else if(!Menubar_Name.compare("actionEn")){
+        trans->load(":/Lang/Lang_en_EN.qm");
+        QApplication::installTranslator(trans);
     }
 }
 
