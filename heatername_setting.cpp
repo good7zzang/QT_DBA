@@ -6,7 +6,7 @@ HeaterName_Setting::HeaterName_Setting(QWidget *parent) :
     ui(new Ui::HeaterName_Setting)
 {
     ui->setupUi(this);
-    init();
+    init(); //초기화
 }
 
 HeaterName_Setting::~HeaterName_Setting()
@@ -91,14 +91,16 @@ void HeaterName_Setting::on_Pu_SaveName_clicked()
                     Update_Query.append(QString(", temp%1_name='%2'").arg(i+1).arg(Li_list.at(i)->text()));
             }
         }
-
-        Update_Query.append(QString(" where Machine_Name='%1'").arg(ui->Co_Machinelist->currentText())); //변경 할 기계이름 추가
     }
 
-    check = HeaterName_Query.exec(Update_Query); //Update 쿼리 실행
+    if(First == 0) //변경되었을 경우에만
+    {
+        Update_Query.append(QString(" where Machine_Name='%1'").arg(ui->Co_Machinelist->currentText())); //변경 할 기계이름 추가
+        check = HeaterName_Query.exec(Update_Query); //Update 쿼리 실행
 
-    if(check)
-        qDebug()<<"Update Query Success";
-    else
-        qDebug()<<"Update Query Fail";
+        if(check)
+            qDebug()<<"Update Query Success";
+        else
+            qDebug()<<"Update Query Fail";
+    }
 }

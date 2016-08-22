@@ -32,6 +32,8 @@ void MoldCondition::init()
     else
         qDebug()<<"DB Open";
 
+    connect(ui->menubar, SIGNAL(triggered(QAction*)), this, SLOT(menubartriggered(QAction*)));
+
     injspd_Lilist<<ui->Li_injspd1<<ui->Li_injspd2<<ui->Li_injspd3<<ui->Li_injspd4<<ui->Li_injspd5<<ui->Li_injspd6
        <<ui->Li_injspd7<<ui->Li_injspd8<<ui->Li_injspd9<<ui->Li_injspd10; //사출속도 UI 셋팅
 
@@ -61,6 +63,19 @@ void MoldCondition::init()
 
     temperature_name_Lalist<<ui->La_Temp1<<ui->La_Temp2<<ui->La_Temp3<<ui->La_Temp4<<ui->La_Temp5<<ui->La_Temp6<<ui->La_Temp7
                           <<ui->La_Temp8<<ui->La_Temp9<<ui->La_Temp10<<ui->La_Temp11<<ui->La_Temp12; //외부온도이름 UI 셋팅
+}
+
+void MoldCondition::menubartriggered(QAction *action)
+{
+    QString ObjectName;
+
+    ObjectName = action->objectName();
+
+    if(!ObjectName.compare("Excel_Cell"))
+    {
+        ExelCell_Setting *m_Excel_Cell = new ExelCell_Setting(machine_name);
+        m_Excel_Cell->show();
+    }
 }
 
 void MoldCondition::Execute_Query()
