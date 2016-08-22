@@ -11,6 +11,7 @@
 #include <QLineEdit>
 #include <QDateTime>
 #include <QLabel>
+#include "exelcell_setting.h"
 
 #define MAX_INJSTEP 10 //최대 사출단수
 #define MAX_HOLDSTEP 5 //최대 보압단수
@@ -32,9 +33,9 @@ public:
     QString machine_name;
     QVector<QLineEdit *> injspd_Lilist, injprs_Lilist, injpos_Lilist, holdspd_Lilist, holdprs_Lilist
                          ,holdtime_Lilist, chgspd_Lilist, chgbps_Lilist, chgpos_Lilist, heater_Lilist
-                         ,temperature_Lilist;
+                         ,temperature_Lilist; //LineEdit UI ObjectName 저장 변수
 
-    QVector<QLabel *> heater_name_Lalist, temperature_name_Lalist;
+    QVector<QLabel *> heater_name_Lalist, temperature_name_Lalist; //Label UI ObjectName 저장 변수
 
     ~MoldCondition();
     void init();
@@ -49,6 +50,9 @@ public:
 
 public:
     QSqlDatabase Mold_DB;
+
+public slots:
+    void  menubartriggered(QAction *action);
 
 private:
     Ui::MoldCondition *ui;
