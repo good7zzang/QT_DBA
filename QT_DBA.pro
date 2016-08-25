@@ -35,7 +35,8 @@ SOURCES += main.cpp\
     zoomchartview.cpp \
     callout.cpp \
     data_graph_m_widget.cpp \
-    heatername_setting.cpp
+    heatername_setting.cpp \
+    exelcell_setting.cpp
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
@@ -58,7 +59,8 @@ HEADERS  += cmsdba_maindlg.h \
     zoomchartview.h \
     callout.h \
     data_graph_m_widget.h \
-    heatername_setting.h
+    heatername_setting.h \
+    exelcell_setting.h
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
@@ -76,7 +78,8 @@ FORMS    += cmsdba_maindlg.ui \
     dbsearchsetting.ui \
     db_serversetting.ui \
     data_graph_m_widget.ui \
-    heatername_setting.ui
+    heatername_setting.ui \
+    exelcell_setting.ui
 
 
 

@@ -191,24 +191,34 @@
         <translation type="unfinished">데이터베이스 검색</translation>
     </message>
     <message>
-        <location filename="cmsdba_maindlg.ui" line="203"/>
+        <location filename="cmsdba_maindlg.ui" line="199"/>
+        <source>graph</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="cmsdba_maindlg.ui" line="210"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="cmsdba_maindlg.ui" line="220"/>
+        <location filename="cmsdba_maindlg.ui" line="227"/>
         <source>Connect</source>
         <translation type="unfinished">연결</translation>
     </message>
     <message>
-        <location filename="cmsdba_maindlg.ui" line="225"/>
+        <location filename="cmsdba_maindlg.ui" line="232"/>
         <source>ActData</source>
         <translation type="unfinished">실제 데이터</translation>
     </message>
     <message>
-        <location filename="cmsdba_maindlg.ui" line="230"/>
+        <location filename="cmsdba_maindlg.ui" line="237"/>
         <source>SetData</source>
         <translation type="unfinished">조건 데이터</translation>
+    </message>
+    <message>
+        <location filename="cmsdba_maindlg.ui" line="242"/>
+        <source>datagraph</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -396,12 +406,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="298"/>
+        <location filename="dbsearchsetting.ui" line="301"/>
         <source>검색</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="232"/>
+        <location filename="dbsearchsetting.ui" line="235"/>
         <source>검색 시작일</source>
         <translation type="unfinished"></translation>
     </message>
@@ -411,28 +421,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="206"/>
+        <location filename="dbsearchsetting.ui" line="209"/>
         <source>기계이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="242"/>
+        <location filename="dbsearchsetting.ui" line="245"/>
         <source>검색 종료일</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="285"/>
-        <location filename="dbsearchsetting.ui" line="318"/>
+        <location filename="dbsearchsetting.ui" line="288"/>
+        <location filename="dbsearchsetting.ui" line="321"/>
         <source>yyyy-MM-dd hh:mm:ss</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="350"/>
+        <location filename="dbsearchsetting.ui" line="353"/>
         <source>엑셀 저장</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.ui" line="222"/>
+        <location filename="dbsearchsetting.ui" line="225"/>
         <source>금형 이름</source>
         <translation type="unfinished"></translation>
     </message>
@@ -443,12 +453,12 @@
         <translation type="unfinished">조건 데이터 검색</translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.cpp" line="152"/>
+        <location filename="dbsearchsetting.cpp" line="154"/>
         <source>save ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="dbsearchsetting.cpp" line="154"/>
+        <location filename="dbsearchsetting.cpp" line="156"/>
         <source>save error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -504,6 +514,391 @@
         <location filename="db_serversetting.ui" line="94"/>
         <source>DB 종류</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ExelCell_Setting</name>
+    <message>
+        <location filename="exelcell_setting.ui" line="14"/>
+        <source>MainWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="36"/>
+        <source>히터</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="50"/>
+        <source>H6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="60"/>
+        <source>H5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="70"/>
+        <source>H7(Oil)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="80"/>
+        <source>H8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="90"/>
+        <source>H4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="100"/>
+        <source>H3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="110"/>
+        <source>H2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="126"/>
+        <source>H1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="197"/>
+        <source>외부온도</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="211"/>
+        <source>12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="221"/>
+        <source>11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="231"/>
+        <location filename="exelcell_setting.ui" line="540"/>
+        <source>10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="241"/>
+        <location filename="exelcell_setting.ui" line="530"/>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="251"/>
+        <location filename="exelcell_setting.ui" line="520"/>
+        <source>8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="261"/>
+        <location filename="exelcell_setting.ui" line="510"/>
+        <source>7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="271"/>
+        <location filename="exelcell_setting.ui" line="500"/>
+        <source>6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="281"/>
+        <location filename="exelcell_setting.ui" line="490"/>
+        <location filename="exelcell_setting.ui" line="853"/>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="291"/>
+        <location filename="exelcell_setting.ui" line="480"/>
+        <location filename="exelcell_setting.ui" line="843"/>
+        <location filename="exelcell_setting.ui" line="1187"/>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="301"/>
+        <location filename="exelcell_setting.ui" line="470"/>
+        <location filename="exelcell_setting.ui" line="833"/>
+        <location filename="exelcell_setting.ui" line="1177"/>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="311"/>
+        <location filename="exelcell_setting.ui" line="460"/>
+        <location filename="exelcell_setting.ui" line="823"/>
+        <location filename="exelcell_setting.ui" line="1167"/>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="327"/>
+        <location filename="exelcell_setting.ui" line="450"/>
+        <location filename="exelcell_setting.ui" line="813"/>
+        <location filename="exelcell_setting.ui" line="1157"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="426"/>
+        <source>사출</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="440"/>
+        <location filename="exelcell_setting.ui" line="883"/>
+        <location filename="exelcell_setting.ui" line="1227"/>
+        <source>거리</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="550"/>
+        <location filename="exelcell_setting.ui" line="863"/>
+        <location filename="exelcell_setting.ui" line="1207"/>
+        <source>속도</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="560"/>
+        <location filename="exelcell_setting.ui" line="873"/>
+        <source>압력</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="799"/>
+        <source>보압</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1019"/>
+        <source>사출설정</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1040"/>
+        <source>보압절환시간</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1050"/>
+        <source>보압절환압력</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1060"/>
+        <source>보압절환 사출압력</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1070"/>
+        <source>사출시간</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1080"/>
+        <source>사출지연시간</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1133"/>
+        <source>계량</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1147"/>
+        <source>강제후퇴1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1197"/>
+        <source>강제후퇴2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1217"/>
+        <source>배압</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1354"/>
+        <source>계량설정</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1375"/>
+        <source>냉각시간</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1385"/>
+        <source>계량지연시간</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1411"/>
+        <source>기계 이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1438"/>
+        <source>날 짜</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="1452"/>
+        <source>금형 이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.cpp" line="24"/>
+        <source>Excel Cell Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>HeaterName_Setting</name>
+    <message>
+        <location filename="heatername_setting.ui" line="14"/>
+        <source>MainWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="57"/>
+        <source>기계 이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="132"/>
+        <source>외부 온도 이름 설정</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="162"/>
+        <source>외부온도 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="172"/>
+        <source>외부온도 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="182"/>
+        <source>외부온도 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="192"/>
+        <source>외부온도 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="202"/>
+        <source>외부온도 5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="235"/>
+        <source>외부온도 7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="245"/>
+        <source>외부온도 6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="255"/>
+        <source>외부온도 8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="265"/>
+        <source>외부온도 9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="275"/>
+        <source>외부온도 10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="341"/>
+        <source>외부온도 11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="388"/>
+        <source>외부온도 12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="415"/>
+        <source>설정 저장</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="430"/>
+        <source>히터 이름 설정</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="486"/>
+        <source>히터 6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="496"/>
+        <source>히터 7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="512"/>
+        <source>히터 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="529"/>
+        <source>히터 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="539"/>
+        <source>히터 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="552"/>
+        <source>히터 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="562"/>
+        <source>히터 5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.ui" line="572"/>
+        <source>히터 8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="heatername_setting.cpp" line="24"/>
+        <source>Heater Setting</source>
+        <translation type="unfinished">히터 이름 설정</translation>
     </message>
 </context>
 <context>
@@ -630,7 +1025,7 @@
         <location filename="moldcondition.ui" line="50"/>
         <location filename="moldcondition.ui" line="519"/>
         <location filename="moldcondition.ui" line="810"/>
-        <location filename="moldcondition.ui" line="1135"/>
+        <location filename="moldcondition.ui" line="1141"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -638,14 +1033,14 @@
         <location filename="moldcondition.ui" line="60"/>
         <location filename="moldcondition.ui" line="555"/>
         <location filename="moldcondition.ui" line="840"/>
-        <location filename="moldcondition.ui" line="1145"/>
+        <location filename="moldcondition.ui" line="1151"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="70"/>
         <location filename="moldcondition.ui" line="509"/>
-        <location filename="moldcondition.ui" line="1125"/>
+        <location filename="moldcondition.ui" line="1131"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -658,7 +1053,7 @@
     <message>
         <location filename="moldcondition.ui" line="90"/>
         <location filename="moldcondition.ui" line="782"/>
-        <location filename="moldcondition.ui" line="1198"/>
+        <location filename="moldcondition.ui" line="1204"/>
         <source>속도</source>
         <translation type="unfinished"></translation>
     </message>
@@ -684,7 +1079,7 @@
         <location filename="moldcondition.ui" line="127"/>
         <location filename="moldcondition.ui" line="529"/>
         <location filename="moldcondition.ui" line="820"/>
-        <location filename="moldcondition.ui" line="1115"/>
+        <location filename="moldcondition.ui" line="1121"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -696,7 +1091,7 @@
     </message>
     <message>
         <location filename="moldcondition.ui" line="147"/>
-        <location filename="moldcondition.ui" line="1191"/>
+        <location filename="moldcondition.ui" line="1197"/>
         <source>압력</source>
         <translation type="unfinished"></translation>
     </message>
@@ -704,7 +1099,7 @@
         <location filename="moldcondition.ui" line="154"/>
         <location filename="moldcondition.ui" line="545"/>
         <location filename="moldcondition.ui" line="830"/>
-        <location filename="moldcondition.ui" line="1161"/>
+        <location filename="moldcondition.ui" line="1167"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -720,92 +1115,87 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1445"/>
+        <location filename="moldcondition.ui" line="1463"/>
         <source>보압절환 사출압력</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1469"/>
+        <location filename="moldcondition.ui" line="1490"/>
         <source>히터</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1489"/>
+        <location filename="moldcondition.ui" line="1510"/>
         <source>H1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1499"/>
+        <location filename="moldcondition.ui" line="1520"/>
         <source>H3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1509"/>
+        <location filename="moldcondition.ui" line="1530"/>
         <source>H2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1519"/>
+        <location filename="moldcondition.ui" line="1540"/>
         <source>H4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1529"/>
+        <location filename="moldcondition.ui" line="1550"/>
         <source>H5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1539"/>
+        <location filename="moldcondition.ui" line="1560"/>
         <source>H6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1549"/>
+        <location filename="moldcondition.ui" line="1570"/>
         <source>H7(Oil)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1559"/>
+        <location filename="moldcondition.ui" line="1580"/>
         <source>H8(Hopper)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1726"/>
-        <source>금형이름</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="moldcondition.ui" line="1101"/>
+        <location filename="moldcondition.ui" line="1107"/>
         <source>보압</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1285"/>
+        <location filename="moldcondition.ui" line="1291"/>
         <source>시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1363"/>
+        <location filename="moldcondition.ui" line="1369"/>
         <source>사출설정</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1377"/>
+        <location filename="moldcondition.ui" line="1383"/>
         <source>보압절환위치</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1384"/>
+        <location filename="moldcondition.ui" line="1393"/>
         <source>보압절환시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1391"/>
+        <location filename="moldcondition.ui" line="1403"/>
         <source>사출시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1398"/>
+        <location filename="moldcondition.ui" line="1413"/>
         <source>사출지연시간</source>
         <translation type="unfinished"></translation>
     </message>
@@ -840,7 +1230,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1043"/>
+        <location filename="moldcondition.ui" line="1046"/>
         <source>냉각시간</source>
         <translation type="unfinished"></translation>
     </message>
@@ -860,27 +1250,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1709"/>
+        <location filename="moldcondition.ui" line="1730"/>
         <source>기계 이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1679"/>
+        <location filename="moldcondition.ui" line="1700"/>
         <source>날 짜</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1794"/>
+        <location filename="moldcondition.ui" line="1747"/>
+        <source>금형 이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="moldcondition.ui" line="1828"/>
         <source>Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1805"/>
+        <location filename="moldcondition.ui" line="1839"/>
         <source>Print</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1810"/>
+        <location filename="moldcondition.ui" line="1844"/>
         <source>Excel Save</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1378,6 +1773,94 @@
     <message>
         <location filename="singlegraph.ui" line="140"/>
         <source>기계이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>data_graph_m_widget</name>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="14"/>
+        <source>MainWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="38"/>
+        <source>기계이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="51"/>
+        <source>검색 종료일</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="74"/>
+        <source>출력</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="81"/>
+        <source>검색 시작일</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="98"/>
+        <source>금형 자료 이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="143"/>
+        <source>상</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="150"/>
+        <source>하</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="157"/>
+        <source>좌</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="164"/>
+        <source>우</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="171"/>
+        <source>확대</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="178"/>
+        <source>축소</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="185"/>
+        <source>줌 리셋</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="192"/>
+        <source>tooltip 제거</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.ui" line="217"/>
+        <source>temp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.cpp" line="21"/>
+        <source>data chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="data_graph_m_widget.cpp" line="22"/>
+        <source>currentcount</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
