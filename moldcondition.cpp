@@ -32,6 +32,8 @@ void MoldCondition::init()
     else
         qDebug()<<"DB Open";
 
+    connect(ui->menubar, SIGNAL(triggered(QAction*)), this, SLOT(menubartriggered(QAction*)));
+
     injspd_Lilist<<ui->Li_injspd1<<ui->Li_injspd2<<ui->Li_injspd3<<ui->Li_injspd4<<ui->Li_injspd5<<ui->Li_injspd6
        <<ui->Li_injspd7<<ui->Li_injspd8<<ui->Li_injspd9<<ui->Li_injspd10; //사출속도 UI 셋팅
 
@@ -61,6 +63,37 @@ void MoldCondition::init()
 
     temperature_name_Lalist<<ui->La_Temp1<<ui->La_Temp2<<ui->La_Temp3<<ui->La_Temp4<<ui->La_Temp5<<ui->La_Temp6<<ui->La_Temp7
                           <<ui->La_Temp8<<ui->La_Temp9<<ui->La_Temp10<<ui->La_Temp11<<ui->La_Temp12; //외부온도이름 UI 셋팅
+}
+
+void MoldCondition::menubartriggered(QAction *action)
+{
+    QString ObjectName;
+
+    ObjectName = action->objectName();
+
+    if(!ObjectName.compare("Excel_Cell"))
+    {
+        ExelCell_Setting *m_Excel_Cell = new ExelCell_Setting(machine_name);
+        m_Excel_Cell->show();
+    }
+    else if(!ObjectName.compare("Excel_Save"))
+    {
+        int error_Number;
+        error_Number = Excel_Save();
+
+//        switch(error_Number) //에러검출 코드
+//        {
+//            case 0:
+//                qDebug()<<"Config folder Not exist";
+//            break;
+//            case 1:
+//                qDebug()<<"Query Fail";
+//            break;
+//            case 2:
+//                qDebug()<<"Cancel Click";
+//            break;
+//        }
+    }
 }
 
 void MoldCondition::Execute_Query()
@@ -325,7 +358,7 @@ void MoldCondition::Display(QString machine_info, QString mold_name, QString inj
             heater_Lilist.at(i)->setEnabled(0); //Off 히터 UI Disable
         else
         {
-            if(count < heater.count()) //출력갯수와 히터 저장 갯수 비
+            if(count < heater.count()) //출력갯수와 히터 저장 갯수 비교
             {
                 heater_Lilist.at(i)->setText(heater.at(count)); //히터 1~8 출력
                 count++;
@@ -343,7 +376,7 @@ void MoldCondition::Display(QString machine_info, QString mold_name, QString inj
             temperature_Lilist.at(i)->setEnabled(0); //외부온도 UI Disable
         else
         {
-            if(count <=temperature.count()) //출력 갯수와 외부온도 저장 갯수 비
+            if(count <=temperature.count()) //출력 갯수와 외부온도 저장 갯수 비교
             {
                 temperature_Lilist.at(i)->setText(temperature.at(count)); //외부온도 출력
                 count++;
@@ -401,4 +434,128 @@ void MoldCondition::Display(QString machine_info, QString mold_name, QString inj
     /*계량설정 정보*/
     ui->Li_Cooltime->setText(cooltime); //냉각시간 출력
     ui->Li_Chgdeltime->setText(chgdeltime); //계량지연시간 출력
+}
+
+int MoldCondition::Excel_Save() //엑셀저장
+{
+    QString Current_Path; //현재실행 경로
+    QString File_Path; //현재파일 위치 경로
+    QString Dir_Name("Config"); //디렉터리 이름 설정
+    QDir File_Dir; //디렉터리 변수
+    QSqlQuery Excel_Query(Mold_DB); //DB 설정
+    bool check;
+
+    Current_Path = QApplication::applicationDirPath(); //현재 DBA 실행 디렉터리 가져오기
+    File_Path = Current_Path; //현재경로 대입
+
+    File_Dir.setPath(Current_Path); //현재 디렉터리 설정
+
+    if(!File_Dir.exists(Dir_Name)) //폴더 유무 확인
+    {
+        qDebug()<<"File Not Exists";
+        QMessageBox::warning(this, tr("Warning"), tr("Molding Condition.xlsx file does not exist."), QMessageBox::Ok); //경고 메시지 출력
+        return 0; //폴더없음
+    }
+    else
+    {
+        check = Excel_Query.exec(QString("select * From ExcelCell_Info where Machine_Name='%1'").arg(machine_name)); //쿼리 실행
+
+        if(!check)
+        {
+            qDebug()<<"Excel Query Fail";
+            return 1; //쿼리실패
+        }
+
+        Excel_Query.next();
+
+        File_Path.append("/Config"); //디렉터리 추가
+        File_Dir.cd(File_Path); //디렉터리 경로 변경
+
+        File_Path.append("/MoldingCondition.xlsx");
+
+        qDebug()<<File_Path;
+
+        QString Save = QFileDialog::getSaveFileName(this, tr("Save As"), "", tr("All Files (*);;Text Files (*.xlsx)"));
+
+        if(Save != "")
+        {
+            QXlsx::Document Xlsx(File_Path);
+
+            /*기계이름*/
+            Xlsx.write(Excel_Query.value("Cell_Machine_Name").toString(), ui->Li_Machine_name->text());
+
+            /*날짜*/
+            Xlsx.write(Excel_Query.value("Cell_DateTime").toString(), ui->Li_Date->text());
+
+            /*금형이름*/
+            Xlsx.write(Excel_Query.value("Cell_Moldname").toString(), ui->Li_Moldname->text());
+
+            for(int i=0; i<TEMPERATURE; i++)
+            {
+                /*사출*/
+                if(i<INJSTEP)
+                {
+                    Xlsx.write(Excel_Query.value(QString("Cell_Injspd_%1").arg(i+1)).toString(), injspd_Lilist.at(i)->text()); //사출속도
+                    Xlsx.write(Excel_Query.value(QString("Cell_Injprs_%1").arg(i+1)).toString(), injprs_Lilist.at(i)->text()); //사출압력
+                    Xlsx.write(Excel_Query.value(QString("Cell_Injpos_%1").arg(i+1)).toString(), injpos_Lilist.at(i)->text()); //사출거리
+                }
+
+                /*보압*/
+                if(i<HOLDSTEP)
+                {
+                    Xlsx.write(Excel_Query.value(QString("Cell_Holdspd_%1").arg(i+1)).toString(), holdspd_Lilist.at(i)->text()); //보압속도
+                    Xlsx.write(Excel_Query.value(QString("Cell_Holdprs_%1").arg(i+1)).toString(), holdprs_Lilist.at(i)->text()); //보압압력
+                    Xlsx.write(Excel_Query.value(QString("Cell_Holdtime_%1").arg(i+1)).toString(), holdtime_Lilist.at(i)->text()); //보압시간
+                }
+
+                /*계량*/
+                if(i<CHGSTEP)
+                {
+                    Xlsx.write(Excel_Query.value(QString("Cell_Chgspd_%1").arg(i+1)).toString(), chgspd_Lilist.at(i)->text()); //계량속도
+                    Xlsx.write(Excel_Query.value(QString("Cell_Chgbps_%1").arg(i+1)).toString(), chgbps_Lilist.at(i)->text()); //배압
+                    Xlsx.write(Excel_Query.value(QString("Cell_Chgpos_%1").arg(i+1)).toString(), chgpos_Lilist.at(i)->text()); //계량위치
+                }
+
+                /*강제후퇴*/
+                if(i<2)
+                {
+                    switch(i)
+                    {
+                        case 0:
+                            Xlsx.write(Excel_Query.value(QString("Cell_Suckspd_%1").arg(i+1)).toString(), ui->Li_Suckpos1->text()); //강제후퇴 속도 1
+                            Xlsx.write(Excel_Query.value(QString("Cell_Suckpos_%1").arg(i+1)).toString(), ui->Li_Suckpos1->text()); //강제후퇴 거리 1
+                            break;
+                        case 1:
+                            Xlsx.write(Excel_Query.value(QString("Cell_Suckspd_%1").arg(i+1)).toString(), ui->Li_Suckspd2->text()); //강제후퇴 속도 2
+                            Xlsx.write(Excel_Query.value(QString("Cell_Suckpos_%1").arg(i+1)).toString(), ui->Li_Suckpos2->text()); //강제후퇴 거리 2
+                            break;
+                    }
+                }
+
+                /*히터*/
+                if(i<HEATER)
+                {
+                    Xlsx.write(Excel_Query.value(QString("Cell_HeaterName_%1").arg(i+1)).toString(), heater_name_Lalist.at(i)->text()); //히터이름1~8
+                    Xlsx.write(Excel_Query.value(QString("Cell_Heater_%1").arg(i+1)).toString(), heater_Lilist.at(i)->text()); //히터1~8
+                }
+
+                /*외부온도*/
+                Xlsx.write(Excel_Query.value(QString("Cell_TempName_%1").arg(i+1)).toString(), temperature_name_Lalist.at(i)->text()); //외부온도1~12
+                Xlsx.write(Excel_Query.value(QString("Cell_Temp_%1").arg(i+1)).toString(), temperature_Lilist.at(i)->text()); //외부온도1~12
+            }
+
+            Xlsx.write(Excel_Query.value("Cell_Sovtime").toString(), ui->Li_Sovtime->text()); //보압절환시간
+            Xlsx.write(Excel_Query.value("Cell_Sovpos").toString(), ui->Li_Sovprs->text()); //보압절환위치
+            Xlsx.write(Excel_Query.value("Cell_Sovprs").toString(), ui->Li_Sovprs->text()); //보압절환 사출압력
+            Xlsx.write(Excel_Query.value("Cell_Injtime").toString(), ui->Li_Injtime->text()); //사출시간
+            Xlsx.write(Excel_Query.value("Cell_Injdeltime").toString(), ui->Li_Injdeltime->text()); //사출지연시간
+
+            Xlsx.write(Excel_Query.value("Cell_Cooltime").toString(), ui->Li_Cooltime->text()); //냉각시간
+            Xlsx.write(Excel_Query.value("Cell_Chgdeltime").toString(), ui->Li_Chgdeltime->text()); //계량지연시간
+
+            Xlsx.saveAs(Save); //다른이름으로 저장
+        }
+        else
+            return 2; //취소버튼 클릭
+    }
 }
