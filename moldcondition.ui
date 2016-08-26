@@ -802,6 +802,9 @@
                  <property name="text">
                   <string>강제후퇴1</string>
                  </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
                 </widget>
                </item>
                <item row="0" column="5">
@@ -848,6 +851,9 @@
                 <widget class="QLabel" name="label_38">
                  <property name="text">
                   <string>강제후퇴2</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1035,12 +1041,18 @@
                  <property name="text">
                   <string>계량지연시간</string>
                  </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
                 </widget>
                </item>
                <item row="0" column="0">
                 <widget class="QLabel" name="label_39">
                  <property name="text">
                   <string>냉각시간</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1376,12 +1388,18 @@
                  <property name="text">
                   <string>보압절환위치</string>
                  </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
                 </widget>
                </item>
                <item row="0" column="0">
                 <widget class="QLabel" name="La_Sovtime">
                  <property name="text">
                   <string>보압절환시간</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1390,6 +1408,9 @@
                  <property name="text">
                   <string>사출시간</string>
                  </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
                 </widget>
                </item>
                <item row="5" column="0">
@@ -1397,10 +1418,19 @@
                  <property name="text">
                   <string>사출지연시간</string>
                  </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
                 </widget>
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="Li_Sovtime">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
                  </property>
@@ -1443,6 +1473,9 @@
                 <widget class="QLabel" name="La_sovprs">
                  <property name="text">
                   <string>보압절환 사출압력</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1723,12 +1756,25 @@
           <item row="0" column="10">
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>금형이름</string>
+             <string>금형 이름</string>
             </property>
            </widget>
           </item>
           <item row="0" column="3">
            <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="12">
+           <spacer name="horizontalSpacer_5">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -1795,9 +1841,16 @@
     </property>
     <addaction name="actionPrint"/>
     <addaction name="separator"/>
-    <addaction name="actionExcel_Save"/>
+    <addaction name="Excel_Save"/>
+   </widget>
+   <widget class="QMenu" name="menuSetting">
+    <property name="title">
+     <string>Setting</string>
+    </property>
+    <addaction name="Excel_Cell"/>
    </widget>
    <addaction name="menuMenu"/>
+   <addaction name="menuSetting"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionPrint">
@@ -1805,9 +1858,14 @@
     <string>Print</string>
    </property>
   </action>
-  <action name="actionExcel_Save">
+  <action name="Excel_Save">
    <property name="text">
     <string>Excel Save</string>
+   </property>
+  </action>
+  <action name="Excel_Cell">
+   <property name="text">
+    <string>Excel Cell</string>
    </property>
   </action>
  </widget>

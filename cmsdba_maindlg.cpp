@@ -22,7 +22,6 @@ void CMSDBA_MainDlg::init()
     QPixmap Picture(":/Icon/res/Woojin Logo.png"); //로고 이미지
     trans = new QTranslator();
 
-
     select_machine_name = "";
 
     ui->label_2->setPixmap(Picture);
