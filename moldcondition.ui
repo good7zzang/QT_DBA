@@ -1042,7 +1042,7 @@
                   <string>계량지연시간</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1052,7 +1052,7 @@
                   <string>냉각시간</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1389,7 +1389,7 @@
                   <string>보압절환위치</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1399,7 +1399,7 @@
                   <string>보압절환시간</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1409,7 +1409,7 @@
                   <string>사출시간</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1419,12 +1419,18 @@
                   <string>사출지연시간</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
                <item row="0" column="1">
                 <widget class="QLineEdit" name="Li_Sovtime">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
                  </property>
@@ -1469,7 +1475,7 @@
                   <string>보압절환 사출압력</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1835,7 +1841,7 @@
     </property>
     <addaction name="actionPrint"/>
     <addaction name="separator"/>
-    <addaction name="actionExcel_Save"/>
+    <addaction name="Excel_Save"/>
    </widget>
    <widget class="QMenu" name="menuSetting">
     <property name="title">
@@ -1852,7 +1858,7 @@
     <string>Print</string>
    </property>
   </action>
-  <action name="actionExcel_Save">
+  <action name="Excel_Save">
    <property name="text">
     <string>Excel Save</string>
    </property>
