@@ -6,7 +6,7 @@ ZoomChartView::ZoomChartView(QChart *chart, QWidget *parent)
     setRubberBand(QChartView::RectangleRubberBand);
 //    setRubberBandSelectionMode(Qt::ContainsItemBoundingRect);
     m_coordX = new QGraphicsSimpleTextItem(chart);
-    qDebug()<<this->size().height();
+
     m_coordX->setPos(50, this->size().height());
 
     m_coordX->setText("X: ");
