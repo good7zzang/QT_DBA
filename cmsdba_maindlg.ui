@@ -185,7 +185,15 @@
     <property name="title">
      <string>Menu</string>
     </property>
+    <widget class="QMenu" name="menuLang_change">
+     <property name="title">
+      <string>lang_change</string>
+     </property>
+     <addaction name="actionKo"/>
+     <addaction name="actionEn"/>
+    </widget>
     <addaction name="actionConnect"/>
+    <addaction name="menuLang_change"/>
    </widget>
    <widget class="QMenu" name="menuDatabase_Search">
     <property name="title">
@@ -240,6 +248,16 @@
   <action name="actiondatagrhape">
    <property name="text">
     <string>datagraph</string>
+   </property>
+  </action>
+  <action name="actionKo">
+   <property name="text">
+    <string>Lang_ko</string>
+   </property>
+  </action>
+  <action name="actionEn">
+   <property name="text">
+    <string>Lang_en</string>
    </property>
   </action>
  </widget>

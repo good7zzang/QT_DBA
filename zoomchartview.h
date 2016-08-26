@@ -14,6 +14,7 @@ public:
     explicit ZoomChartView(QChart *chart, QWidget *parent = 0);
     QGraphicsSimpleTextItem *m_coordX;
     QGraphicsSimpleTextItem *m_coordY;
+    QString Xvalue;
 private:
     bool m_isTouching;
 
@@ -25,6 +26,9 @@ protected:
     void keyPressEvent(QKeyEvent *event);
     void dragEnterEvent(QDragEnterEvent *event);
     void dragLeaveEvent(QDragLeaveEvent *event);
+    void resizeEvent(QResizeEvent *event);
+
+
 
 
 signals:

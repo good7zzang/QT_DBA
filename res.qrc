@@ -15,5 +15,6 @@
     </qresource>
     <qresource prefix="/Lang">
         <file>Lang_ko_KR.qm</file>
+        <file>Lang_en_EN.qm</file>
     </qresource>
 </RCC>
