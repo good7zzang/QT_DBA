@@ -183,7 +183,7 @@
         <location filename="cmsdba_maindlg.ui" line="186"/>
         <source>Menu</source>
         <oldsource>Menu Bar</oldsource>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">메뉴</translation>
     </message>
     <message>
         <location filename="cmsdba_maindlg.ui" line="192"/>
@@ -524,248 +524,215 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="36"/>
+        <location filename="exelcell_setting.ui" line="1148"/>
         <source>히터</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="50"/>
-        <source>H6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="60"/>
-        <source>H5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="70"/>
-        <source>H7(Oil)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="80"/>
-        <source>H8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="90"/>
-        <source>H4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="100"/>
-        <source>H3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="110"/>
-        <source>H2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="126"/>
-        <source>H1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="197"/>
+        <location filename="exelcell_setting.ui" line="548"/>
         <source>외부온도</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="211"/>
-        <source>12</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="221"/>
-        <source>11</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="231"/>
-        <location filename="exelcell_setting.ui" line="540"/>
+        <location filename="exelcell_setting.ui" line="903"/>
         <source>10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="241"/>
-        <location filename="exelcell_setting.ui" line="530"/>
+        <location filename="exelcell_setting.ui" line="893"/>
         <source>9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="251"/>
-        <location filename="exelcell_setting.ui" line="520"/>
+        <location filename="exelcell_setting.ui" line="883"/>
         <source>8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="261"/>
-        <location filename="exelcell_setting.ui" line="510"/>
+        <location filename="exelcell_setting.ui" line="873"/>
         <source>7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="271"/>
-        <location filename="exelcell_setting.ui" line="500"/>
+        <location filename="exelcell_setting.ui" line="863"/>
         <source>6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="281"/>
-        <location filename="exelcell_setting.ui" line="490"/>
         <location filename="exelcell_setting.ui" line="853"/>
+        <location filename="exelcell_setting.ui" line="1361"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="291"/>
-        <location filename="exelcell_setting.ui" line="480"/>
+        <location filename="exelcell_setting.ui" line="1558"/>
+        <source>보압절환위치</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="164"/>
         <location filename="exelcell_setting.ui" line="843"/>
-        <location filename="exelcell_setting.ui" line="1187"/>
+        <location filename="exelcell_setting.ui" line="1351"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="301"/>
-        <location filename="exelcell_setting.ui" line="470"/>
+        <location filename="exelcell_setting.ui" line="154"/>
         <location filename="exelcell_setting.ui" line="833"/>
-        <location filename="exelcell_setting.ui" line="1177"/>
+        <location filename="exelcell_setting.ui" line="1341"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="311"/>
-        <location filename="exelcell_setting.ui" line="460"/>
+        <location filename="exelcell_setting.ui" line="144"/>
         <location filename="exelcell_setting.ui" line="823"/>
-        <location filename="exelcell_setting.ui" line="1167"/>
+        <location filename="exelcell_setting.ui" line="1331"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="327"/>
-        <location filename="exelcell_setting.ui" line="450"/>
+        <location filename="exelcell_setting.ui" line="134"/>
         <location filename="exelcell_setting.ui" line="813"/>
-        <location filename="exelcell_setting.ui" line="1157"/>
+        <location filename="exelcell_setting.ui" line="1321"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="426"/>
+        <location filename="exelcell_setting.ui" line="789"/>
         <source>사출</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="440"/>
-        <location filename="exelcell_setting.ui" line="883"/>
-        <location filename="exelcell_setting.ui" line="1227"/>
+        <location filename="exelcell_setting.ui" line="204"/>
+        <location filename="exelcell_setting.ui" line="803"/>
+        <location filename="exelcell_setting.ui" line="1391"/>
         <source>거리</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="550"/>
-        <location filename="exelcell_setting.ui" line="863"/>
-        <location filename="exelcell_setting.ui" line="1207"/>
+        <location filename="exelcell_setting.ui" line="38"/>
+        <source>기계 호기</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="93"/>
+        <source>Change all the same</source>
+        <translation type="unfinished">모두 변경</translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="184"/>
+        <location filename="exelcell_setting.ui" line="913"/>
+        <location filename="exelcell_setting.ui" line="1371"/>
         <source>속도</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="560"/>
-        <location filename="exelcell_setting.ui" line="873"/>
+        <location filename="exelcell_setting.ui" line="646"/>
+        <location filename="exelcell_setting.ui" line="1162"/>
+        <source>온도 이름</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="653"/>
+        <location filename="exelcell_setting.ui" line="1169"/>
+        <source>온도 값</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="748"/>
+        <source>설정 저장</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="exelcell_setting.ui" line="923"/>
+        <location filename="exelcell_setting.ui" line="1381"/>
         <source>압력</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="799"/>
+        <location filename="exelcell_setting.ui" line="1307"/>
         <source>보압</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1019"/>
+        <location filename="exelcell_setting.ui" line="1527"/>
         <source>사출설정</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1040"/>
+        <location filename="exelcell_setting.ui" line="1548"/>
         <source>보압절환시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1050"/>
-        <source>보압절환압력</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="exelcell_setting.ui" line="1060"/>
+        <location filename="exelcell_setting.ui" line="1568"/>
         <source>보압절환 사출압력</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1070"/>
+        <location filename="exelcell_setting.ui" line="1578"/>
         <source>사출시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1080"/>
+        <location filename="exelcell_setting.ui" line="1588"/>
         <source>사출지연시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1133"/>
+        <location filename="exelcell_setting.ui" line="110"/>
         <source>계량</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1147"/>
+        <location filename="exelcell_setting.ui" line="124"/>
         <source>강제후퇴1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1197"/>
+        <location filename="exelcell_setting.ui" line="174"/>
         <source>강제후퇴2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1217"/>
+        <location filename="exelcell_setting.ui" line="194"/>
         <source>배압</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1354"/>
+        <location filename="exelcell_setting.ui" line="331"/>
         <source>계량설정</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1375"/>
+        <location filename="exelcell_setting.ui" line="352"/>
         <source>냉각시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1385"/>
+        <location filename="exelcell_setting.ui" line="362"/>
         <source>계량지연시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1411"/>
+        <location filename="exelcell_setting.ui" line="388"/>
         <source>기계 이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1438"/>
+        <location filename="exelcell_setting.ui" line="415"/>
         <source>날 짜</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.ui" line="1452"/>
+        <location filename="exelcell_setting.ui" line="429"/>
         <source>금형 이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="exelcell_setting.cpp" line="24"/>
+        <location filename="exelcell_setting.cpp" line="25"/>
         <source>Excel Cell Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">엑셀 형식 설정</translation>
     </message>
 </context>
 <context>
@@ -1024,23 +991,23 @@
     <message>
         <location filename="moldcondition.ui" line="50"/>
         <location filename="moldcondition.ui" line="519"/>
-        <location filename="moldcondition.ui" line="810"/>
-        <location filename="moldcondition.ui" line="1141"/>
+        <location filename="moldcondition.ui" line="813"/>
+        <location filename="moldcondition.ui" line="1147"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="60"/>
         <location filename="moldcondition.ui" line="555"/>
-        <location filename="moldcondition.ui" line="840"/>
-        <location filename="moldcondition.ui" line="1151"/>
+        <location filename="moldcondition.ui" line="843"/>
+        <location filename="moldcondition.ui" line="1157"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="70"/>
         <location filename="moldcondition.ui" line="509"/>
-        <location filename="moldcondition.ui" line="1131"/>
+        <location filename="moldcondition.ui" line="1137"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1053,7 +1020,7 @@
     <message>
         <location filename="moldcondition.ui" line="90"/>
         <location filename="moldcondition.ui" line="782"/>
-        <location filename="moldcondition.ui" line="1204"/>
+        <location filename="moldcondition.ui" line="1210"/>
         <source>속도</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1078,8 +1045,8 @@
     <message>
         <location filename="moldcondition.ui" line="127"/>
         <location filename="moldcondition.ui" line="529"/>
-        <location filename="moldcondition.ui" line="820"/>
-        <location filename="moldcondition.ui" line="1121"/>
+        <location filename="moldcondition.ui" line="823"/>
+        <location filename="moldcondition.ui" line="1127"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1091,15 +1058,15 @@
     </message>
     <message>
         <location filename="moldcondition.ui" line="147"/>
-        <location filename="moldcondition.ui" line="1197"/>
+        <location filename="moldcondition.ui" line="1203"/>
         <source>압력</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="moldcondition.ui" line="154"/>
         <location filename="moldcondition.ui" line="545"/>
-        <location filename="moldcondition.ui" line="830"/>
-        <location filename="moldcondition.ui" line="1167"/>
+        <location filename="moldcondition.ui" line="833"/>
+        <location filename="moldcondition.ui" line="1173"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1115,87 +1082,92 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1463"/>
+        <location filename="moldcondition.ui" line="1475"/>
         <source>보압절환 사출압력</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1490"/>
+        <location filename="moldcondition.ui" line="1502"/>
         <source>히터</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1510"/>
+        <location filename="moldcondition.ui" line="1522"/>
         <source>H1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1520"/>
+        <location filename="moldcondition.ui" line="1532"/>
         <source>H3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1530"/>
+        <location filename="moldcondition.ui" line="1542"/>
         <source>H2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1540"/>
+        <location filename="moldcondition.ui" line="1552"/>
         <source>H4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1550"/>
+        <location filename="moldcondition.ui" line="1562"/>
         <source>H5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1560"/>
+        <location filename="moldcondition.ui" line="1572"/>
         <source>H6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1570"/>
+        <location filename="moldcondition.ui" line="1582"/>
         <source>H7(Oil)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1580"/>
+        <location filename="moldcondition.ui" line="1592"/>
         <source>H8(Hopper)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1107"/>
+        <location filename="moldcondition.ui" line="1868"/>
+        <source>Excel Cell</source>
+        <translation type="unfinished">엑셀 셀 </translation>
+    </message>
+    <message>
+        <location filename="moldcondition.ui" line="1113"/>
         <source>보압</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1291"/>
+        <location filename="moldcondition.ui" line="1297"/>
         <source>시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1369"/>
+        <location filename="moldcondition.ui" line="1375"/>
         <source>사출설정</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1383"/>
+        <location filename="moldcondition.ui" line="1389"/>
         <source>보압절환위치</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1393"/>
+        <location filename="moldcondition.ui" line="1399"/>
         <source>보압절환시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1403"/>
+        <location filename="moldcondition.ui" line="1409"/>
         <source>사출시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1413"/>
+        <location filename="moldcondition.ui" line="1419"/>
         <source>사출지연시간</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1215,22 +1187,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="850"/>
+        <location filename="moldcondition.ui" line="853"/>
         <source>강제후퇴2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1022"/>
+        <location filename="moldcondition.ui" line="1028"/>
         <source>계량설정</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1036"/>
+        <location filename="moldcondition.ui" line="1042"/>
         <source>계량지연시간</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1046"/>
+        <location filename="moldcondition.ui" line="1052"/>
         <source>냉각시간</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1250,39 +1222,64 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1730"/>
+        <location filename="moldcondition.ui" line="1742"/>
         <source>기계 이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1700"/>
+        <location filename="moldcondition.ui" line="1712"/>
         <source>날 짜</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1747"/>
+        <location filename="moldcondition.ui" line="1759"/>
         <source>금형 이름</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1828"/>
+        <location filename="moldcondition.ui" line="1840"/>
         <source>Menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">메뉴</translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1839"/>
+        <location filename="moldcondition.ui" line="1848"/>
+        <source>Setting</source>
+        <translation type="unfinished">설정</translation>
+    </message>
+    <message>
+        <location filename="moldcondition.ui" line="1858"/>
         <source>Print</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="moldcondition.ui" line="1844"/>
+        <location filename="moldcondition.ui" line="1863"/>
         <source>Excel Save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">엑셀 저장</translation>
     </message>
     <message>
         <location filename="moldcondition.cpp" line="26"/>
         <source>Molding Condition</source>
         <translation type="unfinished">성형조건</translation>
+    </message>
+    <message>
+        <location filename="moldcondition.cpp" line="456"/>
+        <source>Warning</source>
+        <translation type="unfinished">경고</translation>
+    </message>
+    <message>
+        <location filename="moldcondition.cpp" line="456"/>
+        <source>Molding Condition.xlsx file does not exist.</source>
+        <translation type="unfinished">Molding Condition.xlsx 엑셀 파일을 찾을 수 없습니다.</translation>
+    </message>
+    <message>
+        <location filename="moldcondition.cpp" line="478"/>
+        <source>Save As</source>
+        <translation type="unfinished">다른 이름으로 저장</translation>
+    </message>
+    <message>
+        <location filename="moldcondition.cpp" line="478"/>
+        <source>All Files (*);;Text Files (*.xlsx)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1611,7 +1608,7 @@
     <message>
         <location filename="moldcondition_report.ui" line="381"/>
         <source>Menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">메뉴</translation>
     </message>
 </context>
 <context>

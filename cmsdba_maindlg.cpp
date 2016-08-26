@@ -21,7 +21,6 @@ void CMSDBA_MainDlg::init()
     Toolbarinit();
     QPixmap Picture(":/Icon/res/Woojin Logo.png"); //로고 이미지
 
-
     select_machine_name = "";
 
     ui->label_2->setPixmap(Picture);
