@@ -356,18 +356,191 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
         temp_series->setName(selecttext);
         remotequely_rec.first();
 
-        if(selecttext == Cycle_time){
+        if(selecttext == Injection_time){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Injection_Time").toDouble());
+            }
+        }else if(selecttext == Filling_time){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Filling_Time").toDouble());
+            }
+        }else if(selecttext == Plasticizing_time){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Plasticizing_Time").toDouble());
+            }
+        }else if(selecttext == Cycle_time){
+                    while(remotequely_rec.next()){
+                        temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                            ,remotequely_rec.value("Cycle_Time").toDouble());
+                    }
+        }else if(selecttext == Clamp_close_time){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Clamp_Close_Time").toDouble());
+            }
+        }else if(selecttext == Cushion_position){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Cushion_Position").toDouble());
+            }
+        }else if(selecttext == Switch_over_position){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Switch_Over_Position").toDouble());
+            }
+        }else if(selecttext == Plasticizing_position){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Plasticizing_Position").toDouble());
+            }
+        }else if(selecttext == Clamp_open_position){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Clamp_Open_Position").toDouble());
+            }
+        }else if(selecttext == Max_injection_speed){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Max_Injection_Speed").toDouble());
+            }
+        }else if(selecttext == Max_Screw_RPM){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Max_Screw_RPM").toDouble());
+            }
+        }else if(selecttext == Average_screw_RPM){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Average_Screw_RPM").toDouble());
+            }
+        }else if(selecttext == Max_injection_pressure){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Max_Injection_Pressure").toDouble());
+            }
+        }else if(selecttext == Max_Switch_Over_Pressure){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Max_Switch_Over_Pressure").toDouble());
+            }
+        }else if(selecttext == Max_back_pressure){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Max_Back_Pressure").toDouble());
+            }
+        }else if(selecttext == Average_Back_Pressure){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Average_Back_Pressure").toDouble());
+            }
+        }else if(selecttext == act_i_Berrel_Temperature_1->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Barrel_Temperature_1").toDouble());
+            }
+        }else if(selecttext == act_i_Berrel_Temperature_2->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Barrel_Temperature_2").toDouble());
+            }
+        }else if(selecttext == act_i_Berrel_Temperature_3->text()){
             while(remotequely_rec.next()){
                 temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
                                     ,remotequely_rec.value("Barrel_Temperature_3").toDouble());
             }
-
-        }else if(selecttext == Injection_time){
+        }else if(selecttext == act_i_Berrel_Temperature_4->text()){
             while(remotequely_rec.next()){
                 temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
                                     ,remotequely_rec.value("Barrel_Temperature_4").toDouble());
             }
-
+        }else if(selecttext == act_i_Berrel_Temperature_5->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Barrel_Temperature_5").toDouble());
+            }
+        }else if(selecttext == act_i_Berrel_Temperature_6->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Barrel_Temperature_6").toDouble());
+            }
+        }else if(selecttext == act_i_Berrel_Temperature_7->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Barrel_Temperature_7").toDouble());
+            }
+        }else if(selecttext == act_i_Hopper_Temperature->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Hopper_Temperature").toDouble());
+            }
+        }else if(selecttext == act_i_Hopper_Temperature->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Hopper_Temperature").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_1->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_1").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_2->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_2").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_3->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_3").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_4->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_4").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_5->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_5").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_6->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_6").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_7->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_7").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_8->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_8").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_9->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_9").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_10->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_10").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_11->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_11").toDouble());
+            }
+        }else if(selecttext == act_i_Mold_Temperature_12->text()){
+            while(remotequely_rec.next()){
+                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec.value("Mold_Temperature_12").toDouble());
+            }
         }
         chart->addSeries(temp_series);
 
@@ -385,6 +558,7 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
     chart->setAnimationOptions(QChart::NoAnimation);
 
     ui->chart_layout->addWidget(chartView);
+
 }
 
 void data_graph_m_widget::on_cb_select_machine_name_currentIndexChanged(const QString &arg1)
