@@ -11,7 +11,18 @@
 #include <QLineEdit>
 #include <QDateTime>
 #include <QLabel>
+#include <QDir>
+#include <QMessageBox>
+#include <QFileDialog>
+#include <QtXlsx>
+#include "xlsxdocument.h"
+#include "xlsxformat.h"
+#include "xlsxcellrange.h"
+#include "xlsxcellreference.h"
+#include "xlsxworksheet.h"
+#include "xlsxconditionalformatting.h"
 #include "exelcell_setting.h"
+
 
 #define MAX_INJSTEP 10 //최대 사출단수
 #define MAX_HOLDSTEP 5 //최대 보압단수
@@ -47,6 +58,7 @@ public:
                  QStringList heater, QStringList heater_OnOff, QStringList heater_name, QStringList temperature, QStringList temperture_OnOff,
                  QStringList temperature_name);
     void closeEvent(QCloseEvent *event);
+    int Excel_Save();
 
 public:
     QSqlDatabase Mold_DB;
