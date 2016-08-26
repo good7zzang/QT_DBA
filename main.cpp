@@ -17,9 +17,6 @@ int main(int argc, char *argv[])
     CMSDBA_MainDlg w;
     Main_ui = &w;
     w.show();
-    QTranslator trans;
-    trans.load(":/Lang/Lang_ko_KR.qm");
-    QApplication::installTranslator(&trans);
 
 
 //    HeaterName_Setting m_heater;

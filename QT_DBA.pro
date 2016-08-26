@@ -91,7 +91,7 @@ FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
     dbsearchact.ui
 
-TRANSLATIONS += Lang_ko_KR.ts\
+TRANSLATIONS += Lang_ko_KR.ts Lang_en_EN.ts\
 
 RESOURCES += \
     res.qrc
