@@ -43,7 +43,7 @@ void ZoomChartView::mouseMoveEvent(QMouseEvent *event)
     QDateTime tim;
     tim.setMSecsSinceEpoch(chart()->mapToValue(event->pos()).x());
     m_coordX->setText(QString("X = %1").arg(tim.toString("yyyy-MM-dd HH:mm:ss")));
-    m_coordY->setText(QString("Y = %1").arg(chart()->mapToValue(event->pos()).y()));
+    m_coordY->setText(QString("Y = %1").arg(chart()->mapToValue(event->pos()).y(),0,'f',1));
 
     if (m_isTouching)
         return;

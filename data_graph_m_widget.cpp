@@ -267,7 +267,7 @@ void data_graph_m_widget::tooltip(QPointF point, bool state){
     if (state) {
         QDateTime tim;
         tim.setMSecsSinceEpoch(point.x());
-        m_tooltip->setText(QString("X: %1 \nY: %2 ").arg(tim.toString("yyyy-MM-dd HH:mm:ss")).arg(point.y()));
+        m_tooltip->setText(QString("X: %1 \nY: %2 ").arg(tim.toString("yyyy-MM-dd HH:mm:ss")).arg(point.y(),0,'f',1));
         QXYSeries *series = qobject_cast<QXYSeries *>(sender());
         m_tooltip->setAnchor(chart->mapToPosition(point, series));
         m_tooltip->setPos(chart->mapToPosition(point, series) + QPoint(10, -50));
@@ -323,7 +323,9 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
     chart->addAxis(axisX, Qt::AlignBottom);
 
     axisY->setTickCount(5);
-    axisY->setLabelFormat("%d");
+    axisY->setLabelFormat("%2i");
+
+//    axisY->setBase(8);
     axisY->setTitleText("Sunspots count");
     chart->addAxis(axisY, Qt::AlignLeft);
 
@@ -355,6 +357,13 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
         temp_series_vc.append(temp_series);
         temp_series->setName(selecttext);
         remotequely_rec.first();
+        remotequely_rec.next();
+        temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0);
+
+        remotequely_rec.first();
+
+        temp_series->setPointsVisible(true);
+
 
         if(selecttext == Injection_time){
             while(remotequely_rec.next()){
@@ -544,6 +553,10 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
         }
         chart->addSeries(temp_series);
 
+        remotequely_rec.first();
+        remotequely_rec.next();
+        temp_series->remove(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0);
+
         temp_series->attachAxis(axisX);
         temp_series->attachAxis(axisY);
 
@@ -551,11 +564,14 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
         connect(temp_series, SIGNAL(hovered(QPointF, bool)), this, SLOT(tooltip(QPointF,bool)));
     }
 
+
     chartView = new ZoomChartView(chart);
 
     chartView->setRenderHint(QPainter::Antialiasing);
 
     chart->setAnimationOptions(QChart::NoAnimation);
+
+
 
     ui->chart_layout->addWidget(chartView);
 
