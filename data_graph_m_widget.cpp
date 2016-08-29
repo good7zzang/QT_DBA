@@ -358,7 +358,7 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
         temp_series->setName(selecttext);
         remotequely_rec.first();
         remotequely_rec.next();
-        temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0);
+        temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0.12345);
 
         remotequely_rec.first();
 
@@ -555,7 +555,7 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
 
         remotequely_rec.first();
         remotequely_rec.next();
-        temp_series->remove(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0);
+        temp_series->remove(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0.12345);
 
         temp_series->attachAxis(axisX);
         temp_series->attachAxis(axisY);
@@ -571,9 +571,10 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
 
     chart->setAnimationOptions(QChart::NoAnimation);
 
-
-
     ui->chart_layout->addWidget(chartView);
+    if(temp_series->count()>0){
+        chartView->setfirstyvalue(temp_series->at(0).y());
+    }
 
 }
 
@@ -624,4 +625,9 @@ void data_graph_m_widget::on_cb_select_machine_name_currentIndexChanged(const QS
     set_i_Mold_Temperature_10->setText(pretext+remotequely.value("temp18_name").toString());
     set_i_Mold_Temperature_11->setText(pretext+remotequely.value("temp19_name").toString());
     set_i_Mold_Temperature_12->setText(pretext+remotequely.value("temp20_name").toString());
+}
+
+void data_graph_m_widget::on_downmove_btn_clicked()
+{
+   chart->scroll(0,10);
 }
