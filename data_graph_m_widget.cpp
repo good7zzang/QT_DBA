@@ -267,7 +267,7 @@ void data_graph_m_widget::tooltip(QPointF point, bool state){
     if (state) {
         QDateTime tim;
         tim.setMSecsSinceEpoch(point.x());
-        m_tooltip->setText(QString("X: %1 \nY: %2 ").arg(tim.toString("yyyy-MM-dd HH:mm:ss")).arg(point.y()));
+        m_tooltip->setText(QString("X: %1 \nY: %2 ").arg(tim.toString("yyyy-MM-dd HH:mm:ss")).arg(point.y(),0,'f',1));
         QXYSeries *series = qobject_cast<QXYSeries *>(sender());
         m_tooltip->setAnchor(chart->mapToPosition(point, series));
         m_tooltip->setPos(chart->mapToPosition(point, series) + QPoint(10, -50));
@@ -323,7 +323,9 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
     chart->addAxis(axisX, Qt::AlignBottom);
 
     axisY->setTickCount(5);
-    axisY->setLabelFormat("%d");
+    axisY->setLabelFormat("%2i");
+
+//    axisY->setBase(8);
     axisY->setTitleText("Sunspots count");
     chart->addAxis(axisY, Qt::AlignLeft);
 
@@ -355,6 +357,13 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
         temp_series_vc.append(temp_series);
         temp_series->setName(selecttext);
         remotequely_rec.first();
+        remotequely_rec.next();
+        temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0.12345);
+
+        remotequely_rec.first();
+
+        temp_series->setPointsVisible(true);
+
 
         if(selecttext == Injection_time){
             while(remotequely_rec.next()){
@@ -544,12 +553,17 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
         }
         chart->addSeries(temp_series);
 
+        remotequely_rec.first();
+        remotequely_rec.next();
+        temp_series->remove(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0.12345);
+
         temp_series->attachAxis(axisX);
         temp_series->attachAxis(axisY);
 
         connect(temp_series, SIGNAL(clicked(QPointF)), this, SLOT(keepCallout()));
         connect(temp_series, SIGNAL(hovered(QPointF, bool)), this, SLOT(tooltip(QPointF,bool)));
     }
+
 
     chartView = new ZoomChartView(chart);
 
@@ -558,6 +572,9 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
     chart->setAnimationOptions(QChart::NoAnimation);
 
     ui->chart_layout->addWidget(chartView);
+    if(temp_series->count()>0){
+        chartView->setfirstyvalue(temp_series->at(0).y());
+    }
 
 }
 
@@ -608,4 +625,9 @@ void data_graph_m_widget::on_cb_select_machine_name_currentIndexChanged(const QS
     set_i_Mold_Temperature_10->setText(pretext+remotequely.value("temp18_name").toString());
     set_i_Mold_Temperature_11->setText(pretext+remotequely.value("temp19_name").toString());
     set_i_Mold_Temperature_12->setText(pretext+remotequely.value("temp20_name").toString());
+}
+
+void data_graph_m_widget::on_downmove_btn_clicked()
+{
+   chart->scroll(0,10);
 }

@@ -198,6 +198,8 @@ private slots:
 
     void on_cb_select_machine_name_currentIndexChanged(const QString &arg1);
 
+    void on_downmove_btn_clicked();
+
 private:
      Ui::data_graph_m_widget *ui;
 
