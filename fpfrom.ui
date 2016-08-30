@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fpfrom</class>
+ <widget class="QWidget" name="fpfrom">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1432</width>
+    <height>947</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="3" column="1">
+    <widget class="temp_moniter_style1" name="widget_temp10" native="true"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="temp_moniter_style1" name="widget_temp9" native="true"/>
+   </item>
+   <item row="3" column="2">
+    <widget class="temp_moniter_style1" name="widget_temp11" native="true"/>
+   </item>
+   <item row="1" column="3">
+    <widget class="temp_moniter_style1" name="widget_temp4" native="true"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="temp_moniter_style1" name="widget_temp2" native="true"/>
+   </item>
+   <item row="3" column="3">
+    <widget class="temp_moniter_style1" name="widget_temp12" native="true"/>
+   </item>
+   <item row="2" column="2">
+    <widget class="temp_moniter_style1" name="widget_temp7" native="true"/>
+   </item>
+   <item row="2" column="3">
+    <widget class="temp_moniter_style1" name="widget_temp8" native="true"/>
+   </item>
+   <item row="1" column="2">
+    <widget class="temp_moniter_style1" name="widget_temp3" native="true"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="temp_moniter_style1" name="widget_temp5" native="true"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="temp_moniter_style1" name="widget_temp1" native="true"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="temp_moniter_style1" name="widget_temp6" native="true"/>
+   </item>
+   <item row="0" column="1">
+    <widget class="QComboBox" name="cb_machine_name"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>기계 선택</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>temp_moniter_style1</class>
+   <extends>QWidget</extends>
+   <header>temp_moniter_style1.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

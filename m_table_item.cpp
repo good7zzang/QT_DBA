@@ -10,6 +10,7 @@ M_table_item::M_table_item(QString machine_name,QString ip,QObject *parent)
     this->machine_name = machine_name;
     this->ip = ip;
     crypt.setKey(CRYPTO_NUMBER);
+    QSqlDatabase localdb;
     localdb = QSqlDatabase::database("localdb");
     //remotedb = QSqlDatabase::addDatabase(ip);
     remotedbconnect();
@@ -22,13 +23,31 @@ M_table_item::M_table_item(QString machine_name,QString ip,QObject *parent)
     PB_achive_bar->setRange(0,100);
     PB_achive_bar->setAlignment(Qt::AlignHCenter);
     La_warning_flag = new QLabel();
+    initlocaldb();
+
+
 
     connect(&M_timer,SIGNAL(timeout()),this,SLOT(M_timer_loop()));
     M_timer.setInterval(1000);
     M_timer.start();
 
 }
+void M_table_item::initlocaldb(){
+    QSqlDatabase localdb;
+    localdb = QSqlDatabase::database("localdb");
+    QSqlQuery litequery(localdb);
+    litequery.exec(QString("insert into set_temptable(machine_name) "
+                           "select '%1' where not exists("
+                           "select * from set_temptable where machine_name = '%1')"
+                           ).arg(machine_name)
+                   );
+
+}
+
 void M_table_item::remotedbconnect(){
+    QSqlDatabase localdb;
+    QSqlDatabase remotedb;
+    localdb = QSqlDatabase::database("localdb");
     QSqlQuery litequery(localdb);
     litequery.exec("select * from systemset");
     if(litequery.next()){
@@ -56,7 +75,10 @@ void M_table_item::remotedbconnect(){
         }
     }
 }
+
 void M_table_item::M_timer_loop(){
+    QSqlDatabase remotedb;
+    remotedb = QSqlDatabase::database(ip);
     if(!remotedb.isOpen()){
         if(!remotedb.open()){
             qDebug()<<ip<<"DB not open";

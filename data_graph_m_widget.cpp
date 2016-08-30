@@ -16,6 +16,7 @@ data_graph_m_widget::data_graph_m_widget(QWidget *parent) :
     ui->start_search_time->setDate(QDate::currentDate());
     ui->end_search_time->setDateTime(QDateTime::currentDateTime());
     tree_model = new QStandardItemModel();
+
     tree_model->insertRow(0,new QStandardItem(QString(tr("act_data"))));
     tree_model->item(0)->insertRow(tree_model->item(0)->rowCount(),new QStandardItem(Injection_time));
     tree_model->item(0)->insertRow(tree_model->item(0)->rowCount(),new QStandardItem(Filling_time));
@@ -164,6 +165,10 @@ data_graph_m_widget::data_graph_m_widget(QWidget *parent) :
     tree_model->item(1)->child(7)->insertRow(1,new QStandardItem(Suckback_pos_2_step));
     tree_model->item(1)->child(7)->insertRow(2,new QStandardItem(Suckback_spd_1_step));
     tree_model->item(1)->child(7)->insertRow(3,new QStandardItem(Suckback_spd_2_step));
+    tree_model->item(1)->insertRow(8,new QStandardItem(set_injtime));
+    tree_model->item(1)->insertRow(9,new QStandardItem(set_cooltime));
+    tree_model->item(1)->insertRow(10,new QStandardItem(set_injdelaytime));
+    tree_model->item(1)->insertRow(11,new QStandardItem(set_chgdelaytime));
 
     QString set_Berrel_Temperature_1 = QString(tr("Berrel_Temperature_1"));
     QString set_Berrel_Temperature_2 = QString(tr("Berrel_Temperature_2"));
@@ -233,14 +238,6 @@ data_graph_m_widget::data_graph_m_widget(QWidget *parent) :
 
 
     tree_model->setHorizontalHeaderItem(0,new QStandardItem(QString(tr("chart"))));
-//    list_model = new QStringListModel();
-//    list_model->insertRow(0);
-//    QModelIndex index = list_model->index(0);
-//    list_model->setData(index,QVariant("test"));
-
-//    list_model->insertRow(1);
-//    QModelIndex index1 = list_model->index(1);
-//    list_model->setData(index1,QVariant("test1"));
 
     ui->tree_chart_item_list->setModel(tree_model);
 
@@ -249,16 +246,16 @@ data_graph_m_widget::data_graph_m_widget(QWidget *parent) :
         ui->cb_select_machine_name->addItem(remotequely.value("machine_name").toString());
     }
 
-
 }
 
 data_graph_m_widget::~data_graph_m_widget()
 {
+    tree_model->deleteLater();
     delete ui;
 }
 
 void data_graph_m_widget::keepCallout(){
-    //tooltip_list.append(m_tooltip);
+
     m_tooltip = new callout(chart);
 }
 void data_graph_m_widget::tooltip(QPointF point, bool state){
@@ -267,7 +264,7 @@ void data_graph_m_widget::tooltip(QPointF point, bool state){
     if (state) {
         QDateTime tim;
         tim.setMSecsSinceEpoch(point.x());
-        m_tooltip->setText(QString("X: %1 \nY: %2 ").arg(tim.toString("yyyy-MM-dd HH:mm:ss")).arg(point.y()));
+        m_tooltip->setText(QString("X: %1 \nY: %2 ").arg(tim.toString("yyyy-MM-dd HH:mm:ss")).arg(point.y(),0,'f',1));
         QXYSeries *series = qobject_cast<QXYSeries *>(sender());
         m_tooltip->setAnchor(chart->mapToPosition(point, series));
         m_tooltip->setPos(chart->mapToPosition(point, series) + QPoint(10, -50));
@@ -285,11 +282,7 @@ void data_graph_m_widget::on_btn_zoom_reset_clicked()
 
 void data_graph_m_widget::on_btn_chart_output_clicked()
 {
-//    QModelIndexList index_list = ui->chart_item_list->selectionModel()->selectedIndexes();
-//    for(int i=0;i<index_list.count();i++){
-//        QModelIndex tempdata = index_list.at(i);
-//        qDebug()<<tempdata.data().toString();
-//    }
+
     if(m_tooltip!=NULL){
         delete m_tooltip;
         m_tooltip = 0;
@@ -322,8 +315,8 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
     axisX->setTitleText("Date");
     chart->addAxis(axisX, Qt::AlignBottom);
 
-    axisY->setTickCount(5);
-    axisY->setLabelFormat("%d");
+    axisY->setTickCount(10);
+    axisY->setLabelFormat("%2.2f");
     axisY->setTitleText("Sunspots count");
     chart->addAxis(axisY, Qt::AlignLeft);
 
@@ -343,10 +336,17 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
     QString machine_name = ui->cb_select_machine_name->currentText();
     QString starttime = ui->start_search_time->dateTime().toString("yyyy-MM-dd HH:mm:ss");
     QString endttime = ui->end_search_time->dateTime().toString("yyyy-MM-dd HH:mm:ss");
-    QSqlQuery remotequely_rec(remote_db);
-    remotequely_rec.exec(QString("select * from shot_data where machine_name = '%1' "
+    QSqlQuery remotequely_rec_act(remote_db);
+    remotequely_rec_act.exec(QString("select * from shot_data where machine_name = '%1' "
                                  "AND TimeStamp >= '%2' AND TimeStamp<= '%3' order by TimeStamp asc")
                          .arg(machine_name).arg(starttime).arg(endttime));
+
+    QSqlQuery remotequely_rec_set(remote_db);
+    remotequely_rec_set.exec(QString("select * from shot_data_rec2 where machine_name = '%1' "
+                                 "AND TimeStamp >= '%2' AND TimeStamp<= '%3' order by TimeStamp asc")
+                         .arg(machine_name).arg(starttime).arg(endttime));
+
+
 
 
     for(int i=0;i<selectdlist.count();i++){
@@ -354,195 +354,649 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
         temp_series = new QLineSeries();
         temp_series_vc.append(temp_series);
         temp_series->setName(selecttext);
-        remotequely_rec.first();
+        remotequely_rec_act.first();
+        remotequely_rec_act.next();
+        temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0.12345);
+        remotequely_rec_act.first();
+        remotequely_rec_set.first();
+
+        temp_series->setPointsVisible(true);
+
 
         if(selecttext == Injection_time){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Injection_Time").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Injection_Time").toDouble());
             }
         }else if(selecttext == Filling_time){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Filling_Time").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Filling_Time").toDouble());
             }
         }else if(selecttext == Plasticizing_time){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Plasticizing_Time").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Plasticizing_Time").toDouble());
             }
         }else if(selecttext == Cycle_time){
-                    while(remotequely_rec.next()){
-                        temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                            ,remotequely_rec.value("Cycle_Time").toDouble());
+                    while(remotequely_rec_act.next()){
+                        temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                            ,remotequely_rec_act.value("Cycle_Time").toDouble());
                     }
         }else if(selecttext == Clamp_close_time){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Clamp_Close_Time").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Clamp_Close_Time").toDouble());
             }
         }else if(selecttext == Cushion_position){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Cushion_Position").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Cushion_Position").toDouble());
             }
         }else if(selecttext == Switch_over_position){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Switch_Over_Position").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Switch_Over_Position").toDouble());
             }
         }else if(selecttext == Plasticizing_position){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Plasticizing_Position").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Plasticizing_Position").toDouble());
             }
         }else if(selecttext == Clamp_open_position){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Clamp_Open_Position").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Clamp_Open_Position").toDouble());
             }
         }else if(selecttext == Max_injection_speed){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Max_Injection_Speed").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Max_Injection_Speed").toDouble());
             }
         }else if(selecttext == Max_Screw_RPM){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Max_Screw_RPM").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Max_Screw_RPM").toDouble());
             }
         }else if(selecttext == Average_screw_RPM){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Average_Screw_RPM").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Average_Screw_RPM").toDouble());
             }
         }else if(selecttext == Max_injection_pressure){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Max_Injection_Pressure").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Max_Injection_Pressure").toDouble());
             }
         }else if(selecttext == Max_Switch_Over_Pressure){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Max_Switch_Over_Pressure").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Max_Switch_Over_Pressure").toDouble());
             }
         }else if(selecttext == Max_back_pressure){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Max_Back_Pressure").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Max_Back_Pressure").toDouble());
             }
         }else if(selecttext == Average_Back_Pressure){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Average_Back_Pressure").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Average_Back_Pressure").toDouble());
             }
         }else if(selecttext == act_i_Berrel_Temperature_1->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Barrel_Temperature_1").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Barrel_Temperature_1").toDouble());
             }
         }else if(selecttext == act_i_Berrel_Temperature_2->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Barrel_Temperature_2").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Barrel_Temperature_2").toDouble());
             }
         }else if(selecttext == act_i_Berrel_Temperature_3->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Barrel_Temperature_3").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Barrel_Temperature_3").toDouble());
             }
         }else if(selecttext == act_i_Berrel_Temperature_4->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Barrel_Temperature_4").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Barrel_Temperature_4").toDouble());
             }
         }else if(selecttext == act_i_Berrel_Temperature_5->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Barrel_Temperature_5").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Barrel_Temperature_5").toDouble());
             }
         }else if(selecttext == act_i_Berrel_Temperature_6->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Barrel_Temperature_6").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Barrel_Temperature_6").toDouble());
             }
         }else if(selecttext == act_i_Berrel_Temperature_7->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Barrel_Temperature_7").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Barrel_Temperature_7").toDouble());
             }
         }else if(selecttext == act_i_Hopper_Temperature->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Hopper_Temperature").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Hopper_Temperature").toDouble());
             }
         }else if(selecttext == act_i_Hopper_Temperature->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Hopper_Temperature").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Hopper_Temperature").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_1->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_1").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_1").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_2->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_2").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_2").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_3->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_3").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_3").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_4->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_4").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_4").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_5->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_5").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_5").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_6->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_6").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_6").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_7->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_7").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_7").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_8->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_8").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_8").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_9->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_9").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_9").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_10->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_10").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_10").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_11->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_11").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_11").toDouble());
             }
         }else if(selecttext == act_i_Mold_Temperature_12->text()){
-            while(remotequely_rec.next()){
-                temp_series->append(remotequely_rec.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
-                                    ,remotequely_rec.value("Mold_Temperature_12").toDouble());
+            while(remotequely_rec_act.next()){
+                temp_series->append(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_act.value("Mold_Temperature_12").toDouble());
             }
         }
+        if(selecttext == inj_spd_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_1").toDouble());
+            }
+        }else if(selecttext == inj_spd_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_2").toDouble());
+            }
+        }else if(selecttext == inj_spd_3_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_3").toDouble());
+            }
+        }else if(selecttext == inj_spd_4_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_4").toDouble());
+            }
+        }else if(selecttext == inj_spd_5_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_5").toDouble());
+            }
+        }else if(selecttext == inj_spd_6_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_6").toDouble());
+            }
+        }else if(selecttext == inj_spd_7_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_7").toDouble());
+            }
+        }else if(selecttext == inj_spd_8_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_8").toDouble());
+            }
+        }else if(selecttext == inj_spd_9_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_9").toDouble());
+            }
+        }else if(selecttext == inj_spd_10_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Velocity_10").toDouble());
+            }
+        }else if(selecttext == inj_pre_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_1").toDouble());
+            }
+        }else if(selecttext == inj_pre_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_2").toDouble());
+            }
+        }else if(selecttext == inj_pre_3_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_3").toDouble());
+            }
+        }else if(selecttext == inj_pre_4_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_4").toDouble());
+            }
+        }else if(selecttext == inj_pre_5_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_5").toDouble());
+            }
+        }else if(selecttext == inj_pre_6_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_6").toDouble());
+            }
+        }else if(selecttext == inj_pre_7_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_7").toDouble());
+            }
+        }else if(selecttext == inj_pre_8_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_8").toDouble());
+            }
+        }else if(selecttext == inj_pre_9_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_9").toDouble());
+            }
+        }else if(selecttext == inj_pre_10_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Pressure_10").toDouble());
+            }
+        }else if(selecttext == inj_pos_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_1").toDouble());
+            }
+        }else if(selecttext == inj_pos_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_2").toDouble());
+            }
+        }else if(selecttext == inj_pos_3_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_3").toDouble());
+            }
+        }else if(selecttext == inj_pos_4_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_4").toDouble());
+            }
+        }else if(selecttext == inj_pos_5_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_5").toDouble());
+            }
+        }else if(selecttext == inj_pos_6_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_6").toDouble());
+            }
+        }else if(selecttext == inj_pos_7_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_7").toDouble());
+            }
+        }else if(selecttext == inj_pos_8_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_8").toDouble());
+            }
+        }else if(selecttext == inj_pos_9_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_9").toDouble());
+            }
+        }else if(selecttext == inj_pos_10_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Inj_Position_10").toDouble());
+            }
+        }else if(selecttext == SOV_time){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("SOV_Time").toDouble());
+            }
+        }else if(selecttext == SOV_pos){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("SOV_Position").toDouble());
+            }
+        }else if(selecttext == SOV_prs){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("SOV_Prs").toDouble());
+            }
+        }else if(selecttext == Hold_pre_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Pressure_1").toDouble());
+            }
+        }else if(selecttext == Hold_pre_2_setp){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Pressure_2").toDouble());
+            }
+        }else if(selecttext == Hold_pre_3_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Pressure_3").toDouble());
+            }
+        }else if(selecttext == Hold_pre_4_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Pressure_4").toDouble());
+            }
+        }else if(selecttext == Hold_pre_5_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Pressure_5").toDouble());
+            }
+        }else if(selecttext == Hold_time_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Time_1").toDouble());
+            }
+        }else if(selecttext == Hold_time_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Time_2").toDouble());
+            }
+        }else if(selecttext == Hold_time_3_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Time_3").toDouble());
+            }
+        }else if(selecttext == Hold_time_4_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Time_4").toDouble());
+            }
+        }else if(selecttext == Hold_time_5_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Time_5").toDouble());
+            }
+        }else if(selecttext == Hold_spd_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Vel_1").toDouble());
+            }
+        }else if(selecttext == Hold_spd_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Vel_2").toDouble());
+            }
+        }else if(selecttext == Hold_spd_3_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Vel_3").toDouble());
+            }
+        }else if(selecttext == Hold_spd_4_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Vel_4").toDouble());
+            }
+        }else if(selecttext == Hold_spd_5_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Hld_Vel_5").toDouble());
+            }
+        }else if(selecttext == Chg_pos_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Chg_Position_1").toDouble());
+            }
+        }else if(selecttext == Chg_pos_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Chg_Position_2").toDouble());
+            }
+        }else if(selecttext == Chg_pos_3_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Chg_Position_3").toDouble());
+            }
+        }else if(selecttext == Chg_pos_4_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Chg_Position_4").toDouble());
+            }
+        }else if(selecttext == Chg_spd_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Chg_Speed_1").toDouble());
+            }
+        }else if(selecttext == Chg_spd_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Chg_Speed_2").toDouble());
+            }
+        }else if(selecttext == Chg_spd_3_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Chg_Speed_3").toDouble());
+            }
+        }else if(selecttext == Chg_spd_4_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Chg_Speed_4").toDouble());
+            }
+        }else if(selecttext == back_pre_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("BackPressure_1").toDouble());
+            }
+        }else if(selecttext == back_pre_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("BackPressure_2").toDouble());
+            }
+        }else if(selecttext == back_pre_3_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("BackPressure_3").toDouble());
+            }
+        }else if(selecttext == back_pre_4_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("BackPressure_4").toDouble());
+            }
+        }else if(selecttext == Suckback_pos_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Suckback_Position_1").toDouble());
+            }
+        }else if(selecttext == Suckback_pos_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Suckback_Position_2").toDouble());
+            }
+        }else if(selecttext == Suckback_spd_1_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Suckback_Speed_1").toDouble());
+            }
+        }else if(selecttext == Suckback_spd_2_step){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Suckback_Speed_2").toDouble());
+            }
+        }else if(selecttext == set_i_Berrel_Temperature_1->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Barrel_Temperature_1").toDouble());
+            }
+        }else if(selecttext == set_i_Berrel_Temperature_2->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Barrel_Temperature_2").toDouble());
+            }
+        }else if(selecttext == set_i_Berrel_Temperature_3->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Barrel_Temperature_3").toDouble());
+            }
+        }else if(selecttext == set_i_Berrel_Temperature_4->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Barrel_Temperature_4").toDouble());
+            }
+        }else if(selecttext == set_i_Berrel_Temperature_5->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Barrel_Temperature_5").toDouble());
+            }
+        }else if(selecttext == set_i_Berrel_Temperature_6->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Barrel_Temperature_6").toDouble());
+            }
+        }else if(selecttext == set_i_Berrel_Temperature_7->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Barrel_Temperature_7").toDouble());
+            }
+        }else if(selecttext == set_i_Hopper_Temperature->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Barrel_Temperature_hopper").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_1->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_1").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_2->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_2").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_3->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_3").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_4->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_4").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_5->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_5").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_6->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_6").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_7->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_7").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_8->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_8").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_9->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_9").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_10->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_10").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_11->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_11").toDouble());
+            }
+        }else if(selecttext == set_i_Mold_Temperature_12->text()){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("Mold_Temperature_12").toDouble());
+            }
+        }else if(selecttext == set_injtime){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("set_injtime").toDouble());
+            }
+        }else if(selecttext == set_cooltime){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("set_cooltime").toDouble());
+            }
+        }else if(selecttext == set_cooltime){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("set_injdelaytime").toDouble());
+            }
+        }else if(selecttext == set_chgdelaytime){
+            while(remotequely_rec_set.next()){
+                temp_series->append(remotequely_rec_set.value("TimeStamp").toDateTime().toMSecsSinceEpoch()
+                                    ,remotequely_rec_set.value("set_chgdelaytime").toDouble());
+            }
+        }
+
+
         chart->addSeries(temp_series);
+
+        remotequely_rec_act.first();
+        remotequely_rec_act.next();
+        temp_series->remove(remotequely_rec_act.value("TimeStamp").toDateTime().toMSecsSinceEpoch(),0.12345);
 
         temp_series->attachAxis(axisX);
         temp_series->attachAxis(axisY);
@@ -551,6 +1005,7 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
         connect(temp_series, SIGNAL(hovered(QPointF, bool)), this, SLOT(tooltip(QPointF,bool)));
     }
 
+
     chartView = new ZoomChartView(chart);
 
     chartView->setRenderHint(QPainter::Antialiasing);
@@ -558,6 +1013,9 @@ void data_graph_m_widget::on_btn_chart_output_clicked()
     chart->setAnimationOptions(QChart::NoAnimation);
 
     ui->chart_layout->addWidget(chartView);
+    if(temp_series->count()>0){
+        chartView->setfirstyvalue(temp_series->at(0).y());
+    }
 
 }
 
@@ -608,4 +1066,13 @@ void data_graph_m_widget::on_cb_select_machine_name_currentIndexChanged(const QS
     set_i_Mold_Temperature_10->setText(pretext+remotequely.value("temp18_name").toString());
     set_i_Mold_Temperature_11->setText(pretext+remotequely.value("temp19_name").toString());
     set_i_Mold_Temperature_12->setText(pretext+remotequely.value("temp20_name").toString());
+}
+
+
+void data_graph_m_widget::on_downmove_btn_clicked()
+{
+   chart->scroll(0,10);
+}
+void data_graph_m_widget::closeEvent(QCloseEvent *event){
+    this->deleteLater();
 }

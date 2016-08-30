@@ -15,6 +15,9 @@ public:
     QGraphicsSimpleTextItem *m_coordX;
     QGraphicsSimpleTextItem *m_coordY;
     QString Xvalue;
+    qreal firstyvalue;
+    void setfirstyvalue(qreal value);
+
 private:
     bool m_isTouching;
 
@@ -27,6 +30,7 @@ protected:
     void dragEnterEvent(QDragEnterEvent *event);
     void dragLeaveEvent(QDragLeaveEvent *event);
     void resizeEvent(QResizeEvent *event);
+    void showEvent(QShowEvent *event);
 
 
 
