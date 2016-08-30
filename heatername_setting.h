@@ -9,6 +9,9 @@
 #include <QVector>
 #include <QLineEdit>
 #include <QString>
+#include <QStandardItemModel>
+#include <QStandardItem>
+#include <QCheckBox>
 
 #define HEATER 8 //히터갯수
 #define TEMPERATURE 12 //외부온도 갯수
@@ -26,9 +29,11 @@ public:
     ~HeaterName_Setting();
     void closeEvent(QCloseEvent *event);
     void init();
+    void Machinelist_Display();
 
 public:
     QVector <QLineEdit *> Li_list; //LineEdit UI 저장 변수
+    QVector <QStandardItem *> LV_list; //ListView UI 저장 변수
 
 public:
     QSqlDatabase HeaterName_DB; //DB 변수
