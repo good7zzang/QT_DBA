@@ -38,7 +38,9 @@ SOURCES += main.cpp\
     heatername_setting.cpp \
     exelcell_setting.cpp \
     temp_moniter_style1.cpp \
-    fpfrom.cpp
+    fpfrom.cpp \
+    selectproductiondashboard.cpp
+
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
@@ -64,7 +66,9 @@ HEADERS  += cmsdba_maindlg.h \
     heatername_setting.h \
     exelcell_setting.h \
     temp_moniter_style1.h \
-    fpfrom.h
+    fpfrom.h \
+    selectproductiondashboard.h
+
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
@@ -85,7 +89,9 @@ FORMS    += cmsdba_maindlg.ui \
     heatername_setting.ui \
     exelcell_setting.ui \
     temp_moniter_style1.ui \
-    fpfrom.ui
+    fpfrom.ui \
+    selectproductiondashboard.ui
+
 
 
 

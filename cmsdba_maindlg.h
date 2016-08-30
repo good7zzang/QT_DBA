@@ -18,6 +18,7 @@
 #include "dbsearchact.h"
 #include "data_graph_m_widget.h"
 #include "heatername_setting.h"
+#include "selectproductiondashboard.h"
 #include <QTranslator>
 #include "fpfrom.h"
 
@@ -44,6 +45,7 @@ public:
     QString select_machine_name;
     QMap<QString,M_table_item *> *item_map;
     Ui::CMSDBA_MainDlg *ui;
+    QAction *toobar_action[8];
     QTranslator *trans;
     ~CMSDBA_MainDlg();
 

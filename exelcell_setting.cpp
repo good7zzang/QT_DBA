@@ -100,27 +100,31 @@ void ExelCell_Setting::Cell_Display(QString Select_Machine)
         ui->Li_Date->setText(Excel_Cell_Query.value("Cell_DateTime").toString()); //날짜 Cell
         ui->Li_Moldname->setText(Excel_Cell_Query.value("Cell_Moldname").toString()); //금형이름 Cell
 
-        for(int i=0; i<INJSTEP; i++) //사출
+        /*사출*/
+        for(int i=0; i<INJSTEP; i++)
         {
             injspd_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Injspd_%1").arg(i+1)).toString()); //사출속도 Cell
             injprs_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Injprs_%1").arg(i+1)).toString()); //사출압력 Cell
             injpos_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Injpos_%1").arg(i+1)).toString()); //사출거리 Cell
 
-            if(i<HOLDSTEP) //보압
+            /*보압*/
+            if(i<HOLDSTEP)
             {
                 holdspd_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Holdspd_%1").arg(i+1)).toString()); //보압속도 Cell
                 holdprs_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Holdprs_%1").arg(i+1)).toString()); //보압압력 Cell
                 holdtime_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Holdtime_%1").arg(i+1)).toString()); //보압시간 Cell
             }
 
-            if(i<CHGSTEP) //계량
+            /*계량*/
+            if(i<CHGSTEP)
             {
                 chgspd_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Chgspd_%1").arg(i+1)).toString()); //계량속도 Cell
                 chgbps_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Chgbps_%1").arg(i+1)).toString()); //배압 Cell
                 chgpos_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Chgpos_%1").arg(i+1)).toString()); //계량위치 Cell
             }
 
-            if(i<SUCKBACKSTEP) //강제후퇴
+            /*강제후퇴*/
+            if(i<SUCKBACKSTEP)
             {
                 if(i==0)
                 {
@@ -146,13 +150,15 @@ void ExelCell_Setting::Cell_Display(QString Select_Machine)
 
         for(int i=0; i<TEMPERATURE; i++) //히터 & 외부온도
         {
-            if(i <HEATER) //히터
+            /*히터*/
+            if(i <HEATER)
             {
                 heater_name_Lalist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_HeaterName_%1").arg(i+1)).toString()); //히터이름 Cell
                 heater_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Heater_%1").arg(i+1)).toString()); //히터 Cell
             }
 
-            if(i < TEMPERATURE) //외부온도
+            /*외부온도*/
+            if(i < TEMPERATURE)
             {
                 temperature_name_Lalist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_TempName_%1").arg(i+1)).toString()); //외부온도이름 Cell
                 temperature_Lilist.at(i)->setText(Excel_Cell_Query.value(QString("Cell_Temp_%1").arg(i+1)).toString()); //외부온도 Cell
@@ -192,7 +198,8 @@ void ExelCell_Setting::on_Pu_Save_ExcelCell_clicked()
             Update_Query.append(QString("Cell_Moldname='%1', ").arg(ui->Li_Moldname->text()));
         }
 
-        for(int i=0; i<INJSTEP; i++) //사출
+        /*사출*/
+        for(int i=0; i<INJSTEP; i++)
         {
             if(injspd_Lilist.at(i)->text() != Excel_Query.value(QString("Cell_Injspd_%1").arg(i+1)).toString() || Allchange) //사출속도 Cell
                 Update_Query.append(QString("Cell_Injspd_%1='%2', ").arg(i+1).arg(injspd_Lilist.at(i)->text()));
@@ -204,7 +211,8 @@ void ExelCell_Setting::on_Pu_Save_ExcelCell_clicked()
                 Update_Query.append(QString("Cell_Injpos_%1='%2', ").arg(i+1).arg(injpos_Lilist.at(i)->text()));
         }
 
-        for(int i=0; i<HOLDSTEP; i++) //보압
+        /*보압*/
+        for(int i=0; i<HOLDSTEP; i++)
         {
             if(holdspd_Lilist.at(i)->text() != Excel_Query.value(QString("Cell_Holdspd_%1").arg(i+1)).toString() || Allchange) //보압속도 Cell
                 Update_Query.append(QString("Cell_Holdspd_%1='%2', ").arg(i+1).arg(holdspd_Lilist.at(i)->text()));
@@ -215,7 +223,8 @@ void ExelCell_Setting::on_Pu_Save_ExcelCell_clicked()
             if(holdtime_Lilist.at(i)->text() != Excel_Query.value(QString("Cell_Holdtime_%1").arg(i+1)).toString() || Allchange) //보압시간 Cell
                 Update_Query.append(QString("Cell_Holdtime_%1='%2', ").arg(i+1).arg(holdtime_Lilist.at(i)->text()));
 
-            if(i<CHGSTEP) //계량
+            /*계량*/
+            if(i<CHGSTEP)
             {
                 if(chgspd_Lilist.at(i)->text() != Excel_Query.value(QString("Cell_Chgspd_%1").arg(i+1)).toString() || Allchange) //계량속도 Cell
                     Update_Query.append(QString("Cell_Chgspd_%1='%2', ").arg(i+1).arg(chgspd_Lilist.at(i)->text()));
@@ -242,7 +251,8 @@ void ExelCell_Setting::on_Pu_Save_ExcelCell_clicked()
 
         for(int i=0; i<TEMPERATURE; i++)
         {
-            if(i<HEATER) //히터
+            /*히터*/
+            if(i<HEATER)
             {
                 if(heater_name_Lalist.at(i)->text() != Excel_Query.value(QString("Cell_HeaterName_%1").arg(i+1)).toString() || Allchange) //히터이름 Cell
                     Update_Query.append(QString("Cell_HeaterName_%1='%2, ").arg(i+1).arg(heater_name_Lalist.at(i)->text()));
