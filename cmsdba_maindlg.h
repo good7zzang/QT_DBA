@@ -19,6 +19,7 @@
 #include "data_graph_m_widget.h"
 #include "heatername_setting.h"
 #include <QTranslator>
+#include "fpfrom.h"
 
 #include "data_graph_m_widget.h"
 #define MACHIEN_NAME_FILD 0
