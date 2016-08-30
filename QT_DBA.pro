@@ -36,7 +36,9 @@ SOURCES += main.cpp\
     callout.cpp \
     data_graph_m_widget.cpp \
     heatername_setting.cpp \
-    exelcell_setting.cpp
+    exelcell_setting.cpp \
+    temp_moniter_style1.cpp \
+    fpfrom.cpp
 
 HEADERS  += cmsdba_maindlg.h \
     molding_setting.h \
@@ -60,7 +62,9 @@ HEADERS  += cmsdba_maindlg.h \
     callout.h \
     data_graph_m_widget.h \
     heatername_setting.h \
-    exelcell_setting.h
+    exelcell_setting.h \
+    temp_moniter_style1.h \
+    fpfrom.h
 
 FORMS    += cmsdba_maindlg.ui \
     molding_setting.ui \
@@ -79,7 +83,9 @@ FORMS    += cmsdba_maindlg.ui \
     db_serversetting.ui \
     data_graph_m_widget.ui \
     heatername_setting.ui \
-    exelcell_setting.ui
+    exelcell_setting.ui \
+    temp_moniter_style1.ui \
+    fpfrom.ui
 
 
 

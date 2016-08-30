@@ -27,13 +27,12 @@ public:
     QLabel *La_current_count;
     QString machine_name;
     QString ip;
-    QSqlDatabase localdb;
-    QSqlDatabase remotedb;
     QTimer M_timer;
     SimpleCrypt crypt;
     QProgressBar *PB_achive_bar;
     QLabel *La_warning_flag;
     void remotedbconnect();
+    void initlocaldb();
 
 
 signals:
