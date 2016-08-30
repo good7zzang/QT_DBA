@@ -46,6 +46,8 @@ void HeaterName_Setting::init()
          <<ui->Li_Heater15<<ui->Li_Heater16<<ui->Li_Heater17<<ui->Li_Heater18<<ui->Li_Heater19<<ui->Li_Heater20; //히터 LineEdit UI 초기화
 
     connect(ui->Co_Machinelist, SIGNAL(currentIndexChanged(QString)), this, SLOT(HeaterName_Display(QString)));
+
+    Machinelist_Display(); //ListView 초기화
 }
 
 void HeaterName_Setting::HeaterName_Display(QString Machine_Name)
@@ -58,6 +60,18 @@ void HeaterName_Setting::HeaterName_Display(QString Machine_Name)
     {
        for(int i=0; i<HEATER+TEMPERATURE; i++)
        {
+           if(i < LV_list.size()) //체크박스 동적할당 크기만큼
+               if(Machine_Name == LV_list.at(i)->text()) //콤보박스 선택 이름 == 체크박스 이름
+               {
+                    LV_list.at(i)->setEnabled(false); //체크박스 비활성화
+                    LV_list.at(i)->setData(Qt::Unchecked, Qt::CheckStateRole); //체크표시 해제
+               }
+               else
+               {
+                    LV_list.at(i)->setEnabled(true); //체크박스 활성화
+                    LV_list.at(i)->setData(Qt::Unchecked, Qt::CheckStateRole); //체크표시 설정
+               }
+
            Li_list.at(i)->setText(HeaterName_Query.value(QString("temp%1_name").arg(i+1)).toString()); //히터이름 출력
        }
     }
@@ -73,7 +87,7 @@ void HeaterName_Setting::on_Pu_SaveName_clicked()
 
     check = HeaterName_Query.exec(QString("select * From temp_table where Machine_Name='%1'").arg(ui->Co_Machinelist->currentText())); //설정된 히터이름 가져오기
 
-    if(check)
+    if(check) //쿼리 성공시
     {
         HeaterName_Query.next();
 
@@ -94,8 +108,15 @@ void HeaterName_Setting::on_Pu_SaveName_clicked()
     }
 
     if(First == 0) //변경되었을 경우에만
-    {
-        Update_Query.append(QString(" where Machine_Name='%1'").arg(ui->Co_Machinelist->currentText())); //변경 할 기계이름 추가
+    {        
+        Update_Query.append(QString(" where Machine_Name='%1'").arg(ui->Co_Machinelist->currentText())); //변경 할 기계호기 설정(콤보박스)
+
+        for(int i=0; i<LV_list.size(); i++)
+            if(LV_list.at(i)->checkState()) //체크박스 체크시
+                Update_Query.append(QString(" OR Machine_Name='%1'").arg(LV_list.at(i)->text())); //동일 설정 기계호기 추가
+
+        qDebug()<<Update_Query;
+
         check = HeaterName_Query.exec(Update_Query); //Update 쿼리 실행
 
         if(check)
@@ -103,4 +124,27 @@ void HeaterName_Setting::on_Pu_SaveName_clicked()
         else
             qDebug()<<"Update Query Fail";
     }
+}
+
+void HeaterName_Setting::Machinelist_Display() //ListView 체크박스 설정
+{
+    QSqlQuery Machine_Query(HeaterName_DB); //DB 설정
+
+    QStandardItemModel *model = new QStandardItemModel(ui->LV_Machinelist); //ListView 위젯 설정
+
+    Machine_Query.exec("select distinct Machine_Name From Systeminfo order by Machine_Name ASC"); //기계이름 검색 쿼리 실행
+
+    for(int i=0; i<Machine_Query.size(); i++)
+    {
+        Machine_Query.next();
+
+        LV_list<<new QStandardItem; //체크박스 동적생성
+
+        LV_list.at(i)->setCheckable(true); //CheckBox Check 체크표시 able 설정
+        LV_list.at(i)->setText(Machine_Query.value("Machine_Name").toString()); //CheckBox에 기계이름 설정
+        LV_list.at(i)->setData(Qt::Unchecked, Qt::CheckStateRole); //CheckBox 선택
+        model->setItem(i, LV_list.at(i)); //CheckBox 설정
+    }
+
+    ui->LV_Machinelist->setModel(model); //LiveView에 체크박스 DIsplay
 }
