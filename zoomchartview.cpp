@@ -13,6 +13,22 @@ ZoomChartView::ZoomChartView(QChart *chart, QWidget *parent)
     m_coordY = new QGraphicsSimpleTextItem(chart);
     m_coordY->setPos(200, this->size().height());
     m_coordY->setText("Y: ");
+    firstyvalue = 0;
+}
+void ZoomChartView::showEvent(QShowEvent *event){
+    qDebug()<<"showevent";
+    qDebug()<<firstyvalue;
+    if(firstyvalue<=0){
+        chart()->scroll(0,-150);
+    }else {
+        chart()->scroll(0,150);
+    }
+
+}
+void ZoomChartView::setfirstyvalue(qreal value){
+    if(firstyvalue == 0){
+        firstyvalue = value;
+    }
 }
 
 bool ZoomChartView::viewportEvent(QEvent *event)
@@ -43,7 +59,7 @@ void ZoomChartView::mouseMoveEvent(QMouseEvent *event)
     QDateTime tim;
     tim.setMSecsSinceEpoch(chart()->mapToValue(event->pos()).x());
     m_coordX->setText(QString("X = %1").arg(tim.toString("yyyy-MM-dd HH:mm:ss")));
-    m_coordY->setText(QString("Y = %1").arg(chart()->mapToValue(event->pos()).y()));
+    m_coordY->setText(QString("Y = %1").arg(chart()->mapToValue(event->pos()).y(),0,'f',1));
 
     if (m_isTouching)
         return;
@@ -98,7 +114,10 @@ void ZoomChartView::keyPressEvent(QKeyEvent *event)
         QGraphicsView::keyPressEvent(event);
         break;
     }
+
+
 }
+
 void ZoomChartView::resizeEvent(QResizeEvent *event){
     m_coordX->setPos(50, this->size().height()-30);
     m_coordY->setPos(200, this->size().height()-30);

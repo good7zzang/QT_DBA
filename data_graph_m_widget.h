@@ -21,6 +21,7 @@
 #include <QModelIndexList>
 #include <QStandardItemModel>
 #include <QSplineSeries>
+#include <QLinkedList>
 QT_CHARTS_USE_NAMESPACE
 
 namespace Ui {
@@ -181,6 +182,13 @@ public:
     QString Suckback_spd_1_step = QString(tr("Suckback_spd_1_step"));
     QString Suckback_spd_2_step = QString(tr("Suckback_spd_2_step"));
 
+    QString set_injtime = QString(tr("set_injtime"));
+    QString set_cooltime = QString(tr("set_cooltime"));
+    QString set_injdelaytime = QString(tr("set_injdelaytime"));
+    QString set_chgdelaytime = QString(tr("set_chgdelaytime"));
+
+    QLinkedList<QStandardItem *> deletelist_item;
+
 
     ~data_graph_m_widget();
 
@@ -194,9 +202,11 @@ private slots:
 
     void on_btn_chart_output_clicked();
 
-
+    void closeEvent(QCloseEvent *event);
 
     void on_cb_select_machine_name_currentIndexChanged(const QString &arg1);
+
+    void on_downmove_btn_clicked();
 
 private:
      Ui::data_graph_m_widget *ui;

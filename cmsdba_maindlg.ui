@@ -208,9 +208,16 @@
     </property>
     <addaction name="actiondatagrhape"/>
    </widget>
+   <widget class="QMenu" name="menuFP">
+    <property name="title">
+     <string>FP</string>
+    </property>
+    <addaction name="actionFPTempmoniter"/>
+   </widget>
    <addaction name="menuMenu_Bar"/>
    <addaction name="menuDatabase_Search"/>
    <addaction name="menuGrape"/>
+   <addaction name="menuFP"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="CMSDBA_MainToobar">
@@ -258,6 +265,11 @@
   <action name="actionEn">
    <property name="text">
     <string>Lang_en</string>
+   </property>
+  </action>
+  <action name="actionFPTempmoniter">
+   <property name="text">
+    <string>tempmoniter</string>
    </property>
   </action>
  </widget>

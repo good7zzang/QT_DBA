@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>temp_moniter_style1</class>
+ <widget class="QWidget" name="temp_moniter_style1">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>372</width>
+    <height>293</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="4">
+    <widget class="QSlider" name="sld_realvalue">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>25</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSlider::groove:vertical {
+    background: red;
+    position: absolute; /* absolutely position 4px from the left and right of the widget. setting margins on the widget should work too... */
+    left: 4px; right: 4px;
+}
+QSlider::handle:vertical {
+    height: 10px;
+    background: green;
+    margin: 0 -4px; /* expand outside the groove */
+}
+QSlider::add-page:vertical {
+    background: rgb(0, 0, 255);
+}
+
+QSlider::sub-page:vertical {
+    background: rgb(255, 0, 0)
+}</string>
+     </property>
+     <property name="value">
+      <number>50</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="QLCDNumber" name="LCD_real_value">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color :rgb(0, 255, 0);
+background-color : rgb(0, 0, 0);</string>
+     </property>
+     <property name="smallDecimalPoint">
+      <bool>true</bool>
+     </property>
+     <property name="digitCount">
+      <number>4</number>
+     </property>
+     <property name="value" stdset="0">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="intValue" stdset="0">
+      <number>0</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="6">
+    <widget class="QComboBox" name="cb_tempname">
+     <property name="font">
+      <font>
+       <family>Agency FB</family>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <item>
+      <property name="text">
+       <string>temp1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp2</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp8</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp9</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp10</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp11</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp12</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp13</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp14</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp15</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp16</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp17</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp18</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp19</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>temp20</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="btn_up_tempvalue">
+       <property name="font">
+        <font>
+         <family>Agency FB</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color :rgb(0, 255, 0);
+background-color : rgb(0, 0, 0);
+padding:0px;</string>
+       </property>
+       <property name="text">
+        <string>250</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_set_tempvalue">
+       <property name="font">
+        <font>
+         <family>Agency FB</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color :rgb(0, 255, 0);
+background-color : rgb(0, 0, 0);
+padding:0px;</string>
+       </property>
+       <property name="text">
+        <string>240</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_down_tempvalue">
+       <property name="font">
+        <font>
+         <family>Agency FB</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color :rgb(0, 255, 0);
+background-color : rgb(0, 0, 0);
+padding:0px;</string>
+       </property>
+       <property name="text">
+        <string>230</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -139,7 +139,11 @@ void CMSDBA_MainDlg::menubartriggered(QAction *action)
     }else if(!Menubar_Name.compare("actionEn")){
         trans->load(":/Lang/Lang_en_EN.qm");
         QApplication::installTranslator(trans);
+    }else if(!Menubar_Name.compare("actionFPTempmoniter")){
+        fpfrom *fpclass = new fpfrom();
+        fpclass->show();
     }
+
 }
 
 /*
@@ -159,7 +163,8 @@ void CMSDBA_MainDlg::litedbinit(){
                     "version INTEGER,"
                     "remoteserverusername TEXT,"
                     "remoteserveruserpassword TEXT,"
-                    "remoteservertype TEXT"
+                    "remoteservertype TEXT,"
+                    "temp_current_machine_name TEXT"
                     ");");
     //만약조건이없다면 업데이트
     qDebug()<<litequery.lastError().text();
@@ -178,6 +183,23 @@ void CMSDBA_MainDlg::litedbinit(){
                     "\'1234\',"
                     "\'ODBC\' "
                     "where not exists(select * from systemset);");
+
+    litequery.exec("CREATE TABLE  IF NOT EXISTS set_temptable "
+                   "(machine_name VARCHAR(50) NOT NULL,"
+                    "temp1_number INT DEFAULT 0,"
+                    "temp2_number INT DEFAULT 0,"
+                    "temp3_number INT DEFAULT 0,"
+                    "temp4_number INT DEFAULT 0,"
+                    "temp5_number INT DEFAULT 0,"
+                    "temp6_number INT DEFAULT 0,"
+                    "temp7_number INT DEFAULT 0,"
+                    "temp8_number INT DEFAULT 0,"
+                    "temp9_number INT DEFAULT 0,"
+                    "temp10_number INT DEFAULT 0,"
+                    "temp11_number INT DEFAULT 0,"
+                    "temp12_number INT DEFAULT 0"
+                    ");"
+                   );
 
 }
 /*
