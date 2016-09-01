@@ -142,6 +142,8 @@ void CMSDBA_MainDlg::menubartriggered(QAction *action)
     }else if(!Menubar_Name.compare("actionFPTempmoniter")){
         fpfrom *fpclass = new fpfrom();
         fpclass->show();
+    }else if(!Menubar_Name.compare("actionAlarmlogData")){
+
     }
 
 }
