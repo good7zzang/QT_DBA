@@ -39,7 +39,9 @@ SOURCES += main.cpp\
     exelcell_setting.cpp \
     temp_moniter_style1.cpp \
     fpfrom.cpp \
-    selectproductiondashboard.cpp
+    selectproductiondashboard.cpp \
+    query_thread.cpp \
+    productionboard_setting.cpp
 
 
 HEADERS  += cmsdba_maindlg.h \
@@ -67,7 +69,9 @@ HEADERS  += cmsdba_maindlg.h \
     exelcell_setting.h \
     temp_moniter_style1.h \
     fpfrom.h \
-    selectproductiondashboard.h
+    selectproductiondashboard.h \
+    query_thread.h \
+    productionboard_setting.h
 
 
 FORMS    += cmsdba_maindlg.ui \
@@ -90,7 +94,8 @@ FORMS    += cmsdba_maindlg.ui \
     exelcell_setting.ui \
     temp_moniter_style1.ui \
     fpfrom.ui \
-    selectproductiondashboard.ui
+    selectproductiondashboard.ui \
+    productionboard_setting.ui
 
 
 
