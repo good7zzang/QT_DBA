@@ -76,7 +76,7 @@ void SelectProductionDashboard::DBinit() //DB 초기화
                            ")");
 
     /*행이 하나도 없을 경우 DEFAULT값 INSERT*/
-    Select_Lite_Query.exec("INSERT INTO Select_Prodution_Dashboard("
+    Select_Lite_Query.exec("INSERT INTO Select_Prodution_Table("
                            "Select_Name1,"
                            "Select_Name2,"
                            "Select_Name3,"

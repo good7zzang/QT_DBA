@@ -41,6 +41,6 @@ void Productionboard_Setting::Combox_init()
     Production_Query.exec("select * from Select_Prodution_Table");
     Production_Query.next();
 
-    for(int i=0; i<Production_Query.size(); i++)
-        st_Datalist<<QString("")
+//    for(int i=0; i<Production_Query.size(); i++)
+//        //st_Datalist<<QString("")
 }

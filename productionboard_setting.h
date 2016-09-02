@@ -20,7 +20,7 @@ public:
     explicit Productionboard_Setting(QWidget *parent = 0);
     ~Productionboard_Setting();
     void init();
-    void DBinit();
+    void Combox_init();
     void closeEvent(QCloseEvent *event);
 
 public:
