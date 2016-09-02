@@ -54,7 +54,7 @@
           <item row="2" column="7">
            <widget class="QLabel" name="label_12">
             <property name="text">
-             <string>TextLabel</string>
+             <string>7</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -64,7 +64,7 @@
           <item row="1" column="1">
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>TextLabel</string>
+             <string>1</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -74,7 +74,7 @@
           <item row="5" column="7">
            <widget class="QLabel" name="label_15">
             <property name="text">
-             <string>TextLabel</string>
+             <string>10</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -91,7 +91,7 @@
           <item row="4" column="1">
            <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>TextLabel</string>
+             <string>4</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -101,7 +101,7 @@
           <item row="3" column="1">
            <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>TextLabel</string>
+             <string>3</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -109,12 +109,12 @@
            </widget>
           </item>
           <item row="2" column="8">
-           <widget class="QComboBox" name="comboBox_7"/>
+           <widget class="QComboBox" name="Co_SelectData7"/>
           </item>
           <item row="5" column="1">
            <widget class="QLabel" name="label_8">
             <property name="text">
-             <string>TextLabel</string>
+             <string>5</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -140,7 +140,7 @@
           <item row="1" column="7">
            <widget class="QLabel" name="label_11">
             <property name="text">
-             <string>TextLabel</string>
+             <string>6</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -160,7 +160,7 @@
           <item row="3" column="7">
            <widget class="QLabel" name="label_13">
             <property name="text">
-             <string>TextLabel</string>
+             <string>8</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -190,7 +190,7 @@
           <item row="2" column="1">
            <widget class="QLabel" name="label_5">
             <property name="text">
-             <string>TextLabel</string>
+             <string>2</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -214,32 +214,32 @@
            </spacer>
           </item>
           <item row="1" column="8">
-           <widget class="QComboBox" name="comboBox_6"/>
+           <widget class="QComboBox" name="Co_SelectData6"/>
           </item>
           <item row="3" column="3">
-           <widget class="QComboBox" name="comboBox_3"/>
+           <widget class="QComboBox" name="Co_SelectData3"/>
           </item>
           <item row="5" column="3">
-           <widget class="QComboBox" name="comboBox_5"/>
+           <widget class="QComboBox" name="Co_SelectData5"/>
           </item>
           <item row="4" column="3">
-           <widget class="QComboBox" name="comboBox_4"/>
+           <widget class="QComboBox" name="Co_SelectData4"/>
           </item>
           <item row="1" column="3">
-           <widget class="QComboBox" name="comboBox"/>
+           <widget class="QComboBox" name="Co_SelectData1"/>
           </item>
           <item row="2" column="3">
-           <widget class="QComboBox" name="comboBox_2"/>
+           <widget class="QComboBox" name="Co_SelectData2"/>
           </item>
           <item row="7" column="8">
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="Pu_Savebutton">
             <property name="text">
              <string>저장</string>
             </property>
            </widget>
           </item>
           <item row="5" column="8">
-           <widget class="QComboBox" name="comboBox_10"/>
+           <widget class="QComboBox" name="Co_SelectData10"/>
           </item>
           <item row="0" column="9">
            <spacer name="horizontalSpacer_5">
@@ -274,7 +274,7 @@
            </spacer>
           </item>
           <item row="3" column="8">
-           <widget class="QComboBox" name="comboBox_8"/>
+           <widget class="QComboBox" name="Co_SelectData8"/>
           </item>
           <item row="6" column="3">
            <spacer name="verticalSpacer_2">
@@ -309,12 +309,12 @@
            </spacer>
           </item>
           <item row="4" column="8">
-           <widget class="QComboBox" name="comboBox_9"/>
+           <widget class="QComboBox" name="Co_SelectData9"/>
           </item>
           <item row="4" column="7">
            <widget class="QLabel" name="label_14">
             <property name="text">
-             <string>TextLabel</string>
+             <string>9</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -353,7 +353,7 @@
          </spacer>
         </item>
         <item row="0" column="0" colspan="3">
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="La_ProductionName">
           <property name="text">
            <string>현황판 이름</string>
           </property>

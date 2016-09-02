@@ -62,7 +62,7 @@ void SelectProductionDashboard::DBinit() //DB 초기화
     QSqlQuery Select_Lite_Query(Select_liteDB); //local DB 설정
 
     /*테이블이 존재하지 않을 경우 테이블 생성*/
-    Select_Lite_Query.exec("CREATE TABLE IF NOT EXISTS Select_Prodution_Dashboard("
+    Select_Lite_Query.exec("CREATE TABLE IF NOT EXISTS Select_Prodution_Table("
                            "Select_Name1 int DEFAULT 1,"
                            "Select_Name2 int DEFAULT 2,"
                            "Select_Name3 int DEFAULT 3,"
