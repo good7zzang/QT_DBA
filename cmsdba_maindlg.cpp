@@ -143,7 +143,8 @@ void CMSDBA_MainDlg::menubartriggered(QAction *action)
         fpfrom *fpclass = new fpfrom();
         fpclass->show();
     }else if(!Menubar_Name.compare("actionAlarmlogData")){
-
+        dbsearchalarmlog *alarmlog = new dbsearchalarmlog();
+        alarmlog->show();
     }
 
 }

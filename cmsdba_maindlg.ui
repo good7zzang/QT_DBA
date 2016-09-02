@@ -201,6 +201,7 @@
     </property>
     <addaction name="actionActData"/>
     <addaction name="actionSettingData"/>
+    <addaction name="actionAlarmlogData"/>
    </widget>
    <widget class="QMenu" name="menuGrape">
     <property name="title">
@@ -270,6 +271,11 @@
   <action name="actionFPTempmoniter">
    <property name="text">
     <string>tempmoniter</string>
+   </property>
+  </action>
+  <action name="actionAlarmlogData">
+   <property name="text">
+    <string>AlarmlogData</string>
    </property>
   </action>
  </widget>
