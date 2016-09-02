@@ -71,8 +71,6 @@ void dbsearchalarmlog::Execute_Query(){
             Query_Count_Row++; //열 증가
         }
     }
-
-
 }
 void dbsearchalarmlog::Display(int Query_Count_Row, QString machinename, QString Alarm_Number, QString Alarm_Start_Time, QString Alarm_End_Time, QString Alarm_flag){
     ui->Ta_Alarmlist->insertRow(Query_Count_Row); //행의 갯수 설정

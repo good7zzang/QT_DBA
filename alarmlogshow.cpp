@@ -97,6 +97,10 @@ void AlarmLogShow::Display(int Query_Count_Row, QString machinename, QString Ala
     ui->Ta_Alarmlist->item(Query_Count_Row,0)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
 
     ui->Ta_Alarmlist->setItem(Query_Count_Row,1,new QTableWidgetItem(Alarm_Number)); //알람 내역 출력
+
+
+
+
     ui->Ta_Alarmlist->item(Query_Count_Row,1)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
 
     if(Alarm_flag == "1") //알람 미 해제시
