@@ -49,64 +49,23 @@ void SelectProductionDashboard::DBinit() //DB 초기화
     SelectDB = QSqlDatabase::database("remotedb"); //remote DB 가져오기
     Select_liteDB = QSqlDatabase::database("localdb"); //SQL Lite DB 가져오기
 
-    if(SelectDB.isOpen() && Select_liteDB.isOpen())
+    if(SelectDB.isOpen() && Select_liteDB.isOpen()) //DB 모두 Open
         qDebug()<<"Both remote DB and local DB Open";
-    else if(SelectDB.isOpen())
-        qDebug()<<"Remote DB Open but Local DB Not Open";
-    else if(Select_liteDB.isOpen())
-        qDebug()<<"Local DB Open but Remote DB Not Open";
     else
-        qDebug()<<"Both remote DB and local DB Not Open";
+    {
+        if(SelectDB.isOpen()) //Remote DB
+            qDebug()<<"Remote DB Open";
+        if(Select_liteDB.isOpen()) //Local DB
+            qDebug()<<"Local DB open";
+    }
 
     QSqlQuery Select_Query(SelectDB); //remote DB 설정
     QSqlQuery Select_Lite_Query(Select_liteDB); //local DB 설정
-
-    /*테이블이 존재하지 않을 경우 테이블 생성*/
-    Select_Lite_Query.exec("CREATE TABLE IF NOT EXISTS Select_Prodution_Table("
-                           "Select_Name1 int DEFAULT 1,"
-                           "Select_Name2 int DEFAULT 2,"
-                           "Select_Name3 int DEFAULT 3,"
-                           "Select_Name4 int DEFAULT 4,"
-                           "Select_Name5 int DEFAULT 5,"
-                           "Select_Name6 int DEFAULT 6,"
-                           "Select_Name7 int DEFAULT 7,"
-                           "Select_Name8 int DEFAULT 8,"
-                           "Select_Name9 int DEFAULT 9,"
-                           "Select_Name10 int DEFAULT 10"
-                           ")");
-
-    /*행이 하나도 없을 경우 DEFAULT값 INSERT*/
-    Select_Lite_Query.exec("INSERT INTO Select_Prodution_Table("
-                           "Select_Name1,"
-                           "Select_Name2,"
-                           "Select_Name3,"
-                           "Select_Name4,"
-                           "Select_Name5,"
-                           "Select_Name6,"
-                           "Select_Name7,"
-                           "Select_Name8,"
-                           "Select_Name9,"
-                           "Select_Name10)"
-                           "select"
-                           "'1',"
-                           "'2',"
-                           "'3',"
-                           "'4',"
-                           "'5',"
-                           "'6',"
-                           "'7',"
-                           "'8',"
-                           "'9',"
-                           "'10'"
-                           "where NOT EXISTS (select * From Select_Prodution_Dashboard"
-                           ")");
-
-    qDebug()<<Select_Lite_Query.lastError().text();
 }
 
 void SelectProductionDashboard::Menubartriggered(QAction *action)
 {
-    if(action->objectName().compare("actionProduction_Board_Setting")) //생산현황판 설정
+    if(action->objectName().compare("actionProduction_Board_Setting")) //생산현황판 설정화면
     {
         Productionboard_Setting *m_produtionboard = new Productionboard_Setting();
         m_produtionboard->show();
