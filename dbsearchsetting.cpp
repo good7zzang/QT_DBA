@@ -43,11 +43,9 @@ void DBsearchsetting::init()
 
     /*기계이름 설정*/
     ui->Co_MachineList->insertItem(0," "); //공백 추가
-    for(int i=1; i<=Machine_Name.size(); i++)
-    {
-        Machine_Name.next();
-        ui->Co_MachineList->insertItem(i, Machine_Name.value("Machine_Name").toString()); //기계이름 추가
-    }
+
+    while(Machine_Name.next())
+        ui->Co_MachineList->insertItem(ui->Co_MachineList->count(), Machine_Name.value("Machine_Name").toString()); //기계이름 추가
 
     /*날짜 설정*/
     ui->Da_Data_Start_Time->setDate(QDate::currentDate()); //현재 날짜 설정

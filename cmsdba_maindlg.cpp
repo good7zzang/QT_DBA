@@ -31,21 +31,24 @@ void CMSDBA_MainDlg::Toolbarinit()
 {
     ui->CMSDBA_MainToobar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon); //툴바 스타일 설정
 
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/connect.png"), "Connect");
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/disconnect.png"), "Disconnect");
+    toobar_action[0] = ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/connect.png"), "Connect");
+    toobar_action[1] = ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/disconnect.png"), "Disconnect");
     ui->CMSDBA_MainToobar->addSeparator();
     //ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/add.png"), "Add");
     //ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/delete.png"), "Delete");
     //ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/moldcondition.png"), "Moldcondition");
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Alarm.png"), "Alarm Log");
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Settinglog.png"), "Setting Log");
+    toobar_action[2] = ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/moldcondition.png"), "Moldcondition");
+    toobar_action[3] = ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Alarm.png"), "Alarm Log");
+    //ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Settinglog.png"), "Setting Log");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display1.png"), "DisPlay1");
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display2.png"), "Display2");
+    toobar_action[4] = ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display1.png"), "DisPlay1");
+    toobar_action[5] = ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/Display2.png"), "Display2");
     ui->CMSDBA_MainToobar->addSeparator();
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/HeaterName.png"), "Heater Name Setting");
-    ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/setting.png"), "Setting");
+    toobar_action[6] = ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/HeaterName.png"), "Heater Name Setting");
+    toobar_action[7] = ui->CMSDBA_MainToobar->addAction(QIcon(":/Icon/res/setting.png"), "Setting");
+
+    for(int i=1; i<sizeof(ui->CMSDBA_MainToobar)-1; i++) //Connect & Setting만 Enable
+        toobar_action[i]->setEnabled(false); //Toobar Menu Disalbe
 
     connect(ui->CMSDBA_MainToobar, SIGNAL(actionTriggered(QAction*)), this,SLOT(toolbartriggered(QAction*))); //메뉴툴바
     connect(ui->menuBar, SIGNAL(triggered(QAction*)), this, SLOT(menubartriggered(QAction*))); //메뉴바
@@ -54,11 +57,7 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
 {
     QString Toolbar_Name;
 
-    //DBA_Setting *m_dbasetting = new DBA_Setting();
-
-
     Toolbar_Name = action->text();
-
 
     if(!Toolbar_Name.compare("Add"))
     {
@@ -84,7 +83,8 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
     }
     else if(!Toolbar_Name.compare("Display2"))
     {
-
+        SelectProductionDashboard *m_selectProduct = new SelectProductionDashboard();
+        m_selectProduct->show();
     }
     else if(!Toolbar_Name.compare("Heater Name Setting"))
     {
@@ -96,6 +96,16 @@ void CMSDBA_MainDlg::toolbartriggered(QAction *action)
         Db_serversetting *m_dbasetting = new Db_serversetting();
         m_dbasetting->show();
     }else if(!Toolbar_Name.compare("Connect")){
+        toobar_action[0]->setEnabled(false); //Connect 메뉴 Disable
+
+        for(int i=1; i<sizeof(ui->CMSDBA_MainToobar); i++)
+        {
+            toobar_action[i]->setEnabled(true); //toolbar 메뉴 Enable
+
+            if(i == sizeof(ui->CMSDBA_MainToobar)-1) //Setting 메뉴
+                toobar_action[i]->setEnabled(false); //Disable
+        }
+
         dbconnect();
     }
 }
@@ -132,6 +142,9 @@ void CMSDBA_MainDlg::menubartriggered(QAction *action)
     }else if(!Menubar_Name.compare("actionFPTempmoniter")){
         fpfrom *fpclass = new fpfrom();
         fpclass->show();
+    }else if(!Menubar_Name.compare("actionAlarmlogData")){
+        dbsearchalarmlog *alarmlog = new dbsearchalarmlog();
+        alarmlog->show();
     }
 
 }
@@ -190,6 +203,21 @@ void CMSDBA_MainDlg::litedbinit(){
                     "temp12_number INT DEFAULT 0"
                     ");"
                    );
+
+    litequery.exec("CREATE TABLE IF NOT EXISTS Select_Prodution_Table("
+                           "machine_name TEXT,"
+                           "Select_Name1 int DEFAULT 1,"
+                           "Select_Name2 int DEFAULT 2,"
+                           "Select_Name3 int DEFAULT 3,"
+                           "Select_Name4 int DEFAULT 4,"
+                           "Select_Name5 int DEFAULT 5,"
+                           "Select_Name6 int DEFAULT 6,"
+                           "Select_Name7 int DEFAULT 7,"
+                           "Select_Name8 int DEFAULT 8,"
+                           "Select_Name9 int DEFAULT 9,"
+                           "Select_Name10 int DEFAULT 10"
+                           ")");
+
 
 }
 /*

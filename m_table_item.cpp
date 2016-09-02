@@ -41,6 +41,11 @@ void M_table_item::initlocaldb(){
                            "select * from set_temptable where machine_name = '%1')"
                            ).arg(machine_name)
                    );
+    litequery.exec(QString("insert into Select_Prodution_Table(machine_name) "
+                           "select '%1' where not exists("
+                           "select * from Select_Prodution_Table where machine_name = '%1')"
+                           ).arg(machine_name)
+                   );
 
 }
 
