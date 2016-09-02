@@ -204,6 +204,21 @@ void CMSDBA_MainDlg::litedbinit(){
                     ");"
                    );
 
+    litequery.exec("CREATE TABLE IF NOT EXISTS Select_Prodution_Table("
+                           "machine_name TEXT,"
+                           "Select_Name1 int DEFAULT 1,"
+                           "Select_Name2 int DEFAULT 2,"
+                           "Select_Name3 int DEFAULT 3,"
+                           "Select_Name4 int DEFAULT 4,"
+                           "Select_Name5 int DEFAULT 5,"
+                           "Select_Name6 int DEFAULT 6,"
+                           "Select_Name7 int DEFAULT 7,"
+                           "Select_Name8 int DEFAULT 8,"
+                           "Select_Name9 int DEFAULT 9,"
+                           "Select_Name10 int DEFAULT 10"
+                           ")");
+
+
 }
 /*
  * 원격 db에 접속
