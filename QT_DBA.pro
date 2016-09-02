@@ -41,7 +41,8 @@ SOURCES += main.cpp\
     fpfrom.cpp \
     selectproductiondashboard.cpp \
     query_thread.cpp \
-    productionboard_setting.cpp
+    productionboard_setting.cpp \
+    dbsearchalarmlog.cpp
 
 
 HEADERS  += cmsdba_maindlg.h \
@@ -71,7 +72,8 @@ HEADERS  += cmsdba_maindlg.h \
     fpfrom.h \
     selectproductiondashboard.h \
     query_thread.h \
-    productionboard_setting.h
+    productionboard_setting.h \
+    dbsearchalarmlog.h
 
 
 FORMS    += cmsdba_maindlg.ui \
@@ -95,7 +97,8 @@ FORMS    += cmsdba_maindlg.ui \
     temp_moniter_style1.ui \
     fpfrom.ui \
     selectproductiondashboard.ui \
-    productionboard_setting.ui
+    productionboard_setting.ui \
+    dbsearchalarmlog.ui
 
 
 
