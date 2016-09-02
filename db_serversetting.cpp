@@ -37,6 +37,7 @@ Db_serversetting::~Db_serversetting()
 
 void Db_serversetting::on_buttonBox_accepted()
 {
+
     QSqlQuery litedb(localdb);
     QString str = QString("update systemset set remoteserverip = \'%1\';").arg(ui->LE_remotedb_ip->text());
     litedb.exec(str);
@@ -50,7 +51,6 @@ void Db_serversetting::on_buttonBox_accepted()
     litedb.exec(str);
     str = QString("update systemset set remoteservertype = \'%1\';").arg(ui->CB_remotedb_type->currentText());
     litedb.exec(str);
-
 
     deleteLater();
 }
