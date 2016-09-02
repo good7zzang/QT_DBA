@@ -71,8 +71,6 @@ void dbsearchalarmlog::Execute_Query(){
             Query_Count_Row++; //열 증가
         }
     }
-
-
 }
 void dbsearchalarmlog::Display(int Query_Count_Row, QString machinename, QString Alarm_Number, QString Alarm_Start_Time, QString Alarm_End_Time, QString Alarm_flag){
     ui->Ta_Alarmlist->insertRow(Query_Count_Row); //행의 갯수 설정
@@ -100,7 +98,6 @@ void dbsearchalarmlog::Display(int Query_Count_Row, QString machinename, QString
         ui->Ta_Alarmlist->item(Query_Count_Row,2)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
         ui->Ta_Alarmlist->setItem(Query_Count_Row,3,new QTableWidgetItem(Alarm_End_Time)); //알람 해제 시간 출력
         ui->Ta_Alarmlist->item(Query_Count_Row,3)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
-
         ui->Ta_Alarmlist->setItem(Query_Count_Row,4,new QTableWidgetItem(tr("Alarm OFF"))); //알람 해제 문구 출력
         ui->Ta_Alarmlist->item(Query_Count_Row,4)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
         ui->Ta_Alarmlist->item(Query_Count_Row,4)->setBackgroundColor(Qt::green); //배경색 설정
