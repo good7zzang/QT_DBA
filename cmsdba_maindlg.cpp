@@ -155,9 +155,18 @@ void CMSDBA_MainDlg::menubartriggered(QAction *action)
 void CMSDBA_MainDlg::litedbinit(){
     localdb = QSqlDatabase::addDatabase("QSQLITE","localdb");
     localdb.setDatabaseName("local.db");
+    QSqlDatabase alarmdb  = QSqlDatabase::addDatabase("QSQLITE","alarmdb");
+    alarmdb.setDatabaseName(qApp->applicationDirPath()+"/alarmtabel.db");
+
     if(!localdb.open()){
         qDebug()<<"local DB not open";
     }
+    if(!alarmdb.open()){
+        qDebug()<<"alarm DB not open";
+    }
+
+
+
     QSqlQuery litequery(localdb);
 
     litequery.exec("CREATE TABLE  IF NOT EXISTS systemset (remoteserverip TEXT,"

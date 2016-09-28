@@ -43,6 +43,7 @@ public:
     explicit CMSDBA_MainDlg(QWidget *parent = 0);
     QSqlDatabase localdb;
     QSqlDatabase remotedb;
+
     QString select_machine_name;
     QMap<QString,M_table_item *> *item_map;
     Ui::CMSDBA_MainDlg *ui;

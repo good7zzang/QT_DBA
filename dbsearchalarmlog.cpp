@@ -54,7 +54,7 @@ void dbsearchalarmlog::Execute_Query(){
             QString Temp; //문자열 제거하기 위한 변수
 
             Temp = Alarm_Query.value(QString("Controller_info")).toString(); //컨트롤러 이름 저장
-            QString Controller_info = Temp.section('/',0,0); //컨트롤러 이름 저장
+            QString Controller_info = Temp; //컨트롤러 이름 저장
 
             QString Alarm_Number = Alarm_Query.value(QString("Alarm_Number")).toString(); //알람번호 저장
 
@@ -66,21 +66,41 @@ void dbsearchalarmlog::Execute_Query(){
 
             QString Alarm_flag = Alarm_Query.value(QString("Alarm_flag")).toString(); //알람 flag 저장
 
-            Display(Query_Count_Row, machine_name, Alarm_Number, Alarm_Start_Time, Alarm_End_Time, Alarm_flag);
+            Display(Query_Count_Row, machine_name,Controller_info,Alarm_Number, Alarm_Start_Time, Alarm_End_Time, Alarm_flag);
 
             Query_Count_Row++; //열 증가
         }
     }
 }
-void dbsearchalarmlog::Display(int Query_Count_Row, QString machinename, QString Alarm_Number, QString Alarm_Start_Time, QString Alarm_End_Time, QString Alarm_flag){
+void dbsearchalarmlog::Display(int Query_Count_Row, QString machinename, QString Controller_info, QString Alarm_Number, QString Alarm_Start_Time, QString Alarm_End_Time, QString Alarm_flag){
     ui->Ta_Alarmlist->insertRow(Query_Count_Row); //행의 갯수 설정
 
     /*알람 정보 출력*/
     ui->Ta_Alarmlist->setItem(Query_Count_Row,0,new QTableWidgetItem(machinename)); //컨트롤러 정보 출력
     ui->Ta_Alarmlist->item(Query_Count_Row,0)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
+    QSqlDatabase alarmdb  = QSqlDatabase::database("alarmdb");
+    if(!alarmdb.isOpen()){
+        if(!alarmdb.open()){
+            qDebug()<<"openfaile";
+        }
+    }
 
-    ui->Ta_Alarmlist->setItem(Query_Count_Row,1,new QTableWidgetItem(Alarm_Number)); //알람 내역 출력
+    QString lang = "ko";
+
+    QSqlQuery alarmdbquery(alarmdb);
+
+    alarmdbquery.exec(QString("select %1 from '%2' where number = %3")
+                      .arg(lang).arg(Controller_info).arg(Alarm_Number)
+                      );
+    QString Alarmstrdata;
+    if(alarmdbquery.next()){
+        Alarmstrdata = alarmdbquery.value(lang).toString();
+    }else {
+        Alarmstrdata = Alarm_Number;
+    }
+    ui->Ta_Alarmlist->setItem(Query_Count_Row,1,new QTableWidgetItem(Alarmstrdata)); //알람 내역 출력
     ui->Ta_Alarmlist->item(Query_Count_Row,1)->setTextAlignment(Qt::AlignCenter); //가운데 정렬
+
 
     if(Alarm_flag == "1") //알람 미 해제시
     {

@@ -33,7 +33,7 @@ public:
     void closeEvent(QCloseEvent *event);
     void init();
     void Execute_Query();
-    void Display(int Query_Count_Row, QString machinename, QString Alarm_Number, QString Alarm_Start_Time,
+    void Display(int Query_Count_Row, QString machinename,QString program_name, QString Alarm_Number, QString Alarm_Start_Time,
                  QString Alarm_End_Time, QString Alarm_flag);
 
 

@@ -31,7 +31,7 @@ public:
     void init();
     void Execute_Query();
     int Query_Count_Row; //열 카운트 변수
-    void Display(int Query_Count_Row, QString machinename, QString Alarm_Number, QString Alarm_Start_Time, QString Alarm_End_Time, QString Alarm_flag);
+    void Display(int Query_Count_Row, QString machinename,QString Controller_info, QString Alarm_Number, QString Alarm_Start_Time, QString Alarm_End_Time, QString Alarm_flag);
 
 
 
